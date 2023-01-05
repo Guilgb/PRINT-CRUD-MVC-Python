@@ -17,10 +17,11 @@ agendamento = AgentamentoConsulta(
     3, '05/01/2023', '13:24', '88996431916', '2000127987189410871', 'Agendamento de Consulta')
 funcionario = Funcionario(1, 'Nome Funcionario', '20/06/2018',
                           'email@funcionario.com', '9988776676', 'Funcionario')
-prontuario = Prontuario
+prontuario = Prontuario(1, 'M', 'Porte', 'Especie', '22/01/2020', 'Cianes')
 
 
 clienteControle = ClienteController.controllerCliente(cliente)
 animalControle = AnimalController.controllerAnimal(animal)
 agendamentoControle = ConsultaController.controllerConsulta(agendamento)
 funcionarioControle = FuncionarioController.controllerFuncionario(funcionario)
+prontuarioControle = ProntuarioController.controllerProntuario(prontuario)
