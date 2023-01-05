@@ -1,4 +1,4 @@
-class Prontuario:
+class Veterinario:
     def __init__(self, id: int, nome: str, cpf: str, nascimento: str,
                  telefone: str, email: str, formacao: str):
         self.__id = id
@@ -56,6 +56,14 @@ class Prontuario:
     @email.setter
     def email(self, email):
         self.__email = email
+
+    @property
+    def formacao(self):
+        return self.__formacao
+
+    @formacao.setter
+    def formacao(self, formacao):
+        self.__formacao = formacao
 
     def __str__(self) -> str:
         return self.porte
