@@ -28,7 +28,7 @@ class Prontuario:
     def porte(self):
         return self.__porte
 
-    @id.setter
+    @porte.setter
     def porte(self, porte):
         self.__porte = porte
 
