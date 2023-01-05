@@ -3,5 +3,6 @@ from . import (
     clienteService,
     consultaService,
     funcionarioService,
+    prontuarioService,
 
 )

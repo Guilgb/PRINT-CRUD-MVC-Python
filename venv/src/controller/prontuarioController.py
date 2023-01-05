@@ -1,2 +1,7 @@
+from src.model.prontuario import Prontuario
+from src.service.prontuarioService import ProntuarioService
+
+
 class ProntuarioController:
-    pass
+    def controllerProntuario(prontuario: Prontuario):
+        ProntuarioService.serviceProntuario(prontuario)
