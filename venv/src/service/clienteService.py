@@ -1,7 +1,6 @@
-from src.model.cliente import Cliente
 from src.repository.clienteRepository import ClientRepository
 
 
 class ClienteService:
-    def serviceCliente(cliente: Cliente):
+    def serviceCliente(cliente):
         ClientRepository.repositoryCliente(cliente)

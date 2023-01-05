@@ -1,3 +1,3 @@
-from src.model.agendamentoConsulta import AgentamentoConsultaclass ConsultaRepository:
-    def repositoryConsulta(agendamentoConsulta: AgentamentoConsulta):
+class ConsultaRepository:
+    def repositoryConsulta(agendamentoConsulta):
         print(agendamentoConsulta.observacao)

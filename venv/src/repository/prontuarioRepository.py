@@ -1,3 +1,3 @@
 class ProntuarioRepository:
-    def repositoryProntuario(prontuario: Prontuario):
+    def repositoryProntuario(prontuario):
         print(prontuario)

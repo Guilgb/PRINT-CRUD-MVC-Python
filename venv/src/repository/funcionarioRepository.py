@@ -1,3 +1,3 @@
 class FuncionarioRepository:
-    def repositoryFuncionario(funcionario: Funcionario):
+    def repositoryFuncionario(funcionario):
         print(funcionario.nomeFuncionario)

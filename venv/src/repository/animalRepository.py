@@ -1,3 +1,3 @@
 class AnimalRepository:
-    def repositoryAnimal(animal: Animal):
+    def repositoryAnimal(animal):
         print(animal)

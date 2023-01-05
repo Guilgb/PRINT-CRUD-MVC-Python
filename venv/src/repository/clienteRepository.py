@@ -1,3 +1,3 @@
 class ClientRepository:
-    def repositoryCliente(cliente: Cliente):
+    def repositoryCliente(cliente):
         print(cliente.nomeCliente)
