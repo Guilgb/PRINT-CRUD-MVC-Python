@@ -30,7 +30,7 @@ class Veterinario:
         return self.__cpf
 
     @cpf.setter
-    def porte(self, cpf):
+    def cpf(self, cpf):
         self.__cpf = cpf
 
     @property
@@ -66,4 +66,4 @@ class Veterinario:
         self.__formacao = formacao
 
     def __str__(self) -> str:
-        return self.porte
+        return self.__nome
