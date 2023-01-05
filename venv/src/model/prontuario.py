@@ -45,7 +45,7 @@ class Prontuario:
         return self.__dataProntuario
 
     @dataProntuario.setter
-    def dataProntuario(self, id):
+    def dataProntuario(self, dataProntuario):
         self.__dataProntuario = dataProntuario
 
     @property

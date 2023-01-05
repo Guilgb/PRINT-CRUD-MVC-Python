@@ -3,5 +3,6 @@ from . import (
     cliente,
     agendamentoConsulta,
     funcionario,
+    prontuario,
 
 )
