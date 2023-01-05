@@ -25,7 +25,8 @@ prontuario = Prontuario(1, 'M', 'Porte', 'Especie', '22/01/2020', 'Cianes')
 
 vacina = Vacina(1, 'VaXina', 'Xina', '28/08/2023', '30L')
 
-veterinario = Veterinario(1, 'Dr. Rubens', '09876543287', '12/12/1212', 'rubens@gmail.com', 'sistemas de informação')
+veterinario = Veterinario(1, 'Dr. Rubens', '09876543287',
+                          '12/12/1212', '889982328923', 'rubens@gmail.com', 'sistemas de informação')
 
 clienteControle = ClienteController.controllerCliente(cliente)
 animalControle = AnimalController.controllerAnimal(animal)
@@ -33,4 +34,5 @@ agendamentoControle = ConsultaController.controllerConsulta(agendamento)
 funcionarioControle = FuncionarioController.controllerFuncionario(funcionario)
 prontuarioControle = ProntuarioController.controllerProntuario(prontuario)
 vacinaControle = VacinaController.controllerVacina(vacina)
-VeterinarioController = VeterinarioController.controllerVeterinario(veterinario)
+VeterinarioController = VeterinarioController.controllerVeterinario(
+    veterinario)
