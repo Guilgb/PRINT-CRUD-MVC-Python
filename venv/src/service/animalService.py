@@ -1,10 +1,9 @@
-from src.model.animal import Animal
 from src.repository.animalRepository import AnimalRepository
 
 
 class AnimalService:
 
-    def serviceAnimal(animal: Animal):
+    def serviceAnimal(animal):
         if (animal.nomeAnimal == "Piroquinha"):
             AnimalRepository.repositoryAnimal(animal)
         else:

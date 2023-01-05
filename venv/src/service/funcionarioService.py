@@ -1,7 +1,6 @@
-from src.model.funcionario import Funcionario
 from src.repository.funcionarioRepository import FuncionarioRepository
 
 
 class FuncionarioService:
-    def serviceFuncionario(funcionario: Funcionario):
+    def serviceFuncionario(funcionario):
         FuncionarioRepository.repositoryFuncionario(funcionario)
