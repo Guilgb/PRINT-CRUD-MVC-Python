@@ -4,5 +4,7 @@ from . import (
     agendamentoConsulta,
     funcionario,
     prontuario,
+    vacina,
+    veterinario,
 
 )

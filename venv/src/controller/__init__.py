@@ -3,4 +3,7 @@ from . import (
     clienteController,
     consultaController,
     funcionarioController,
+    prontuarioController,
+    vacinaController
+
 )

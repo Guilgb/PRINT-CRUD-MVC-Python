@@ -4,4 +4,5 @@ from . import (
     consultaRepository,
     funcionarioRepository,
     prontuarioRepository,
+    
 )
