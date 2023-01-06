@@ -11,11 +11,11 @@ class AgentamentoConsulta(Funcionario):
                  telefone: str):
 
         super().__init__(idFuncionario, nomeFuncionario, nascimentoFuncionario,
-                         emailFuncionario, telefoneFuncionario, cargo, id, nomeAnimal, especie, sexo,
-                         raca, peso, nascimento,  idCliente,
-                         nomeCliente, cpf, nascimentoCliente,
-                         email, endereco, bairro, n_rua,
-                         telefone)
+                         emailFuncionario, telefoneFuncionario, cargo, Animal.__init__(id, nomeAnimal, especie, sexo,
+                                                                                       raca, peso, nascimento,  idCliente,
+                                                                                       nomeCliente, cpf, nascimentoCliente,
+                                                                                       email, endereco, bairro, n_rua,
+                                                                                       telefone))
 
         self.__idConsulta = idConsulta
         self.__dataConsulta = dataConsulta
