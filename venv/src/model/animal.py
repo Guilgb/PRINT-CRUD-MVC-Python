@@ -5,7 +5,8 @@ class Animal(Cliente):
     def __init__(self, id: int, nomeAnimal: str, especie: str, sexo: str,
                  raca: str, peso: float, nascimento: str,  idCliente: int,
                  nomeCliente: str, cpf: str, nascimentoCliente: str,
-                 email: str, endereco: str, bairro: str, n_rua: int, telefone: str):
+                 email: str, endereco: str, bairro: str, n_rua: int, 
+                 telefone: str):
 
         super().__init__(idCliente, nomeCliente, cpf, nascimentoCliente,
                          email, endereco, bairro, n_rua, telefone)

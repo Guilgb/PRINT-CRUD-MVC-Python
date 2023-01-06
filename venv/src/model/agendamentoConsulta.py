@@ -1,28 +1,44 @@
-class AgentamentoConsulta:
-    def __init__(self, id: int, data: str, horario: str, telefoneAg: str,
-                 pagemento: str, observacao: str):
-        self.__id = id
-        self.__data = data
+from src.model.funcionario import Funcionario
+from src.model.animal import Animal
+
+
+class AgentamentoConsulta(Funcionario):
+    def __init__(self, idConsulta: int, dataConsulta: str, horario: str, telefoneAg: str,
+                 pagemento: str, observacao: str, idFuncionario: int, nomeFuncionario: str, nascimentoFuncionario: str, emailFuncionario: str, telefoneFuncionario: str, cargo: str, id: int, nomeAnimal: str, especie: str, sexo: str,
+                 raca: str, peso: float, nascimento: str,  idCliente: int,
+                 nomeCliente: str, cpf: str, nascimentoCliente: str,
+                 email: str, endereco: str, bairro: str, n_rua: int,
+                 telefone: str):
+
+        super().__init__(idFuncionario, nomeFuncionario, nascimentoFuncionario,
+                         emailFuncionario, telefoneFuncionario, cargo, id, nomeAnimal, especie, sexo,
+                         raca, peso, nascimento,  idCliente,
+                         nomeCliente, cpf, nascimentoCliente,
+                         email, endereco, bairro, n_rua,
+                         telefone)
+
+        self.__idConsulta = idConsulta
+        self.__dataConsulta = dataConsulta
         self.__horario = horario
         self.__telefoneAg = telefoneAg
         self.__pagemento = pagemento
         self.__observacao = observacao
 
     @property
-    def id(self):
-        return self.__id
+    def idConsulta(self):
+        return self.__idConsulta
 
-    @id.setter
-    def id(self, id):
-        self.__id = id
+    @idConsulta.setter
+    def idConsulta(self, idConsulta):
+        self.__idConsulta = idConsulta
 
     @property
-    def data(self):
-        return self.__data
+    def dataConsulta(self):
+        return self.__dataConsulta
 
-    @data.setter
-    def data(self, data):
-        self.__data = data
+    @dataConsulta.setter
+    def dataConsulta(self, dataConsulta):
+        self.__dataConsulta = dataConsulta
 
     @property
     def horario(self):

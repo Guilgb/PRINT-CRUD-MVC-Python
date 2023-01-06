@@ -1,7 +1,6 @@
 class Funcionario:
-    def __init__(self, id: int, nomeFuncionario: str, nascimentoFuncionario: str,
-                 emailFuncionario: str, telefoneFuncionario: str, cargo: str):
-        self.__id = id
+    def __init__(self, idFuncionario: int, nomeFuncionario: str, nascimentoFuncionario: str, emailFuncionario: str, telefoneFuncionario: str, cargo: str):
+        self.__idFuncionario = idFuncionario
         self.__nomeFuncionario = nomeFuncionario
         self.__nascimentoFuncionario = nascimentoFuncionario
         self.__emailFuncionario = emailFuncionario
@@ -9,12 +8,12 @@ class Funcionario:
         self.__cargo = cargo
 
     @property
-    def id(self):
-        return self.__id
+    def idFuncionario(self):
+        return self.__idFuncionario
 
-    @id.setter
-    def id(self, id):
-        self.__id = id
+    @idFuncionario.setter
+    def idFuncionario(self, idFuncionario):
+        self.__idFuncionario = idFuncionario
 
     @property
     def nomeFuncionario(self):
@@ -54,7 +53,7 @@ class Funcionario:
 
     @cargo.setter
     def cargo(self, cargo):
-        self.__id = cargo
+        self.__idFuncionario = cargo
 
     def __str__(self) -> str:
         return self.__nomeFuncionario

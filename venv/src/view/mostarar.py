@@ -18,6 +18,7 @@ cliente = Cliente(2, 'Guilherme', '07341965398', '28/01/1999',
                   'guilherme.gb@hotmail.com', '63400000', 'Centro', 'Av. Pedro Lopes', '88996431916')
 animal = Animal(1, 'Piroquinhas', 'Felino', 'M',
                 'Cianes', 1.2, '20/08/2020', '88999771125', cliente.nomeCliente, cliente.cpf, cliente.nascimentoCliente, cliente.email, cliente.endereco, cliente.bairro, cliente.n_rua, cliente.telefone)
+
 agendamento = AgentamentoConsulta(
     3, '05/01/2023', '13:24', '88996431916', '2000127987189410871', 'Agendamento de Consulta')
 funcionario = Funcionario(1, 'Nome Funcionario', '20/06/2018',
