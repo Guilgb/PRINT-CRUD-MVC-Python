@@ -3,7 +3,7 @@ from src.model.animal import Animal
 
 
 class AgentamentoConsulta(Funcionario):
-    def __init__(self, idConsulta: int, dataConsulta: str, horario: str, telefoneAg: str,
+    def __init__(self, idConsulta: int, dataConsulta: str, horario: str,
                  pagemento: str, observacao: str, idFuncionario: int, nomeFuncionario: str, nascimentoFuncionario: str, emailFuncionario: str, telefoneFuncionario: str, cargo: str, id: int, nomeAnimal: str, especie: str, sexo: str,
                  raca: str, peso: float, nascimento: str,  idCliente: int,
                  nomeCliente: str, cpf: str, nascimentoCliente: str,
@@ -20,7 +20,6 @@ class AgentamentoConsulta(Funcionario):
         self.__idConsulta = idConsulta
         self.__dataConsulta = dataConsulta
         self.__horario = horario
-        self.__telefoneAg = telefoneAg
         self.__pagemento = pagemento
         self.__observacao = observacao
 

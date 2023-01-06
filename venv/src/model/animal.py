@@ -5,11 +5,11 @@ class Animal(Cliente):
     def __init__(self, id: int, nomeAnimal: str, especie: str, sexo: str,
                  raca: str, peso: float, nascimento: str,  idCliente: int,
                  nomeCliente: str, cpf: str, nascimentoCliente: str,
-                 email: str, endereco: str, bairro: str, n_rua: int,
+                 email: str, endereco: str, bairro: str, n_rua: int, telefone: str
                  ):
 
         super().__init__(idCliente, nomeCliente, cpf, nascimentoCliente,
-                         email, endereco, bairro, n_rua)
+                         email, endereco, bairro, n_rua, telefone)
 
         self.__id = id
         self.__nomeAnimal = nomeAnimal
@@ -76,4 +76,4 @@ class Animal(Cliente):
         self.__nascimento = nascimento
 
     def __str__(self) -> str:
-        return self.__nomeAnimal, self.__nomeCliente
+        return self.nomeAnimal
