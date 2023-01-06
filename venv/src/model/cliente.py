@@ -1,10 +1,10 @@
 class Cliente:
-    def __init__(self, id: int, nomeCliente: str, cpf: str, nascimento: str,
+    def __init__(self, idCliente: int, nomeCliente: str, cpf: str, nascimentoCliente: str,
                  email: str, endereco: str, bairro: str, n_rua: int, telefone: str):
-        self.__id = id
+        self.__idCliente = idCliente
         self.__nomeCliente = nomeCliente
         self.__cpf = cpf
-        self.__nascimento = nascimento
+        self.__nascimentoCliente = nascimentoCliente
         self.__email = email
         self.__endereco = endereco
         self.__bairro = bairro
@@ -12,12 +12,12 @@ class Cliente:
         self.__telefone = telefone
 
     @property
-    def id(self):
-        return self.__id
+    def idCliente(self):
+        return self.__idCliente
 
-    @id.setter
-    def id(self, id):
-        self.__id = id
+    @idCliente.setter
+    def idCliente(self, idCliente):
+        self.__idCliente = idCliente
 
     @property
     def nomeCliente(self):
@@ -36,12 +36,12 @@ class Cliente:
         self.__cpf = cpf
 
     @property
-    def nascimento(self):
-        return self.__nascimento
+    def nascimentoCliente(self):
+        return self.__nascimentoCliente
 
-    @nascimento.setter
-    def nascimento(self, nascimento):
-        self.__nascimento = nascimento
+    @nascimentoCliente.setter
+    def nascimentoCliente(self, nascimentoCliente):
+        self.__nascimentoCliente = nascimentoCliente
 
     @property
     def email(self):
