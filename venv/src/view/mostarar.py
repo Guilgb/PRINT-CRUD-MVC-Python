@@ -29,7 +29,7 @@ veterinario = Veterinario(1, 'Dr. Rubens', '09876543287',
                           '12/12/1212', '889982328923', 'rubens@gmail.com', 'sistemas de informação')
 
 prontuario = Prontuario(23, 'sexo', 'porte', 'especie',
-                        'dataProntuario', 'racaProntuario')
+                        'dataProntuario', 'racaProntuario', animal, veterinario)
 
 clienteControle = ClienteController.controllerCliente(cliente)
 animalControle = AnimalController.controllerAnimal(animal)

@@ -40,14 +40,6 @@ class AgentamentoConsulta(Funcionario, Animal):
         self.__horario = horario
 
     @ property
-    def telefoneAg(self):
-        return self.__telefoneAg
-
-    @ telefoneAg.setter
-    def telefoneAg(self, telefoneAg):
-        self.__telefoneAg = telefoneAg
-
-    @ property
     def pagemento(self):
         return self.__pagemento
 
@@ -62,9 +54,6 @@ class AgentamentoConsulta(Funcionario, Animal):
     @ observacao.setter
     def observacao(self, observacao):
         self.__observacao = observacao
-
-    def __str__(self) -> str:
-        return self.observacao
 
     @ property
     def animal(self):
@@ -81,3 +70,8 @@ class AgentamentoConsulta(Funcionario, Animal):
     @ funcionario.setter
     def funcionario(self, funcionario):
         self.__funcionario = funcionario
+
+    def __str__(self):
+        return (self.idConsulta, self.__dataConsulta, self.__horario,
+                self.__pagemento, self.__observacao,
+                self.__animal, self.__funcionario)
