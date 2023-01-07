@@ -35,7 +35,7 @@ clienteControle = ClienteController.controllerCliente(cliente)
 animalControle = AnimalController.controllerAnimal(animal)
 agendamentoControle = ConsultaController.controllerConsulta(agendamento)
 funcionarioControle = FuncionarioController.controllerFuncionario(funcionario)
-prontuarioControle = ProntuarioController.controllerProntuario(prontuario)
 vacinaControle = VacinaController.controllerVacina(vacina)
+pontuarioControle = ProntuarioController.controllerProntuario(prontuario)
 VeterinarioController = VeterinarioController.controllerVeterinario(
     veterinario)

@@ -6,6 +6,7 @@ class Prontuario:
     def __init__(self, idProntuario: int, sexo: str, porte: str, especie: str,
                  dataProntuario: str, racaProntuario: str, animal: Animal,
                  veterinario: Veterinario):
+
         self.__idProntuario = idProntuario
         self.__sexo = sexo
         self.__porte = porte
@@ -80,4 +81,4 @@ class Prontuario:
         self.__veterinario = veterinario
 
     def __str__(self) -> str:
-        return (self.idProntuario, self.sexo, self.porte, self.especie, self.dataProntuario, self.racaProntuario, self.animal, self.veterinario)
+        return self.especie

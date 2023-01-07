@@ -3,4 +3,15 @@ from src.repository.clienteRepository import ClientRepository
 
 class ClienteService:
     def serviceCliente(cliente):
-        ClientRepository.repositoryCliente(cliente)
+        id = int(cliente.idCliente)
+        nomeCliente = str(cliente.nomeCliente)
+        cpf = str(cliente.cpf)
+        nascimentoCliente = str(cliente.nascimentoCliente)
+        email = str(cliente.email)
+        endereco = str(cliente.endereco)
+        bairro = str(cliente.bairro)
+        rua = str(cliente.n_rua)
+        telefoneCliente = str(cliente.telefone)
+
+        ClientRepository.repositoryCliente(
+            id, nomeCliente, cpf, nascimentoCliente, email, endereco, bairro, rua, telefoneCliente)
