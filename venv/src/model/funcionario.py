@@ -56,4 +56,4 @@ class Funcionario:
         self.__idFuncionario = cargo
 
     def __str__(self) -> str:
-        return self.__nomeFuncionario
+        return (self.idFuncionario, self.__nomeFuncionario, self.nascimentoFuncionario, self.emailFuncionario, self.telefoneFuncionario, self.cargo)
