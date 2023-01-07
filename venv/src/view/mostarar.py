@@ -16,8 +16,8 @@ from src.controller.veterinarioController import VeterinarioController
 
 cliente = Cliente(2, 'Guilherme', '07341965398', '28/01/1999',
                   'guilherme.gb@hotmail.com', '63400000', 'Centro', 'Av. Pedro Lopes', '88996431916')
-animal = Animal(1, 'Piroquinhas', 'Felino', 'M',
-                'Cianes', 1.2, '20/08/2020', cliente.nomeCliente, cliente.cpf, cliente.nascimentoCliente, cliente.email, cliente.endereco, cliente.bairro, cliente.n_rua)
+animal = Animal(1, 'nomeAnimal', 'especie', 'sexo', 'raca', 10, 'nascimento', cliente.idCliente, cliente.nomeCliente,
+                cliente.cpf, cliente.nascimentoCliente, cliente.email, cliente.endereco, cliente.bairro, cliente.n_rua, cliente.telefone)
 
 funcionario = Funcionario(1, 'Nome Funcionario', '20/06/2018',
                           'email@funcionario.com', '9988776676', 'Funcionario')
