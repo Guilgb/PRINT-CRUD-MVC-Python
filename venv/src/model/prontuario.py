@@ -80,4 +80,4 @@ class Prontuario:
         self.__veterinario = veterinario
 
     def __str__(self) -> str:
-        return self.porte
+        return (self.idProntuario, self.sexo, self.porte, self.especie, self.dataProntuario, self.racaProntuario, self.animal, self.veterinario)

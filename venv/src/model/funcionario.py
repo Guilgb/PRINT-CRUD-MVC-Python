@@ -57,3 +57,7 @@ class Funcionario:
 
     def __str__(self) -> str:
         return (self.idFuncionario, self.__nomeFuncionario, self.nascimentoFuncionario, self.emailFuncionario, self.telefoneFuncionario, self.cargo)
+
+
+
+
