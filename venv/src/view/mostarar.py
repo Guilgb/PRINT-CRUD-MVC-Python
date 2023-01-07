@@ -22,7 +22,7 @@ animal = Animal(3, 'nomeAnimal', 'especie', 'sexo',
 funcionario = Funcionario(1, 'Nome Funcionario', '20/06/2018',
                           'email@funcionario.com', '9988776676', 'Funcionario')
 agendamento = AgentamentoConsulta(
-    10, 'data', 'horario', 'pagamento', 'observacao', animal, funcionario)
+    10, 'data', 'horario', 120.80, 'observacao', animal, funcionario)
 vacina = Vacina(1, 'VaXina', 'Xina', '28/08/2023', '30L')
 
 veterinario = Veterinario(1, 'Dr. Rubens', '09876543287',

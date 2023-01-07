@@ -1,3 +1,4 @@
 class ConsultaRepository:
-    def repositoryConsulta(agendamentoConsulta):
-        print(agendamentoConsulta.observacao)
+    def repositoryConsulta(idConsulta, dataConsulta, horarioConsulta, pagamento, observacao, animal, funcionario):
+        print(idConsulta, dataConsulta, horarioConsulta,
+              pagamento, observacao, animal, funcionario)

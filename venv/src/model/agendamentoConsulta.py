@@ -4,13 +4,13 @@ from src.model.animal import Animal
 
 class AgentamentoConsulta(Funcionario, Animal):
     def __init__(self, idConsulta: int, dataConsulta: str, horario: str,
-                 pagemento: str, observacao: str,
+                 pagamento: float, observacao: str,
                  animal: Animal, funcionario: Funcionario):
 
         self.__idConsulta = idConsulta
         self.__dataConsulta = dataConsulta
         self.__horario = horario
-        self.__pagemento = pagemento
+        self.__pagamento = pagamento
         self.__observacao = observacao
         self.__animal = animal
         self.__funcionario = funcionario
@@ -40,12 +40,12 @@ class AgentamentoConsulta(Funcionario, Animal):
         self.__horario = horario
 
     @ property
-    def pagemento(self):
-        return self.__pagemento
+    def pagamento(self):
+        return self.__pagamento
 
-    @ pagemento.setter
-    def pagemento(self, pagemento):
-        self.__pagemento = pagemento
+    @ pagamento.setter
+    def pagamento(self, pagamento):
+        self.__pagamento = pagamento
 
     @ property
     def observacao(self):
