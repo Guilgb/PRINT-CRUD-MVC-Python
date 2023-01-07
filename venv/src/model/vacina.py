@@ -1,18 +1,18 @@
 class Vacina:
-    def __init__(self, id: int, nomeVacina: str, fabricante: str, validade: str, volume: str):
-        self.__id = id
+    def __init__(self, idVacina: int, nomeVacina: str, fabricante: str, validade: str, volume: str):
+        self.__idVacina = idVacina
         self.__nomeVacina = nomeVacina
         self.__fabricante = fabricante
         self.__validade = validade
         self.__volume = volume
 
     @property
-    def id(self):
-        return self.__id
+    def idVacina(self):
+        return self.__idVacina
 
-    @id.setter
-    def id(self, id):
-        self.__id = id
+    @idVacina.setter
+    def idVacina(self, id):
+        self.__idVacina = idVacina
 
     @property
     def nomeVacina(self):
@@ -47,4 +47,4 @@ class Vacina:
         self.__volume = volume
 
     def __str__(self) -> str:
-        return self.__volume
+        return (self.idVacina, self.nomeVacina, self.validade, self.__volume, )
