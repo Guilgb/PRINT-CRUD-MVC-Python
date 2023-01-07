@@ -3,13 +3,7 @@ from src.model.cliente import Cliente
 
 class Animal(Cliente):
     def __init__(self, id: int, nomeAnimal: str, especie: str, sexo: str,
-                 raca: str, peso: float, nascimento: str,  idCliente: int,
-                 nomeCliente: str, cpf: str, nascimentoCliente: str,
-                 email: str, endereco: str, bairro: str, n_rua: int, telefone: str
-                 ):
-
-        super().__init__(idCliente, nomeCliente, cpf, nascimentoCliente,
-                         email, endereco, bairro, n_rua, telefone)
+                 raca: str, peso: float, nascimento: str, cliente: Cliente):
 
         self.__id = id
         self.__nomeAnimal = nomeAnimal
@@ -18,6 +12,7 @@ class Animal(Cliente):
         self.__raca = raca
         self.__peso = peso
         self.__nascimento = nascimento
+        self.__cliente = cliente
 
     @property
     def id(self):
@@ -74,6 +69,14 @@ class Animal(Cliente):
     @nascimento.setter
     def nascimento(self, nascimento):
         self.__nascimento = nascimento
+
+    @property
+    def cliente(self):
+        return self.__cliente
+
+    @cliente.setter
+    def cliente(self, cliente):
+        self.__cliente = cliente
 
     def __str__(self) -> str:
         return self.nomeAnimal
