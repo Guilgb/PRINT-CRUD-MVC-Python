@@ -1,20 +1,27 @@
+from src.model.animal import Animal
+from src.model.veterinario import Veterinario
+
+
 class Prontuario:
-    def __init__(self, id: int, sexo: str, porte: str, especie: str,
-                 dataProntuario: str, racaProntuario: str):
-        self.__id = id
+    def __init__(self, idProntuario: int, sexo: str, porte: str, especie: str,
+                 dataProntuario: str, racaProntuario: str, animal: Animal,
+                 veterinario: Veterinario):
+        self.__idProntuario = idProntuario
         self.__sexo = sexo
         self.__porte = porte
         self.__especie = especie
         self.__dataProntuario = dataProntuario
         self.__racaProntuario = racaProntuario
+        self.__animal = animal
+        self.__veterinario = veterinario
 
     @property
-    def id(self):
-        return self.__id
+    def idProntuario(self):
+        return self.__idProntuario
 
-    @id.setter
-    def id(self, id):
-        self.__id = id
+    @idProntuario.setter
+    def idProntuario(self, idProntuario):
+        self.__idProntuario = idProntuario
 
     @property
     def sexo(self):
@@ -55,6 +62,22 @@ class Prontuario:
     @racaProntuario.setter
     def racaProntuario(self, racaProntuario):
         self.__racaProntuario = racaProntuario
+
+    @property
+    def animal(self):
+        return self.__animal
+
+    @animal.setter
+    def animal(self, animal):
+        self.__animal = animal
+
+    @property
+    def veterinario(self):
+        return self.__veterinario
+
+    @veterinario.setter
+    def veterinario(self, veterinario):
+        self.__veterinario = veterinario
 
     def __str__(self) -> str:
         return self.porte
