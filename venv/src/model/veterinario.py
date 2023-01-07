@@ -1,7 +1,7 @@
 class Veterinario:
-    def __init__(self, id: int, nome: str, cpf: str, nascimento: str,
+    def __init__(self, idVeterinario: int, nome: str, cpf: str, nascimento: str,
                  telefone: str, email: str, formacao: str):
-        self.__id = id
+        self.__idVeterinario = idVeterinario
         self.__nome = nome
         self.__cpf = cpf
         self.__nascimento = nascimento
@@ -10,12 +10,12 @@ class Veterinario:
         self.__formacao = formacao
 
     @property
-    def id(self):
-        return self.__id
+    def idVeterinario(self):
+        return self.__idVeterinario
 
-    @id.setter
-    def id(self, id):
-        self.__id = id
+    @idVeterinario.setter
+    def idVeterinario(self, idVeterinario):
+        self.__idVeterinario = idVeterinario
 
     @property
     def nome(self):
@@ -66,4 +66,4 @@ class Veterinario:
         self.__formacao = formacao
 
     def __str__(self) -> str:
-        return self.__nome
+        return (self.idVeterinario, self.nome, self.cpf, self.nascimento, self.telefone, self.email, self.formacao)
