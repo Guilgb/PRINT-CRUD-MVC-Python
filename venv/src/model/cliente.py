@@ -83,5 +83,5 @@ class Cliente:
     def telefone(self, telefone):
         self.__telefone = telefone
 
-    def __str__(self) -> str:
-        return self.__nomeCliente
+    def __str__(self):
+        return (self, idCliente, self.__nomeCliente, self.cpf, self.nascimentoCliente, self.email, self.endereco, self.bairro, self.n_rua, self.telefone)
