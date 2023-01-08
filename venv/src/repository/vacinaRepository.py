@@ -1,3 +1,3 @@
 class VacinaRepository:
-    def repositoryVacina(vacina):
-        print(vacina.volume)
+    def repositoryVacina(idVacina, nomeVacina, fabricanteVacina, validade, volume):
+        print(idVacina, nomeVacina, fabricanteVacina, validade, volume)
