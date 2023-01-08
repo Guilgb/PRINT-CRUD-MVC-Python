@@ -11,6 +11,7 @@ class ProntuarioService:
         racaProntuario = str(prontuario.racaProntuario)
         animal = int(prontuario.animal.id)
         veterinario = int(prontuario.veterinario.idVeterinario)
+        vacina = int(prontuario.vacina.idVacina)
 
         ProntuarioRepository.repositoryProntuario(
-            idProntuario, sexo, porte, especie, dataProntuario, racaProntuario, animal, veterinario)
+            idProntuario, sexo, porte, especie, dataProntuario, racaProntuario, animal, veterinario, vacina)

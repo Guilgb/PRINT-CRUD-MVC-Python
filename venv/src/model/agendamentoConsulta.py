@@ -4,7 +4,7 @@ from src.model.animal import Animal
 
 class AgentamentoConsulta(Funcionario, Animal):
     def __init__(self, idConsulta: int, dataConsulta: str, horario: str,
-                 pagamento: float, observacao: str,
+                 pagamento: str, observacao: str,
                  animal: Animal, funcionario: Funcionario):
 
         self.__idConsulta = idConsulta

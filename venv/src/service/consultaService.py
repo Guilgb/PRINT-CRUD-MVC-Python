@@ -6,7 +6,7 @@ class ConsultaService:
         idConsulta = str(agendamento.idConsulta)
         dataConsulta = str(agendamento.dataConsulta)
         horarioConsulta = str(agendamento.horario)
-        pagamento = float(agendamento.pagamento)
+        pagamento = str(agendamento.pagamento)
         observacao = str(agendamento.observacao)
         animal = int(agendamento.animal.id)
         funcionario = int(agendamento.funcionario.idFuncionario)
