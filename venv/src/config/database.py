@@ -9,7 +9,7 @@ class Conexao:
         con = psycopg2.connect(
             host='localhost',
             port='5432',
-            database='PRINT',
+            database='PRINTDB',
             user='postgres',
             password=1234
         )

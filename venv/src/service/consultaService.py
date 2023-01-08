@@ -8,8 +8,8 @@ class ConsultaService:
         horarioConsulta = str(agendamento.horario)
         pagamento = str(agendamento.pagamento)
         observacao = str(agendamento.observacao)
-        animal = int(agendamento.animal.id)
-        funcionario = int(agendamento.funcionario.idFuncionario)
+        animal = str(agendamento.animal.nomeAnimal)
+        funcionario = str(agendamento.funcionario.nomeFuncionario)
 
         ConsultaRepository.repositoryConsulta(
             idConsulta, dataConsulta, horarioConsulta, pagamento, observacao,
