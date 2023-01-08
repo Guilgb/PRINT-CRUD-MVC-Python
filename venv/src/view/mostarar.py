@@ -1,6 +1,6 @@
 from src.model.animal import Animal
 from src.model.cliente import Cliente
-from src.model.agendamentoConsulta import AgentamentoConsulta
+from src.model.consulta import Consulta
 from src.model.funcionario import Funcionario
 from src.model.prontuario import Prontuario
 from src.model.vacina import Vacina

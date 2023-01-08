@@ -2,7 +2,7 @@ from src.model.funcionario import Funcionario
 from src.model.animal import Animal
 
 
-class AgentamentoConsulta(Funcionario, Animal):
+class Consulta(Funcionario, Animal):
     def __init__(self, idConsulta: int, dataConsulta: str, horario: str,
                  pagamento: str, observacao: str,
                  animal: Animal, funcionario: Funcionario):
