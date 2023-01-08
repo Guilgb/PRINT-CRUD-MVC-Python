@@ -17,7 +17,6 @@ class AnimalRepository:
                 return resultado
 
         resultadoFinal = buscarIdCliente()
-        print(resultadoFinal)
         sql = "insert into animal (nome, especie, sexo, raca, peso, nascimento, clienteId) values(%s, %s, %s, %s, %s, %s, %s);"
         value = (nomeAnimal, especie, sexo,
                  raca, peso, nascimento, resultadoFinal)
