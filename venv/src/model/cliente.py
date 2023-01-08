@@ -82,8 +82,3 @@ class Cliente:
     @telefone.setter
     def telefone(self, telefone):
         self.__telefone = telefone
-
-    def retorno(self):
-        return (self.idCliente, self.__nomeCliente, self.cpf,
-                self.nascimentoCliente, self.email, self.endereco, self.bairro,
-                self.n_rua, self.telefone)

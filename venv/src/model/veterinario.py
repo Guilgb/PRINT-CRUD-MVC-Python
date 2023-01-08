@@ -65,8 +65,3 @@ class Veterinario:
     @formacao.setter
     def formacao(self, formacao):
         self.__formacao = formacao
-
-    def __str__(self) -> str:
-        return (self.idVeterinario, self.nomeVeterinario, self.cpfVeterinario,
-                self.nascimentoVeterinario, self.telefoneVeterinario,
-                self.emailVeterinario, self.formacao)

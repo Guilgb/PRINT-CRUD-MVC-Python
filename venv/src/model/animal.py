@@ -77,7 +77,3 @@ class Animal(Cliente):
     @cliente.setter
     def cliente(self, cliente):
         self.__cliente = cliente
-
-    def __str__(self):
-        return (self.id, self.nomeAnimal, self.especie, self.sexo, self.raca,
-                self.peso, self.nascimento, self.cliente)

@@ -45,6 +45,3 @@ class Vacina:
     @volume.setter
     def volume(self, volume):
         self.__volume = volume
-
-    def __str__(self) -> str:
-        return (self.idVacina, self.nomeVacina, self.validade, self.__volume, )

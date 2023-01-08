@@ -89,6 +89,3 @@ class Prontuario:
     @vacina.setter
     def vacina(self, vacina):
         self.__vacina = vacina
-
-    def __str__(self) -> str:
-        return self.especie

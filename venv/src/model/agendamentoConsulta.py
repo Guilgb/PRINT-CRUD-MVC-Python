@@ -70,8 +70,3 @@ class AgentamentoConsulta(Funcionario, Animal):
     @ funcionario.setter
     def funcionario(self, funcionario):
         self.__funcionario = funcionario
-
-    def __str__(self):
-        return (self.idConsulta, self.__dataConsulta, self.__horario,
-                self.__pagemento, self.__observacao,
-                self.__animal, self.__funcionario)
