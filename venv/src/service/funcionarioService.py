@@ -10,5 +10,5 @@ class FuncionarioService:
         telefoneFuncionario = str(funcionario.telefoneFuncionario)
         cargo = str(funcionario.cargo)
 
-        FuncionarioRepository.repositoryFuncionario(
+        FuncionarioRepository.insertFuncionario(
             idFuncionario, nomeFuncionario, nascimentoFuncionario, emailFuncionario, telefoneFuncionario, cargo)

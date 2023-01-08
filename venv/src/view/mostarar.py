@@ -22,3 +22,9 @@ animal = Animal(1, 'Nome Animal', 'especie', 'sexo',
                 'raca', 12.3, 'nascimento', cliente)
 
 animalController = AnimalController.controllerAnimal(animal)
+
+funcionario = Funcionario(1, 'nome', 'nascimento',
+                          'email', 'telefone', 'cargo')
+
+funcionarioController = FuncionarioController.controllerFuncionario(
+    funcionario)

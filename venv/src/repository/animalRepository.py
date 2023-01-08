@@ -16,9 +16,9 @@ class AnimalRepository:
             for resultado in resultadoBusca:
                 return resultado
 
-        resultadoFinal = buscarIdCliente()
-        sql = "insert into animal (nome, especie, sexo, raca, peso, nascimento, clienteId) values(%s, %s, %s, %s, %s, %s, %s);"
-        value = (nomeAnimal, especie, sexo,
-                 raca, peso, nascimento, resultadoFinal)
-        cursor.execute(sql, value)
-        con.commit()
+        # resultadoFinal = buscarIdCliente()
+        # sql = "insert into animal (nome, especie, sexo, raca, peso, nascimento, clienteId) values(%s, %s, %s, %s, %s, %s, %s);"
+        # value = (nomeAnimal, especie, sexo,
+        #          raca, peso, nascimento, resultadoFinal)
+        # cursor.execute(sql, value)
+        # con.commit()
