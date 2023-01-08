@@ -16,15 +16,18 @@ from src.controller.veterinarioController import VeterinarioController
 
 cliente = Cliente(1, 'Guilherme1', 'cpf6', 'nas6', 'tel6',
                   'mail6', 'rua6', 'num6', '6')
-clienteControle = ClienteController.controllerCliente(cliente)
 
-animal = Animal(1, 'Nome Animal', 'especie', 'sexo',
-                'raca', 12.3, 'nascimento', cliente)
-
-animalController = AnimalController.controllerAnimal(animal)
+animal = Animal(1, 'Nome Animal', 'especi2', 'sex2',
+                'raa2', 12.4, 'nasciment2', cliente)
 
 funcionario = Funcionario(1, 'nome', 'nascimento',
                           'email', 'telefone', 'cargo')
 
+consulta = Consulta(1, 'data', 'horario', 'pagamento',
+                    'obs', animal, funcionario)
+
+clienteControle = ClienteController.controllerCliente(cliente)
+animalController = AnimalController.controllerAnimal(animal)
 funcionarioController = FuncionarioController.controllerFuncionario(
     funcionario)
+consultaController = ConsultaController.controllerConsulta(consulta)

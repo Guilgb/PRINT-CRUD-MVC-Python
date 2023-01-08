@@ -1,7 +1,7 @@
 from . import (
     animal,
     cliente,
-    agendamentoConsulta,
+    consulta,
     funcionario,
     prontuario,
     vacina,
