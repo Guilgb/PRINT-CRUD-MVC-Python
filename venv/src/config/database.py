@@ -8,7 +8,8 @@ class Conexao:
     def getConnection(self):
         con = psycopg2.connect(
             host='localhost',
-            database='PRINT-DB',
+            port='5432',
+            database='PRINT',
             user='postgres',
             password=1234
         )
