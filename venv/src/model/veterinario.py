@@ -1,5 +1,6 @@
 class Veterinario:
-    def __init__(self, idVeterinario: int, nomeVeterinario: str, cpfVeterinario: str, nascimentoVeterinario: str,
+    def __init__(self, idVeterinario: int, nomeVeterinario: str,
+                 cpfVeterinario: str, nascimentoVeterinario: str,
                  telefoneVeterinario: str, emailVeterinario: str,
                  formacao: str):
         self.__idVeterinario = idVeterinario

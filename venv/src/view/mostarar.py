@@ -26,10 +26,12 @@ agendamento = AgentamentoConsulta(
 vacina = Vacina(1, 'VaXina', 'Xina', '28/08/2023', '30L')
 
 veterinario = Veterinario(1, 'Dr. Rubens', '09876543287',
-                          '12/12/1212', '889982328923', 'rubens@gmail.com', 'sistemas de informação')
+                          '12/12/1212', '889982328923', 'rubens@gmail.com',
+                          'sistemas de informação')
 
 prontuario = Prontuario(23, 'sexo', 'porte', 'especie',
-                        'dataProntuario', 'racaProntuario', animal, veterinario, vacina)
+                        'dataProntuario', 'racaProntuario', animal,
+                        veterinario, vacina)
 
 clienteControle = ClienteController.controllerCliente(cliente)
 animalControle = AnimalController.controllerAnimal(animal)
