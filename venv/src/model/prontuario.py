@@ -5,7 +5,8 @@ from src.model.veterinario import Veterinario
 
 class Prontuario:
     def __init__(self, idProntuario: int, sexo: str, porte: str, especie: str,
-                 dataProntuario: str, racaProntuario: str, animal: Animal, veterinario: Veterinario, vacina: Vacina):
+                 dataProntuario: str, racaProntuario: str, animal: Animal,
+                 veterinario: Veterinario, vacina: Vacina):
 
         self.__idProntuario = idProntuario
         self.__sexo = sexo
