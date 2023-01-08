@@ -14,5 +14,11 @@ from src.controller.prontuarioController import ProntuarioController
 from src.controller.vacinaController import VacinaController
 from src.controller.veterinarioController import VeterinarioController
 
-cliente = Cliente(1, 'nome', 'cpf2', 'nas', 'tel', 'mail', 'rua', 'num', '')
+cliente = Cliente(1, 'Guilherme1', 'cpf6', 'nas6', 'tel6',
+                  'mail6', 'rua6', 'num6', '6')
 clienteControle = ClienteController.controllerCliente(cliente)
+
+animal = Animal(1, 'Nome Animal', 'especie', 'sexo',
+                'raca', 12.3, 'nascimento', cliente)
+
+animalController = AnimalController.controllerAnimal(animal)

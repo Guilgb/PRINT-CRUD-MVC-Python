@@ -8,7 +8,7 @@ class ClienteService:
         cpf = str(cliente.cpf)
         nascimentoCliente = str(cliente.nascimentoCliente)
         email = str(cliente.email)
-        endereco = str(cliente.endereco)
+        endereco = str(cliente.rua)
         bairro = str(cliente.bairro)
         rua = str(cliente.n_rua)
         telefoneCliente = str(cliente.telefone)

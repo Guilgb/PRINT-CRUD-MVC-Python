@@ -11,6 +11,6 @@ class AnimalService:
         raca = str(animal.raca)
         peso = float(animal.peso)
         nascimento = str(animal.nascimento)
-        cliente = int(animal.cliente.idCliente)
+        cliente = str(animal.cliente.nomeCliente)
         AnimalRepository.repositoryAnimal(
-            id, nomeAnimal, especie, sexo, raca, peso, nascimento, cliente)
+            nomeAnimal, especie, sexo, raca, peso, nascimento, cliente)
