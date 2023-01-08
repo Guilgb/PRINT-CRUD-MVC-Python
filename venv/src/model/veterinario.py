@@ -1,12 +1,13 @@
 class Veterinario:
-    def __init__(self, idVeterinario: int, nome: str, cpf: str, nascimento: str,
-                 telefone: str, email: str, formacao: str):
+    def __init__(self, idVeterinario: int, nomeVeterinario: str, cpfVeterinario: str, nascimentoVeterinario: str,
+                 telefoneVeterinario: str, emailVeterinario: str,
+                 formacao: str):
         self.__idVeterinario = idVeterinario
-        self.__nome = nome
-        self.__cpf = cpf
-        self.__nascimento = nascimento
-        self.__telefone = telefone
-        self.__email = email
+        self.__nomeVeterinario = nomeVeterinario
+        self.__cpfVeterinario = cpfVeterinario
+        self.__nascimentoVeterinario = nascimentoVeterinario
+        self.__telefoneVeterinario = telefoneVeterinario
+        self.__emailVeterinario = emailVeterinario
         self.__formacao = formacao
 
     @property
@@ -18,44 +19,44 @@ class Veterinario:
         self.__idVeterinario = idVeterinario
 
     @property
-    def nome(self):
-        return self.__nome
+    def nomeVeterinario(self):
+        return self.__nomeVeterinario
 
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome
-
-    @property
-    def cpf(self):
-        return self.__cpf
-
-    @cpf.setter
-    def cpf(self, cpf):
-        self.__cpf = cpf
+    @nomeVeterinario.setter
+    def nomeVeterinario(self, nomeVeterinario):
+        self.__nomeVeterinario = nomeVeterinario
 
     @property
-    def nascimento(self):
-        return self.__nascimento
+    def cpfVeterinario(self):
+        return self.__cpfVeterinario
 
-    @nascimento.setter
-    def nascimento(self, nascimento):
-        self.__nascimento = nascimento
-
-    @property
-    def telefone(self):
-        return self.__telefone
-
-    @telefone.setter
-    def telefone(self, telefone):
-        self.__telefone = telefone
+    @cpfVeterinario.setter
+    def cpfVeterinario(self, cpfVeterinario):
+        self.__cpfVeterinario = cpfVeterinario
 
     @property
-    def email(self):
-        return self.__email
+    def nascimentoVeterinario(self):
+        return self.__nascimentoVeterinario
 
-    @email.setter
-    def email(self, email):
-        self.__email = email
+    @nascimentoVeterinario.setter
+    def nascimentoVeterinario(self, nascimentoVeterinario):
+        self.__nascimentoVeterinario = nascimentoVeterinario
+
+    @property
+    def telefoneVeterinario(self):
+        return self.__telefoneVeterinario
+
+    @telefoneVeterinario.setter
+    def telefoneVeterinario(self, telefoneVeterinario):
+        self.__telefoneVeterinario = telefoneVeterinario
+
+    @property
+    def emailVeterinario(self):
+        return self.__emailVeterinario
+
+    @emailVeterinario.setter
+    def emailVeterinario(self, emailVeterinario):
+        self.__emailVeterinario = emailVeterinario
 
     @property
     def formacao(self):
@@ -66,4 +67,6 @@ class Veterinario:
         self.__formacao = formacao
 
     def __str__(self) -> str:
-        return (self.idVeterinario, self.nome, self.cpf, self.nascimento, self.telefone, self.email, self.formacao)
+        return (self.idVeterinario, self.nomeVeterinario, self.cpfVeterinario,
+                self.nascimentoVeterinario, self.telefoneVeterinario,
+                self.emailVeterinario, self.formacao)

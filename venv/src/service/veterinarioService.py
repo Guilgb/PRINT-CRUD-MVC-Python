@@ -3,7 +3,15 @@ from src.repository.veterinarioRepository import VeterinarioRepository
 
 class VeterinarioService:
     def serviceVeterinario(veterinario):
-        if (veterinario.nome == None):
-            VeterinarioRepository.repositoryVeterinario(veterinario)
-        else:
-            print('Veterinário não existe!')
+        idVeterinario = int(veterinario.idVeterinario)
+        nomeVeterinario = str(veterinario.nomeVeterinario)
+        cpfVeterinario = str(veterinario.cpfVeterinario)
+        nascimentoVeterinario = str(veterinario.nascimentoVeterinario)
+        telefoneVeterinario = str(veterinario.telefoneVeterinario)
+        emailVeterinario = str(veterinario.emailVeterinario)
+        formacao = str(veterinario.formacao)
+
+        VeterinarioRepository.repositoryVeterinario(
+            idVeterinario, nomeVeterinario, cpfVeterinario,
+            nascimentoVeterinario, telefoneVeterinario, emailVeterinario,
+            formacao)
