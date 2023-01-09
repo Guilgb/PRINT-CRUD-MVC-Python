@@ -28,9 +28,15 @@ consulta = Consulta(1, 'data', '30-May-2020-15:59:02', 'pagamento',
 
 vacina = Vacina(1, 'nomeVacina', 'fabricante', 'vlidade', 'volume')
 
+vaterinario = Veterinario(1, 'vete', 'cpf', 'nas', 'tel', 'mail', 'medico vet')
+
+prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
+                        animal, vaterinario, vacina)
 # clienteControle = ClienteController.controllerCliente(cliente)
 # animalController = AnimalController.controllerAnimal(animal)
 # funcionarioController = FuncionarioController.controllerFuncionario(
 #     funcionario)
 # consultaController = ConsultaController.controllerConsulta(consulta)
 # vacinaControlle = VacinaController.controllerVacina(vacina)
+# veterinarioCont = VeterinarioController.controllerVeterinario(vaterinario)
+controlePro = ProntuarioController.controllerProntuario(prontuario)

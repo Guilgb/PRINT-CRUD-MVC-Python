@@ -8,8 +8,30 @@ class ProntuarioRepository:
         cursor = con.cursor()
 
         try:
-            sql = "insert into prontuario(sexo, porte, especie, data, raca, animalid, veterinarioid)"
-            value = (sexo, porte, especie, dataProntuario, racaProntuario)
+            def BuscarIdAnimal():
+                sqlBuscarAnimal = "SELECT id FROM animal where nome = %s"
+                valor = animal
+                cursor.execute(sqlBuscarAnimal, (valor,))
+                resultadoAnimal = cursor.fetchone()
+
+                for idanimal in resultadoAnimal:
+                    return idanimal
+
+            def BuscarIdVet():
+                sqlBuscarvet = "SELECT id FROM veterinario where nome = %s"
+                valorVet = veterinario
+                cursor.execute(sqlBuscarvet, (valorVet,))
+                resultadoVet = cursor.fetchone()
+
+                for idVet in resultadoVet:
+                    return idVet
+
+            animalId = BuscarIdAnimal()
+            vetId = BuscarIdVet()
+
+            sql = "insert into prontuario(sexo, porte, especie, data, raca, animalid, veterinarioid) values(%s, %s, %s, %s, %s, %s, %s)"
+            value = (sexo, porte, especie, dataProntuario,
+                     racaProntuario, animalId, vetId)
             cursor.execute(sql, value)
             con.commit()
         except (Exception, psycopg2.DatabaseError) as error:
