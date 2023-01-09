@@ -26,8 +26,11 @@ funcionario = Funcionario(1, 'nome', 'nascimento',
 consulta = Consulta(1, 'data', '30-May-2020-15:59:02', 'pagamento',
                     'obs', animal, funcionario)
 
+vacina = Vacina(1, 'nomeVacina', 'fabricante', 'vlidade', 'volume')
+
 # clienteControle = ClienteController.controllerCliente(cliente)
 # animalController = AnimalController.controllerAnimal(animal)
 # funcionarioController = FuncionarioController.controllerFuncionario(
 #     funcionario)
-consultaController = ConsultaController.controllerConsulta(consulta)
+# consultaController = ConsultaController.controllerConsulta(consulta)
+# vacinaControlle = VacinaController.controllerVacina(vacina)
