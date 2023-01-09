@@ -14,8 +14,8 @@ from src.controller.prontuarioController import ProntuarioController
 from src.controller.vacinaController import VacinaController
 from src.controller.veterinarioController import VeterinarioController
 
-cliente = Cliente(1, 'Guilherme1', 'cpf6', 'nas6', 'tel6',
-                  'mail6', 'rua6', 'num6', '6')
+cliente = Cliente(1, 'Guilherme8', 'cpf8', 'nas8', 'tel8',
+                  'mail8', 'rua8', 'num8', '8')
 
 animal = Animal(1, 'Nome Animal', 'especi2', 'sex2',
                 'raa2', 12.4, 'nasciment2', cliente)
@@ -23,11 +23,11 @@ animal = Animal(1, 'Nome Animal', 'especi2', 'sex2',
 funcionario = Funcionario(1, 'nome', 'nascimento',
                           'email', 'telefone', 'cargo')
 
-consulta = Consulta(1, 'data', 'horario', 'pagamento',
+consulta = Consulta(1, 'data', '30-May-2020-15:59:02', 'pagamento',
                     'obs', animal, funcionario)
 
-clienteControle = ClienteController.controllerCliente(cliente)
-animalController = AnimalController.controllerAnimal(animal)
-funcionarioController = FuncionarioController.controllerFuncionario(
-    funcionario)
+# clienteControle = ClienteController.controllerCliente(cliente)
+# animalController = AnimalController.controllerAnimal(animal)
+# funcionarioController = FuncionarioController.controllerFuncionario(
+#     funcionario)
 consultaController = ConsultaController.controllerConsulta(consulta)

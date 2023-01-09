@@ -1,4 +1,5 @@
 from src.repository.consultaRepository import ConsultaRepository
+from datetime import datetime
 
 
 class ConsultaService:
@@ -11,6 +12,8 @@ class ConsultaService:
         animal = str(agendamento.animal.nomeAnimal)
         funcionario = str(agendamento.funcionario.nomeFuncionario)
 
+        paraData = datetime.strptime(horarioConsulta, "%d-%b-%Y-%H:%M:%S")
+
         ConsultaRepository.repositoryConsulta(
-            idConsulta, dataConsulta, horarioConsulta, pagamento, observacao,
+            idConsulta, dataConsulta, paraData, pagamento, observacao,
             animal, funcionario)
