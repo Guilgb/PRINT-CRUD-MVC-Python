@@ -17,3 +17,11 @@ class AnimalService:
     def readServiceAnimal(animal):
         id = int(animal.id)
         AnimalRepository.readRepositoryAnimal(id)
+
+    def deleServiceAnimal(animal):
+        id = int(animal.id)
+        AnimalRepository.deleteRepositoryAnimal(id)
+
+    def updateServiceAnimal(animal):
+        id = int(animal.id)
+        AnimalRepository.updateRepositoryAnimal(id)
