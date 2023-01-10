@@ -10,7 +10,7 @@ class AnimalController:
         AnimalService.readServiceAnimal(animal)
 
     def deleteControllerAnimal(animal: Animal):
-        pass
+        AnimalService.deleServiceAnimal(animal)
 
     def updateControllerAnimal(animal: Animal):
-        pass
+        AnimalService.updateServiceAnimal(animal)

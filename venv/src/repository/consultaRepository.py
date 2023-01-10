@@ -39,3 +39,51 @@ class ConsultaRepository:
         finally:
             if con is not None:
                 con.close()
+
+    def readConsultaRepository(animal):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlReadRepository = "select from agendamento where id=%s"
+            valor = animal
+            cursor.execute(sqlReadRepository, (valor,))
+            readConsulta = cursor.fetchall()
+
+            for consulta in readConsulta:
+                print(consulta)
+                return consulta
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def deleteConsultaRepository(consulta):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlDeleteConsulta = "delete from agendamento where id=%s"
+            valor = consulta
+            cursor.execute(sqlDeleteConsulta, (valor,))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def UpdateConsultaRepository(animal):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            pass
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
