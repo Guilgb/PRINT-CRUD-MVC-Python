@@ -40,3 +40,24 @@ class ClientRepository:
         finally:
             if con is not None:
                 con.close()
+
+    def deleteRepositoryCliente(cliente):
+
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            sqlDeleteCliente = "delete from cliente where id=%s"
+            value = (clienteId)
+            cursor.execute(sqlDeleteCliente, (value,))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()
+
+    def updateRepositoryCliente(cliente):
+        pass

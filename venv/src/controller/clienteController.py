@@ -7,4 +7,10 @@ class ClienteController:
         ClienteService.serviceCliente(cliente)
 
     def readClienteController(clinte: Cliente):
-        ClienteService.readCliente(clinte)
+        ClienteService.readClienteService(clinte)
+
+    def deleteClienteController(cliente: Cliente):
+        ClienteService.deleteClienteService(cliente)
+
+    def updateClienteController(cliente: Cliente):
+        Cliente.updateClienteService(cliente)

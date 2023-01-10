@@ -16,6 +16,14 @@ class ClienteService:
         ClientRepository.repositoryCliente(
             id, nomeCliente, cpf, nascimentoCliente, email, endereco, bairro, rua, telefoneCliente)
 
-    def readCliente(cliente):
+    def readClienteService(cliente):
         id = int(cliente.idCliente)
         ClientRepository.readRepositoryCliente(id)
+
+    def deleteClienteService(cliente):
+        nome = str(cliente.nomeCliente)
+        ClientRepository.deleteRepositoryCliente(nome)
+
+    def updateClienteService(cliente):
+        nome = str(cliente.nomeCliente)
+        ClientRepository.updateRepositoryCliente(nome)
