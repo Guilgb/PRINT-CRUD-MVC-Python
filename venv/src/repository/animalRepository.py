@@ -48,3 +48,32 @@ class AnimalRepository:
         finally:
             if con is not None:
                 con.close()
+
+    def deleteRepositoryAnimal(animal):
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            sqlReadAnimal = "delete from animal where nome=%s "
+            valor = animal
+            cursor.execute(sqlReadAnimal, (valor,))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()
+
+    def updateRepositoryAnimal(animal):
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()
