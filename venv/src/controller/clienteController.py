@@ -5,3 +5,6 @@ from src.service.clienteService import ClienteService
 class ClienteController:
     def controllerCliente(cliente: Cliente):
         ClienteService.serviceCliente(cliente)
+
+    def readClienteController(clinte: Cliente):
+        ClienteService.readCliente(clinte)

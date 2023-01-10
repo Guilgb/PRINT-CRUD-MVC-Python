@@ -39,4 +39,7 @@ prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
 # consultaController = ConsultaController.controllerConsulta(consulta)
 # vacinaControlle = VacinaController.controllerVacina(vacina)
 # veterinarioCont = VeterinarioController.controllerVeterinario(vaterinario)
-controlePro = ProntuarioController.controllerProntuario(prontuario)
+# controlePro = ProntuarioController.controllerProntuario(prontuario)
+
+read = ClienteController.readClienteController(cliente)
+print(read)

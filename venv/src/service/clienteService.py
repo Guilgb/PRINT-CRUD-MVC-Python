@@ -15,3 +15,7 @@ class ClienteService:
 
         ClientRepository.repositoryCliente(
             id, nomeCliente, cpf, nascimentoCliente, email, endereco, bairro, rua, telefoneCliente)
+
+    def readCliente(cliente):
+        id = int(cliente.idCliente)
+        ClientRepository.readRepositoryCliente(id)
