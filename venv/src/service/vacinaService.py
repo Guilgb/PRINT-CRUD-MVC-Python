@@ -10,3 +10,14 @@ class VacinaService:
         volume = str(vacina.volume)
         VacinaRepository.repositoryVacina(
             idVacina, nomeVacina, fabricanteVacina, validade, volume)
+
+    def readVacinaService(vacina):
+        idVacina = int(vacina.idVacina)
+        VacinaRepository.readVacinaRepository(idVacina)
+
+    def deleteProntuarioService(vacina):
+        idVacina = int(vacina.idVacina)
+        VacinaRepository.deleteVacinaRepository(idVacina)
+
+    def updateVacinaService(vacina):
+        pass

@@ -48,9 +48,9 @@ class ProntuarioRepository:
             sqlReadProntuario = "select from prontuario where id=%s"
             valor = prontuario
             cursor.execute(sqlReadProntuario, (valor,))
-            readFuncionario = cursor.fetchall()
+            readProntuario = cursor.fetchall()
 
-            for funcionario in readFuncionario:
+            for prontuario in readProntuario:
                 print(prontuario)
                 return prontuario
         except (Exception, psycopg2.DatabaseError) as error:

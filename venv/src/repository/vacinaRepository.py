@@ -17,3 +17,41 @@ class VacinaRepository:
         finally:
             if con is not None:
                 con.close()
+
+    def readVacinaRepository(vacina):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlReadVacina = "select from vacina where id=%s"
+            valor = vacina
+            cursor.execute(sqlReadVacina, (valor,))
+            readVacina = cursor.fetchall()
+
+            for vacina in readVacina:
+                print(vacina)
+                return vacina
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def deleteVacinaRepository(vacina):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlDeleteVacina = "delete from vacina where id=%s"
+            valor = vacina
+            cursor.execute(sqlDeleteVacina, (valor,))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+   def updateVacinaRepository(vacina):
+        pass
