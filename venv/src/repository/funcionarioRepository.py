@@ -19,3 +19,41 @@ class FuncionarioRepository:
         finally:
             if con is not None:
                 con.close()
+
+    def readFuncionarioRepository(funcionario):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlReadRepository = "select from funcionario where id=%s"
+            valor = funcionario
+            cursor.execute(sqlReadRepository, (valor,))
+            readFuncionario = cursor.fetchall()
+
+            for funcionario in readFuncionario:
+                print(funcionario)
+                return funcionario
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def deleteFuncionarioRepository(funcionario):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlDeleteFuncionario = "delete from funcionario where id=%s"
+            valor = funcionario
+            cursor.execute(sqlDeleteFuncionario, (valor,))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def updateFuncionarioRepository(funcionario):
+        pass
