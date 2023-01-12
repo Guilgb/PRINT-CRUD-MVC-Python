@@ -15,3 +15,14 @@ class ProntuarioService:
 
         ProntuarioRepository.repositoryProntuario(
             idProntuario, sexo, porte, especie, dataProntuario, racaProntuario, animal, veterinario, vacina)
+
+    def readProntuarioService(prontuario):
+        idProntuario = int(prontuario.idProntuario)
+        ProntuarioRepository.readProntuarioRepository(idProntuario)
+
+    def deleteProntuarioService(prontuario):
+        idProntuario = int(prontuario.idProntuario)
+        ProntuarioRepository.deleteProntuarioRepository(idProntuario)
+
+    def updateProntuarioService(prontuario):
+        pass

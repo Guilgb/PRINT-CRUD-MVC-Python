@@ -39,3 +39,41 @@ class ProntuarioRepository:
         finally:
             if con is not None:
                 con.close()
+
+    def readProntuarioRepository(prontuario):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlReadProntuario = "select from prontuario where id=%s"
+            valor = prontuario
+            cursor.execute(sqlReadProntuario, (valor,))
+            readFuncionario = cursor.fetchall()
+
+            for funcionario in readFuncionario:
+                print(prontuario)
+                return prontuario
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def deleteProntuarioRepository(prontuario):
+        con = Conexao.getConnection('')
+        cursor = con.cursor()
+
+        try:
+            sqlDeleteProntuario = "delete from prontuario where id=%s"
+            valor = prontuario
+            cursor.execute(sqlDeleteProntuario, (valor,))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def updateProntuarioRepository(prontuario):
+        pass
