@@ -66,11 +66,22 @@ class AnimalRepository:
             if con is not None:
                 con.close()
 
-    def updateRepositoryAnimal(animal):
+    def updateRepositoryAnimal(id, nomeAnimal, especie, sexo, raca, peso, nascimento, cliente):
         try:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
+            def BuscarAnimalid():
+                sqlBuscarId = 'select id from animal where nome=%s'
+                value = nomeAnimal
+                cursor.execute(sqlBuscarId, (value,))
+                dados = cursor.fetchone()
+
+                for dado in dados:
+                    return dado
+
+            idAnimal = BuscarAnimalid()
+            
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
 

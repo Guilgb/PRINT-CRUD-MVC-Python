@@ -24,4 +24,12 @@ class AnimalService:
 
     def updateServiceAnimal(animal):
         id = int(animal.id)
-        AnimalRepository.updateRepositoryAnimal(id)
+        nomeAnimal = str(animal.nomeAnimal)
+        especie = str(animal.especie)
+        sexo = str(animal.sexo)
+        raca = str(animal.raca)
+        peso = float(animal.peso)
+        nascimento = str(animal.nascimento)
+        cliente = str(animal.cliente.nomeCliente)
+        AnimalRepository.updateRepositoryAnimal(
+            id, nomeAnimal, especie, sexo, raca, peso, nascimento, cliente)
