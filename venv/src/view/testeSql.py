@@ -1,14 +1,12 @@
-from src.config.database import Conexao
-
-con = Conexao.getConnection('')
-cursor = con.cursor()
+from PyQt5 import uic, QtWidgets
 
 
-def ok():
-    sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
-    valor = "Guilherme"
-    cursor.execute(sqlBuscarCliente, (valor,))
-    resultadoBusca = cursor.fetchone()
+def insert():
+    print('nada')
 
-    for resultado in resultadoBusca:
-        return resultado
+
+app = QtWidgets.QApplication([])
+tela = uic.loadUi("cadastrarCliente.ui")
+
+tela.show()
+app.exec()
