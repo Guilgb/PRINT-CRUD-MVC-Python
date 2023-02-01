@@ -384,7 +384,7 @@ class Ui_Cadastrar(object):
         self.btnRemover.setText(_translate("Cadastrar", "REMOVER"))
 
         def insert():
-            conteudo = widget.document().toPlainText()
+            print(self.campoNome.Text())
         self.btnSalvar.clicked.connect(insert)
 
 
