@@ -384,7 +384,8 @@ class Ui_Cadastrar(object):
         self.btnRemover.setText(_translate("Cadastrar", "REMOVER"))
 
         def insert():
-            print(self.campoNome.Text())
+            print(self.campoNome.toPlainText())
+
         self.btnSalvar.clicked.connect(insert)
 
 
