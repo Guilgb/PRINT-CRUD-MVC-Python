@@ -47,6 +47,16 @@ class ClientRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
+            def buscarIdCliente():
+                sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
+                valor = cliente
+                cursor.execute(sqlBuscarCliente, (valor,))
+                resultadoBusca = cursor.fetchone()
+
+                for resultado in resultadoBusca:
+                    return resultado
+            clienteId = buscarIdCliente()
+
             sqlDeleteCliente = "delete from cliente where id=%s"
             value = (clienteId)
             cursor.execute(sqlDeleteCliente, (value,))

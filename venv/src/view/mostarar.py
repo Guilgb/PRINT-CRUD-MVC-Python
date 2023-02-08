@@ -14,8 +14,8 @@ from src.controller.prontuarioController import ProntuarioController
 from src.controller.vacinaController import VacinaController
 from src.controller.veterinarioController import VeterinarioController
 
-cliente = Cliente(1, 'Guilherme8', 'cpf8', 'nas8', 'tel8',
-                  'mail8', 'rua8', 'num8', '8')
+cliente = Cliente(1, 'Guilherme8', 'cpf9', 'nas8', 'tel8',
+                  'mail9', 'rua9', 'num9', '9')
 
 animal = Animal(1, 'Nome Animal', 'especi2', 'sex2',
                 'raa2', 12.4, 'nasciment2', cliente)
@@ -32,7 +32,8 @@ vaterinario = Veterinario(1, 'vete', 'cpf', 'nas', 'tel', 'mail', 'medico vet')
 
 prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
                         animal, vaterinario, vacina)
-# clienteControle = ClienteController.controllerCliente(cliente)
+
+clienteControle = ClienteController.deleteClienteController(cliente)
 # animalController = AnimalController.controllerAnimal(animal)
 # funcionarioController = FuncionarioController.controllerFuncionario(
 #     funcionario)
@@ -41,5 +42,5 @@ prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
 # veterinarioCont = VeterinarioController.controllerVeterinario(vaterinario)
 # controlePro = ProntuarioController.controllerProntuario(prontuario)
 
-read = ClienteController.readClienteController(cliente)
-print(read)
+# read = ClienteController.readClienteController(cliente)
+# print(read)
