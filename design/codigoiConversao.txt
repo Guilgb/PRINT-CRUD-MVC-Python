@@ -1,0 +1,1 @@
+pyuic6 cadastrarAnimal.ui -o animal.py -x

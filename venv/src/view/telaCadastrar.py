@@ -134,6 +134,33 @@ class Ui_Cadastrar(object):
         self.btnVeterinarios.setText(_translate("Cadastrar", "VETERINÁRIOS"))
         self.btnVacinas.setText(_translate("Cadastrar", "VACINAS"))
         self.txtCadastrar.setText(_translate("Cadastrar", "Cadastrar"))
+        def insert():
+            nomeCliente = self.campoNome.toPlainText()
+            cpf = self.campoCPF.toPlainText()
+            nascimentoCliente = self.campoNascimento.toPlainText()
+            telefone = self.campoTelefone.toPlainText()
+            email = self.campoTelefone.toPlainText()
+            rua = self.campoEndereco.toPlainText()
+            bairro = self.campoBairro.toPlainText()
+            cliente = Cliente(1, nomeCliente, cpf, nascimentoCliente,
+                              telefone, email, rua, bairro, 1)
+            registroCliente = ClienteController.controllerCliente(cliente)
+
+        def remove():
+            nomeCliente = self.campoNome.toPlainText()
+            cpf = self.campoCPF.toPlainText()
+            nascimentoCliente = self.campoNascimento.toPlainText()
+            telefone = self.campoTelefone.toPlainText()
+            email = self.campoTelefone.toPlainText()
+            rua = self.campoEndereco.toPlainText()
+            bairro = self.campoBairro.toPlainText()
+            cliente = Cliente(1, nomeCliente, cpf, nascimentoCliente,
+                              telefone, email, rua, bairro, 1)
+            
+            deleteCliente = ClienteController.deleteClienteController(cliente)
+        
+        self.btnSalvar.clicked.connect(insert)
+        self.btnRemover.clicked.connect(remove)
 
 
 if __name__ == "__main__":
