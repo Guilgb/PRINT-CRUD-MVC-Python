@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\guilh\Documents\PRINT\design\CadastrarCliente.ui'
+# Form implementation generated from reading ui file 'cadastrarCliente.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.1
 #
@@ -393,3 +393,13 @@ class Ui_Cadastrar(object):
         self.btnSalvar.setText(_translate("Cadastrar", "SALVAR"))
         self.btnRemover.setText(_translate("Cadastrar", "REMOVER"))
         self.btnAtualizar.setText(_translate("Cadastrar", "BUSCAR"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Cadastrar = QtWidgets.QWidget()
+    ui = Ui_Cadastrar()
+    ui.setupUi(Cadastrar)
+    Cadastrar.show()
+    sys.exit(app.exec())

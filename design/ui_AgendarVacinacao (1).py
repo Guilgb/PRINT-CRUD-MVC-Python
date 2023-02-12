@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\guilh\Documents\PRINT\design\CadastrarCliente.ui'
+# Form implementation generated from reading ui file 'c:\Users\guilh\Documents\PRINT\design\AgendarVacinacao (1).ui'
 #
 # Created by: PyQt6 UI code generator 6.4.1
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Cadastrar(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
-        Cadastrar.resize(900, 566)
+        Cadastrar.resize(900, 600)
         Cadastrar.setMinimumSize(QtCore.QSize(900, 240))
         Cadastrar.setMaximumSize(QtCore.QSize(900, 600))
         self.navegation = QtWidgets.QFrame(parent=Cadastrar)
@@ -62,7 +62,7 @@ class Ui_Cadastrar(object):
         self.container.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.container.setObjectName("container")
         self.txtCadastrar = QtWidgets.QLabel(parent=self.container)
-        self.txtCadastrar.setGeometry(QtCore.QRect(30, 10, 291, 51))
+        self.txtCadastrar.setGeometry(QtCore.QRect(30, 10, 311, 51))
         self.txtCadastrar.setStyleSheet("position: absolute;\n"
 "width: 397px;\n"
 "height: 36px;\n"
@@ -80,14 +80,14 @@ class Ui_Cadastrar(object):
 "")
         self.txtCadastrar.setObjectName("txtCadastrar")
         self.frame = QtWidgets.QFrame(parent=self.container)
-        self.frame.setGeometry(QtCore.QRect(30, 70, 621, 401))
+        self.frame.setGeometry(QtCore.QRect(20, 60, 621, 401))
         self.frame.setStyleSheet("background-color: rgb(255, 255, 255)")
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
-        self.nome = QtWidgets.QLabel(parent=self.frame)
-        self.nome.setGeometry(QtCore.QRect(30, 30, 171, 21))
-        self.nome.setStyleSheet("position: absolute;\n"
+        self.buscaAnimal = QtWidgets.QLabel(parent=self.frame)
+        self.buscaAnimal.setGeometry(QtCore.QRect(10, 30, 171, 21))
+        self.buscaAnimal.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -101,10 +101,10 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.nome.setObjectName("nome")
-        self.nascimento = QtWidgets.QLabel(parent=self.frame)
-        self.nascimento.setGeometry(QtCore.QRect(30, 90, 211, 21))
-        self.nascimento.setStyleSheet("position: absolute;\n"
+        self.buscaAnimal.setObjectName("buscaAnimal")
+        self.buscaVacina = QtWidgets.QLabel(parent=self.frame)
+        self.buscaVacina.setGeometry(QtCore.QRect(20, 200, 151, 31))
+        self.buscaVacina.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -118,10 +118,10 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.nascimento.setObjectName("nascimento")
-        self.telefone = QtWidgets.QLabel(parent=self.frame)
-        self.telefone.setGeometry(QtCore.QRect(30, 200, 101, 31))
-        self.telefone.setStyleSheet("position: absolute;\n"
+        self.buscaVacina.setObjectName("buscaVacina")
+        self.data = QtWidgets.QLabel(parent=self.frame)
+        self.data.setGeometry(QtCore.QRect(20, 260, 101, 41))
+        self.data.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -135,10 +135,10 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.telefone.setObjectName("telefone")
-        self.email = QtWidgets.QLabel(parent=self.frame)
-        self.email.setGeometry(QtCore.QRect(30, 150, 81, 21))
-        self.email.setStyleSheet("position: absolute;\n"
+        self.data.setObjectName("data")
+        self.hora = QtWidgets.QLabel(parent=self.frame)
+        self.hora.setGeometry(QtCore.QRect(200, 260, 81, 31))
+        self.hora.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -152,10 +152,10 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.email.setObjectName("email")
-        self.rua = QtWidgets.QLabel(parent=self.frame)
-        self.rua.setGeometry(QtCore.QRect(30, 260, 51, 41))
-        self.rua.setStyleSheet("position: absolute;\n"
+        self.hora.setObjectName("hora")
+        self.dataProxDose = QtWidgets.QLabel(parent=self.frame)
+        self.dataProxDose.setGeometry(QtCore.QRect(20, 320, 201, 31))
+        self.dataProxDose.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -169,10 +169,10 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.rua.setObjectName("rua")
-        self.bairro = QtWidgets.QLabel(parent=self.frame)
-        self.bairro.setGeometry(QtCore.QRect(40, 320, 81, 31))
-        self.bairro.setStyleSheet("position: absolute;\n"
+        self.dataProxDose.setObjectName("dataProxDose")
+        self.buscaCliente = QtWidgets.QLabel(parent=self.frame)
+        self.buscaCliente.setGeometry(QtCore.QRect(10, 90, 161, 21))
+        self.buscaCliente.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -186,10 +186,87 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.bairro.setObjectName("bairro")
-        self.cpf = QtWidgets.QLabel(parent=self.frame)
-        self.cpf.setGeometry(QtCore.QRect(410, 90, 41, 21))
-        self.cpf.setStyleSheet("position: absolute;\n"
+        self.buscaCliente.setObjectName("buscaCliente")
+        self.campoBuscarAnimal = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoBuscarAnimal.setGeometry(QtCore.QRect(170, 20, 431, 41))
+        self.campoBuscarAnimal.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoBuscarAnimal.setObjectName("campoBuscarAnimal")
+        self.campoBuscarCliente = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoBuscarCliente.setGeometry(QtCore.QRect(170, 80, 431, 41))
+        self.campoBuscarCliente.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoBuscarCliente.setObjectName("campoBuscarCliente")
+        self.campoBuscarVacina = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoBuscarVacina.setGeometry(QtCore.QRect(180, 200, 421, 41))
+        self.campoBuscarVacina.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoBuscarVacina.setObjectName("campoBuscarVacina")
+        self.campoData = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoData.setGeometry(QtCore.QRect(80, 260, 111, 41))
+        self.campoData.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoData.setObjectName("campoData")
+        self.campoHora = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoHora.setGeometry(QtCore.QRect(260, 260, 101, 41))
+        self.campoHora.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoHora.setObjectName("campoHora")
+        self.campoProxDose = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoProxDose.setGeometry(QtCore.QRect(230, 320, 251, 41))
+        self.campoProxDose.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoProxDose.setObjectName("campoProxDose")
+        self.campoBuscarVeterinario = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoBuscarVeterinario.setGeometry(QtCore.QRect(220, 140, 381, 41))
+        self.campoBuscarVeterinario.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoBuscarVeterinario.setObjectName("campoBuscarVeterinario")
+        self.buscaVeterinario = QtWidgets.QLabel(parent=self.frame)
+        self.buscaVeterinario.setGeometry(QtCore.QRect(10, 140, 211, 31))
+        self.buscaVeterinario.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -203,98 +280,10 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.cpf.setObjectName("cpf")
-        self.campoNome = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoNome.setGeometry(QtCore.QRect(210, 20, 391, 41))
-        self.campoNome.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoNome.setObjectName("campoNome")
-        self.campoNascimento = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoNascimento.setGeometry(QtCore.QRect(240, 80, 151, 41))
-        self.campoNascimento.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoNascimento.setObjectName("campoNascimento")
-        self.campoCPF = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoCPF.setGeometry(QtCore.QRect(450, 80, 151, 41))
-        self.campoCPF.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoCPF.setObjectName("campoCPF")
-        self.campoEmail = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoEmail.setGeometry(QtCore.QRect(140, 140, 391, 41))
-        self.campoEmail.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoEmail.setObjectName("campoEmail")
-        self.campoTelefone = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoTelefone.setGeometry(QtCore.QRect(140, 200, 251, 41))
-        self.campoTelefone.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoTelefone.setObjectName("campoTelefone")
-        self.campoRua = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoRua.setGeometry(QtCore.QRect(80, 260, 371, 41))
-        self.campoRua.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoRua.setObjectName("campoRua")
-        self.campoBairro = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoBairro.setGeometry(QtCore.QRect(140, 320, 201, 41))
-        self.campoBairro.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoBairro.setObjectName("campoBairro")
-        self.campoCidade_2 = QtWidgets.QTextEdit(parent=self.frame)
-        self.campoCidade_2.setGeometry(QtCore.QRect(510, 260, 81, 41))
-        self.campoCidade_2.setStyleSheet("position: absolute;\n"
-"width: 692px;\n"
-"height: 51px;\n"
-"left: 625px;\n"
-"top: 264px;\n"
-"\n"
-"background: #D9D9D9;\n"
-"border-radius: 8px;")
-        self.campoCidade_2.setObjectName("campoCidade_2")
-        self.cidade_2 = QtWidgets.QLabel(parent=self.frame)
-        self.cidade_2.setGeometry(QtCore.QRect(470, 260, 31, 31))
-        self.cidade_2.setStyleSheet("position: absolute;\n"
+        self.buscaVeterinario.setObjectName("buscaVeterinario")
+        self.fase = QtWidgets.QLabel(parent=self.frame)
+        self.fase.setGeometry(QtCore.QRect(370, 260, 81, 31))
+        self.fase.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
 "left: 420px;\n"
@@ -308,9 +297,20 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #000000;")
-        self.cidade_2.setObjectName("cidade_2")
+        self.fase.setObjectName("fase")
+        self.campoFase = QtWidgets.QTextEdit(parent=self.frame)
+        self.campoFase.setGeometry(QtCore.QRect(430, 260, 171, 41))
+        self.campoFase.setStyleSheet("position: absolute;\n"
+"width: 692px;\n"
+"height: 51px;\n"
+"left: 625px;\n"
+"top: 264px;\n"
+"\n"
+"background: #D9D9D9;\n"
+"border-radius: 8px;")
+        self.campoFase.setObjectName("campoFase")
         self.btnSalvar = QtWidgets.QPushButton(parent=self.container)
-        self.btnSalvar.setGeometry(QtCore.QRect(30, 480, 141, 61))
+        self.btnSalvar.setGeometry(QtCore.QRect(490, 490, 141, 61))
         self.btnSalvar.setStyleSheet("position: absolute;\n"
 "width: 251px;\n"
 "height: 66px;\n"
@@ -329,15 +329,15 @@ class Ui_Cadastrar(object):
 "\n"
 "color: #FFFFFF;")
         self.btnSalvar.setObjectName("btnSalvar")
-        self.btnRemover = QtWidgets.QPushButton(parent=self.container)
-        self.btnRemover.setGeometry(QtCore.QRect(180, 480, 141, 61))
-        self.btnRemover.setStyleSheet("position: absolute;\n"
+        self.btnListar = QtWidgets.QPushButton(parent=self.container)
+        self.btnListar.setGeometry(QtCore.QRect(20, 490, 141, 61))
+        self.btnListar.setStyleSheet("position: absolute;\n"
 "width: 251px;\n"
 "height: 66px;\n"
 "left: 381px;\n"
 "top: 884px;\n"
 "\n"
-"background: #D69188;\n"
+"background-color: rgb(85, 170, 127);\n"
 "border-radius: 27px;\n"
 "\n"
 "font-family: \'Inter\';\n"
@@ -348,27 +348,7 @@ class Ui_Cadastrar(object):
 "text-align: center;\n"
 "\n"
 "color: #FFFFFF;")
-        self.btnRemover.setObjectName("btnRemover")
-        self.btnAtualizar = QtWidgets.QPushButton(parent=self.container)
-        self.btnAtualizar.setGeometry(QtCore.QRect(510, 480, 141, 61))
-        self.btnAtualizar.setStyleSheet("position: absolute;\n"
-"width: 251px;\n"
-"height: 66px;\n"
-"left: 381px;\n"
-"top: 884px;\n"
-"\n"
-"background: #304456;\n"
-"border-radius: 27px;\n"
-"\n"
-"font-family: \'Inter\';\n"
-"font-style: normal;\n"
-"font-weight: 700;\n"
-"font-size: 20px;\n"
-"line-height: 24px;\n"
-"text-align: center;\n"
-"\n"
-"color: #FFFFFF;")
-        self.btnAtualizar.setObjectName("btnAtualizar")
+        self.btnListar.setObjectName("btnListar")
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
@@ -381,15 +361,14 @@ class Ui_Cadastrar(object):
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
         self.btnAgendar.setText(_translate("Cadastrar", "AGENDAR"))
         self.btnProntuario.setText(_translate("Cadastrar", "PRONTUÁRIO"))
-        self.txtCadastrar.setText(_translate("Cadastrar", "Cadastrar Cliente"))
-        self.nome.setText(_translate("Cadastrar", "NOME DO CLIENTE"))
-        self.nascimento.setText(_translate("Cadastrar", "DATA DE NASCIMENTO"))
-        self.telefone.setText(_translate("Cadastrar", "TELEFONE"))
-        self.email.setText(_translate("Cadastrar", "E-MAIL"))
-        self.rua.setText(_translate("Cadastrar", "RUA"))
-        self.bairro.setText(_translate("Cadastrar", "BAIRRO"))
-        self.cpf.setText(_translate("Cadastrar", "CPF"))
-        self.cidade_2.setText(_translate("Cadastrar", "Nº"))
+        self.txtCadastrar.setText(_translate("Cadastrar", "Agendar Vacinação"))
+        self.buscaAnimal.setText(_translate("Cadastrar", "BUSCAR ANIMAL"))
+        self.buscaVacina.setText(_translate("Cadastrar", "BUSCAR VACINA"))
+        self.data.setText(_translate("Cadastrar", "DATA"))
+        self.hora.setText(_translate("Cadastrar", "HORA"))
+        self.dataProxDose.setText(_translate("Cadastrar", "DATA PRÓXIMA DOSE"))
+        self.buscaCliente.setText(_translate("Cadastrar", "BUSCAR CLIENTE"))
+        self.buscaVeterinario.setText(_translate("Cadastrar", "BUSCAR VETERINÁRIO"))
+        self.fase.setText(_translate("Cadastrar", "FASE"))
         self.btnSalvar.setText(_translate("Cadastrar", "SALVAR"))
-        self.btnRemover.setText(_translate("Cadastrar", "REMOVER"))
-        self.btnAtualizar.setText(_translate("Cadastrar", "BUSCAR"))
+        self.btnListar.setText(_translate("Cadastrar", "Listar"))

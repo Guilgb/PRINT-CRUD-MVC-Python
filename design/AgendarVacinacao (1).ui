@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>900</width>
-    <height>566</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -185,7 +185,7 @@ color: white;</string>
      <rect>
       <x>30</x>
       <y>10</y>
-      <width>291</width>
+      <width>311</width>
       <height>51</height>
      </rect>
     </property>
@@ -207,14 +207,14 @@ color: white;
 </string>
     </property>
     <property name="text">
-     <string>Cadastrar Cliente</string>
+     <string>Agendar Vacinação</string>
     </property>
    </widget>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>70</y>
+      <x>20</x>
+      <y>60</y>
       <width>621</width>
       <height>401</height>
      </rect>
@@ -228,10 +228,10 @@ color: white;
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="nome">
+    <widget class="QLabel" name="buscaAnimal">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>10</x>
        <y>30</y>
        <width>171</width>
        <height>21</height>
@@ -254,44 +254,15 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>NOME DO CLIENTE</string>
+      <string>BUSCAR ANIMAL</string>
      </property>
     </widget>
-    <widget class="QLabel" name="nascimento">
+    <widget class="QLabel" name="buscaVacina">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>90</y>
-       <width>211</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 184px;
-height: 24px;
-left: 420px;
-top: 277px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 300;
-font-size: 20px;
-line-height: 24px;
-text-align: center;
-
-color: #000000;</string>
-     </property>
-     <property name="text">
-      <string>DATA DE NASCIMENTO</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="telefone">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
+       <x>20</x>
        <y>200</y>
-       <width>101</width>
+       <width>151</width>
        <height>31</height>
       </rect>
      </property>
@@ -312,44 +283,15 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>TELEFONE</string>
+      <string>BUSCAR VACINA</string>
      </property>
     </widget>
-    <widget class="QLabel" name="email">
+    <widget class="QLabel" name="data">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>150</y>
-       <width>81</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 184px;
-height: 24px;
-left: 420px;
-top: 277px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 300;
-font-size: 20px;
-line-height: 24px;
-text-align: center;
-
-color: #000000;</string>
-     </property>
-     <property name="text">
-      <string>E-MAIL</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="rua">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
+       <x>20</x>
        <y>260</y>
-       <width>51</width>
+       <width>101</width>
        <height>41</height>
       </rect>
      </property>
@@ -370,14 +312,14 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>RUA</string>
+      <string>DATA</string>
      </property>
     </widget>
-    <widget class="QLabel" name="bairro">
+    <widget class="QLabel" name="hora">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>320</y>
+       <x>200</x>
+       <y>260</y>
        <width>81</width>
        <height>31</height>
       </rect>
@@ -399,15 +341,44 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>BAIRRO</string>
+      <string>HORA</string>
      </property>
     </widget>
-    <widget class="QLabel" name="cpf">
+    <widget class="QLabel" name="dataProxDose">
      <property name="geometry">
       <rect>
-       <x>410</x>
+       <x>20</x>
+       <y>320</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 184px;
+height: 24px;
+left: 420px;
+top: 277px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #000000;</string>
+     </property>
+     <property name="text">
+      <string>DATA PRÓXIMA DOSE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="buscaCliente">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>90</y>
-       <width>41</width>
+       <width>161</width>
        <height>21</height>
       </rect>
      </property>
@@ -428,15 +399,15 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>CPF</string>
+      <string>BUSCAR CLIENTE</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="campoNome">
+    <widget class="QTextEdit" name="campoBuscarAnimal">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>170</x>
        <y>20</y>
-       <width>391</width>
+       <width>431</width>
        <height>41</height>
       </rect>
      </property>
@@ -451,12 +422,12 @@ background: #D9D9D9;
 border-radius: 8px;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="campoNascimento">
+    <widget class="QTextEdit" name="campoBuscarCliente">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>170</x>
        <y>80</y>
-       <width>151</width>
+       <width>431</width>
        <height>41</height>
       </rect>
      </property>
@@ -471,51 +442,71 @@ background: #D9D9D9;
 border-radius: 8px;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="campoCPF">
+    <widget class="QTextEdit" name="campoBuscarVacina">
      <property name="geometry">
       <rect>
-       <x>450</x>
-       <y>80</y>
-       <width>151</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
-
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="campoEmail">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>140</y>
-       <width>391</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
-
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="campoTelefone">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
+       <x>180</x>
        <y>200</y>
+       <width>421</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 692px;
+height: 51px;
+left: 625px;
+top: 264px;
+
+background: #D9D9D9;
+border-radius: 8px;</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="campoData">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>260</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 692px;
+height: 51px;
+left: 625px;
+top: 264px;
+
+background: #D9D9D9;
+border-radius: 8px;</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="campoHora">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>260</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 692px;
+height: 51px;
+left: 625px;
+top: 264px;
+
+background: #D9D9D9;
+border-radius: 8px;</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="campoProxDose">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>320</y>
        <width>251</width>
        <height>41</height>
       </rect>
@@ -531,12 +522,12 @@ background: #D9D9D9;
 border-radius: 8px;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="campoRua">
+    <widget class="QTextEdit" name="campoBuscarVeterinario">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>260</y>
-       <width>371</width>
+       <x>220</x>
+       <y>140</y>
+       <width>381</width>
        <height>41</height>
       </rect>
      </property>
@@ -551,52 +542,12 @@ background: #D9D9D9;
 border-radius: 8px;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="campoBairro">
+    <widget class="QLabel" name="buscaVeterinario">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>320</y>
-       <width>201</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
-
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="campoCidade_2">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>260</y>
-       <width>81</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
-
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="cidade_2">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>260</y>
-       <width>31</width>
+       <x>10</x>
+       <y>140</y>
+       <width>211</width>
        <height>31</height>
       </rect>
      </property>
@@ -617,15 +568,64 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>Nº</string>
+      <string>BUSCAR VETERINÁRIO</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fase">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>260</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 184px;
+height: 24px;
+left: 420px;
+top: 277px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #000000;</string>
+     </property>
+     <property name="text">
+      <string>FASE</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="campoFase">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>260</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 692px;
+height: 51px;
+left: 625px;
+top: 264px;
+
+background: #D9D9D9;
+border-radius: 8px;</string>
      </property>
     </widget>
    </widget>
    <widget class="QPushButton" name="btnSalvar">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>480</y>
+      <x>490</x>
+      <y>490</y>
       <width>141</width>
       <height>61</height>
      </rect>
@@ -653,11 +653,11 @@ color: #FFFFFF;</string>
      <string>SALVAR</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnRemover">
+   <widget class="QPushButton" name="btnListar">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>480</y>
+      <x>20</x>
+      <y>490</y>
       <width>141</width>
       <height>61</height>
      </rect>
@@ -669,7 +669,7 @@ height: 66px;
 left: 381px;
 top: 884px;
 
-background: #D69188;
+background-color: rgb(85, 170, 127);
 border-radius: 27px;
 
 font-family: 'Inter';
@@ -682,39 +682,7 @@ text-align: center;
 color: #FFFFFF;</string>
     </property>
     <property name="text">
-     <string>REMOVER</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnAtualizar">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>480</y>
-      <width>141</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">position: absolute;
-width: 251px;
-height: 66px;
-left: 381px;
-top: 884px;
-
-background: #304456;
-border-radius: 27px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 24px;
-text-align: center;
-
-color: #FFFFFF;</string>
-    </property>
-    <property name="text">
-     <string>BUSCAR</string>
+     <string>Listar</string>
     </property>
    </widget>
   </widget>
