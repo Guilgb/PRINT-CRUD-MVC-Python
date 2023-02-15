@@ -422,7 +422,7 @@ class Ui_Cadastrar(object):
 
         self.btnSalvar.clicked.connect(insert)
         self.btnRemover.clicked.connect(remove)
-        
+
         def read():
             pass
 

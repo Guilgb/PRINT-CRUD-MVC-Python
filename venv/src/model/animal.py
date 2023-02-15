@@ -3,7 +3,7 @@ from src.model.cliente import Cliente
 
 class Animal(Cliente):
     def __init__(self, id: int, nomeAnimal: str, especie: str, sexo: str,
-                 raca: str, peso: float, nascimento: str, cliente: Cliente):
+                 raca: str, peso: float, nascimento: str, cliente: str):
 
         self.__id = id
         self.__nomeAnimal = nomeAnimal
