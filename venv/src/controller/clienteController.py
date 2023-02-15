@@ -9,6 +9,9 @@ class ClienteController:
     def readClienteController(clinte: Cliente):
         ClienteService.readClienteService(clinte)
 
+    def readAllClientesController(self):
+        return ClienteService.readAllClientesService('')
+
     def deleteClienteController(cliente: Cliente):
         ClienteService.deleteClienteService(cliente)
 

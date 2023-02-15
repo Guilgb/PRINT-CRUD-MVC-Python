@@ -41,6 +41,23 @@ class ClientRepository:
             if con is not None:
                 con.close()
 
+    def readAllClientesRepository(self):
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            sqlReadCliente = "select * from cliente"
+            cursor.execute(sqlReadCliente)
+            resultadoReadCliente = cursor.fetchall()
+            return resultadoReadCliente
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()
+
     def deleteRepositoryCliente(cliente):
 
         try:

@@ -20,6 +20,9 @@ class ClienteService:
         id = int(cliente.idCliente)
         ClientRepository.readRepositoryCliente(id)
 
+    def readAllClientesService(self):
+        return ClientRepository.readAllClientesRepository('')
+
     def deleteClienteService(cliente):
         nome = str(cliente.nomeCliente)
         ClientRepository.deleteRepositoryCliente(nome)

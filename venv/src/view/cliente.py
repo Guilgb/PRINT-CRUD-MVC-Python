@@ -350,26 +350,26 @@ class Ui_Cadastrar(object):
                                       "\n"
                                       "color: #FFFFFF;")
         self.btnRemover.setObjectName("btnRemover")
-        self.btnAtualizar = QtWidgets.QPushButton(parent=self.container)
-        self.btnAtualizar.setGeometry(QtCore.QRect(510, 480, 141, 61))
-        self.btnAtualizar.setStyleSheet("position: absolute;\n"
-                                        "width: 251px;\n"
-                                        "height: 66px;\n"
-                                        "left: 381px;\n"
-                                        "top: 884px;\n"
-                                        "\n"
-                                        "background: #304456;\n"
-                                        "border-radius: 27px;\n"
-                                        "\n"
-                                        "font-family: \'Inter\';\n"
-                                        "font-style: normal;\n"
-                                        "font-weight: 700;\n"
-                                        "font-size: 20px;\n"
-                                        "line-height: 24px;\n"
-                                        "text-align: center;\n"
-                                        "\n"
-                                        "color: #FFFFFF;")
-        self.btnAtualizar.setObjectName("btnAtualizar")
+        self.btnListar = QtWidgets.QPushButton(parent=self.container)
+        self.btnListar.setGeometry(QtCore.QRect(510, 480, 141, 61))
+        self.btnListar.setStyleSheet("position: absolute;\n"
+                                     "width: 251px;\n"
+                                     "height: 66px;\n"
+                                     "left: 381px;\n"
+                                     "top: 884px;\n"
+                                     "\n"
+                                     "background: #304456;\n"
+                                     "border-radius: 27px;\n"
+                                     "\n"
+                                     "font-family: \'Inter\';\n"
+                                     "font-style: normal;\n"
+                                     "font-weight: 700;\n"
+                                     "font-size: 20px;\n"
+                                     "line-height: 24px;\n"
+                                     "text-align: center;\n"
+                                     "\n"
+                                     "color: #FFFFFF;")
+        self.btnListar.setObjectName("btnAtualizar")
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
@@ -393,7 +393,7 @@ class Ui_Cadastrar(object):
         self.cidade_2.setText(_translate("Cadastrar", "Nº"))
         self.btnSalvar.setText(_translate("Cadastrar", "SALVAR"))
         self.btnRemover.setText(_translate("Cadastrar", "REMOVER"))
-        self.btnAtualizar.setText(_translate("Cadastrar", "BUSCAR"))
+        self.btnListar.setText(_translate("Cadastrar", "Listar"))
 
         def insert():
             nomeCliente = self.campoNome.toPlainText()
@@ -420,11 +420,12 @@ class Ui_Cadastrar(object):
 
             ClienteController.deleteClienteController(cliente)
 
+        def read():
+            ClienteController.readClienteController()
+
         self.btnSalvar.clicked.connect(insert)
         self.btnRemover.clicked.connect(remove)
-
-        def read():
-            pass
+        self.btnListar.clicked.connect(read)
 
 
 if __name__ == "__main__":
