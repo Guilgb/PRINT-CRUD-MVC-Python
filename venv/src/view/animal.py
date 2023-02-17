@@ -472,7 +472,7 @@ class Ui_CadastrarAnimal(object):
         def insert():
             nomeAnimal = self.campoNomeAnimal.toPlainText()
             nascimentoAnimal = self.campoNascimento.toPlainText()
-            tipo = self.campoTipo.toPlainText()
+            especie = self.campoTipo.toPlainText()
             raca = self.campoRaca.toPlainText()
             sexo = self.campoSexo.toPlainText()
             porte = self.campoPorte.toPlainText()
@@ -482,9 +482,9 @@ class Ui_CadastrarAnimal(object):
             status = self.campoStatus.toPlainText()
             buscarTutor = self.campoBuscarCliente.toPlainText()
 
-            animal = Animal(1, nomeAnimal, raca, sexo, peso,
-                            nascimentoAnimal, buscarTutor)
-            AnimalController.controllerCliente(animal)
+            animal = Animal(1, nomeAnimal, especie, sexo, raca,
+                            peso, nascimentoAnimal, buscarTutor)
+            AnimalController.controllerAnimal(animal)
 
         def remove():
             nomeAnimal = self.campoNomeAnimal.toPlainText()
