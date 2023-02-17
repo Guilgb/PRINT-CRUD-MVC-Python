@@ -260,10 +260,10 @@ color: #000000;</string>
     <widget class="QLabel" name="data">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>200</y>
-       <width>101</width>
-       <height>41</height>
+       <x>10</x>
+       <y>210</y>
+       <width>51</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -289,10 +289,10 @@ color: #000000;</string>
     <widget class="QLabel" name="hora">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>200</y>
+       <x>220</x>
+       <y>210</y>
        <width>81</width>
-       <height>31</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -318,10 +318,10 @@ color: #000000;</string>
     <widget class="QLabel" name="retorno">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>260</y>
-       <width>201</width>
-       <height>31</height>
+       <x>10</x>
+       <y>270</y>
+       <width>121</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -436,7 +436,7 @@ border-radius: 8px;</string>
     <widget class="QTextEdit" name="campoHora">
      <property name="geometry">
       <rect>
-       <x>290</x>
+       <x>280</x>
        <y>200</y>
        <width>101</width>
        <height>41</height>
@@ -456,7 +456,7 @@ border-radius: 8px;</string>
     <widget class="QTextEdit" name="campoRetorno">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>140</x>
        <y>260</y>
        <width>421</width>
        <height>41</height>
@@ -497,9 +497,9 @@ border-radius: 8px;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>140</y>
-       <width>211</width>
-       <height>31</height>
+       <y>150</y>
+       <width>201</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">

@@ -103,7 +103,7 @@ class Ui_Cadastrar(object):
 "color: #000000;")
         self.buscaAnimal.setObjectName("buscaAnimal")
         self.buscaVacina = QtWidgets.QLabel(parent=self.frame)
-        self.buscaVacina.setGeometry(QtCore.QRect(20, 200, 151, 31))
+        self.buscaVacina.setGeometry(QtCore.QRect(10, 210, 151, 16))
         self.buscaVacina.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
@@ -120,7 +120,7 @@ class Ui_Cadastrar(object):
 "color: #000000;")
         self.buscaVacina.setObjectName("buscaVacina")
         self.data = QtWidgets.QLabel(parent=self.frame)
-        self.data.setGeometry(QtCore.QRect(20, 260, 101, 41))
+        self.data.setGeometry(QtCore.QRect(10, 270, 51, 20))
         self.data.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
@@ -137,7 +137,7 @@ class Ui_Cadastrar(object):
 "color: #000000;")
         self.data.setObjectName("data")
         self.hora = QtWidgets.QLabel(parent=self.frame)
-        self.hora.setGeometry(QtCore.QRect(200, 260, 81, 31))
+        self.hora.setGeometry(QtCore.QRect(200, 270, 81, 20))
         self.hora.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
@@ -154,7 +154,7 @@ class Ui_Cadastrar(object):
 "color: #000000;")
         self.hora.setObjectName("hora")
         self.dataProxDose = QtWidgets.QLabel(parent=self.frame)
-        self.dataProxDose.setGeometry(QtCore.QRect(20, 320, 201, 31))
+        self.dataProxDose.setGeometry(QtCore.QRect(20, 330, 201, 16))
         self.dataProxDose.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
@@ -265,7 +265,7 @@ class Ui_Cadastrar(object):
 "border-radius: 8px;")
         self.campoBuscarVeterinario.setObjectName("campoBuscarVeterinario")
         self.buscaVeterinario = QtWidgets.QLabel(parent=self.frame)
-        self.buscaVeterinario.setGeometry(QtCore.QRect(10, 140, 211, 31))
+        self.buscaVeterinario.setGeometry(QtCore.QRect(10, 150, 211, 16))
         self.buscaVeterinario.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
@@ -282,7 +282,7 @@ class Ui_Cadastrar(object):
 "color: #000000;")
         self.buscaVeterinario.setObjectName("buscaVeterinario")
         self.fase = QtWidgets.QLabel(parent=self.frame)
-        self.fase.setGeometry(QtCore.QRect(370, 260, 81, 31))
+        self.fase.setGeometry(QtCore.QRect(370, 271, 81, 20))
         self.fase.setStyleSheet("position: absolute;\n"
 "width: 184px;\n"
 "height: 24px;\n"
