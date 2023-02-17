@@ -44,4 +44,4 @@ clienteControle = ClienteController.deleteClienteController(cliente)
 
 # read = ClienteController.readClienteController(cliente)
 query = ClienteController.readAllClientesController('')
-print(query[1][1])
+print(query[1][0])

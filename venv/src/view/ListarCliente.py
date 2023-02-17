@@ -185,12 +185,12 @@ class Ui_Listar(object):
         row = 0
         while row < tam:
             self.listagemCliente.insertRow(row)
-            idCliente = QTableWidgetItem(query[row][1])
-            nomeCliente = QTableWidgetItem(query[row][2])
+            idCliente = QTableWidgetItem(str(query[row][0]))
+            nomeCliente = QTableWidgetItem(query[row][1])
             nascimentoCliente = QTableWidgetItem(query[row][3])
-            telefoneCliente = QTableWidgetItem(query[row][4])
-            emailCliente = QTableWidgetItem(query[row][5])
-            rua = QTableWidgetItem(query[row][6])
+            telefoneCliente = QTableWidgetItem(query[row][6])
+            emailCliente = QTableWidgetItem(query[row][4])
+            rua = QTableWidgetItem(query[row][5])
             numero = QTableWidgetItem(query[row][7])
             bairrro = QTableWidgetItem(query[row][8])
 
