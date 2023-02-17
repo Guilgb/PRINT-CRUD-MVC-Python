@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
 from src.controller.clienteController import ClienteController
 
 
@@ -176,6 +177,33 @@ class Ui_Listar(object):
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
+
+        query = ClienteController.readAllClientesController('')
+
+        while (self.listagemCliente.rowCount() > 0):
+            self.listagemCliente.removeRow(0)
+        row = 0
+        while row < tam:
+            self.listagemCliente.insertRow(row)
+            idCliente = QTableWidgetItem(query[row][1])
+            nomeCliente = QTableWidgetItem(query[row][2])
+            nascimentoCliente = QTableWidgetItem(query[row][3])
+            telefoneCliente = QTableWidgetItem(query[row][4])
+            emailCliente = QTableWidgetItem(query[row][5])
+            rua = QTableWidgetItem(query[row][6])
+            numero = QTableWidgetItem(query[row][7])
+            bairrro = QTableWidgetItem(query[row][8])
+
+            self.listagemCliente.setItem(row, 0, idCliente)
+            self.listagemCliente.setItem(row, 1, nomeCliente)
+            self.listagemCliente.setItem(row, 2, nascimentoCliente)
+            self.listagemCliente.setItem(row, 3, telefoneCliente)
+            self.listagemCliente.setItem(row, 4, emailCliente)
+            self.listagemCliente.setItem(row, 5, rua)
+            self.listagemCliente.setItem(row, 6, numero)
+            self.listagemCliente.setItem(row, 7, bairrro)
+
+            row = row + 1
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate

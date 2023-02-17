@@ -43,4 +43,5 @@ clienteControle = ClienteController.deleteClienteController(cliente)
 # controlePro = ProntuarioController.controllerProntuario(prontuario)
 
 # read = ClienteController.readClienteController(cliente)
-# print(read)
+query = ClienteController.readAllClientesController('')
+print(query[1][1])
