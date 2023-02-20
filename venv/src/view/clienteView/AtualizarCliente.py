@@ -312,9 +312,9 @@ class Ui_Cadastrar(object):
                                     "\n"
                                     "color: #000000;")
         self.cidade_2.setObjectName("cidade_2")
-        self.btnSalvar = QtWidgets.QPushButton(parent=self.container)
-        self.btnSalvar.setGeometry(QtCore.QRect(30, 480, 141, 61))
-        self.btnSalvar.setStyleSheet("position: absolute;\n"
+        self.btnUpate = QtWidgets.QPushButton(parent=self.container)
+        self.btnUpate.setGeometry(QtCore.QRect(30, 480, 141, 61))
+        self.btnUpate.setStyleSheet("position: absolute;\n"
                                      "width: 251px;\n"
                                      "height: 66px;\n"
                                      "left: 381px;\n"
@@ -331,7 +331,7 @@ class Ui_Cadastrar(object):
                                      "text-align: center;\n"
                                      "\n"
                                      "color: #FFFFFF;")
-        self.btnSalvar.setObjectName("btnSalvar")
+        self.btnUpate.setObjectName("btnSalvar")
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
@@ -353,7 +353,7 @@ class Ui_Cadastrar(object):
         self.bairro.setText(_translate("Cadastrar", "BAIRRO"))
         self.cpf.setText(_translate("Cadastrar", "CPF"))
         self.cidade_2.setText(_translate("Cadastrar", "Nº"))
-        self.btnSalvar.setText(_translate("Cadastrar", "ATUALIZAR"))
+        self.btnUpate.setText(_translate("Cadastrar", "ATUALIZAR"))
 
         def update():
             nomeCliente = self.campoNome.toPlainText()
@@ -364,16 +364,14 @@ class Ui_Cadastrar(object):
             rua = self.campoRua.toPlainText()
             bairro = self.campoBairro.toPlainText()
             cliente = Cliente(1, nomeCliente, cpf, nascimentoCliente,
-                              telefone, email, rua, bairro, 1)
-            ClienteController.controllerCliente(cliente)
+                              telefone, email, rua, bairro, 12)
+            ClienteController.updateClienteController(cliente)
             msg = QMessageBox()
-            # msg.setIcon(QMessageBox.information)
-            msg.setText("Cliente Adicionado")
-            msg.setWindowTitle("Adicionar Cliente")
-            # msg.setStandardButtons(QMessageBox.Ok)
+            msg.setText("Cliente Atualizado")
+            msg.setWindowTitle("Atualizar Cliente")
             msg.exec()
 
-        self.btnSalvar.clicked.connect(update)
+        self.btnUpate.clicked.connect(update)
 
 
 if __name__ == "__main__":

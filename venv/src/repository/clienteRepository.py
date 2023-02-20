@@ -94,7 +94,7 @@ class ClientRepository:
 
             def buscarIdCliente():
                 sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
-                valor = cliente
+                valor = cliente.nomeCliente
                 cursor.execute(sqlBuscarCliente, (valor,))
                 resultadoBusca = cursor.fetchone()
 
