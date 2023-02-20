@@ -29,5 +29,4 @@ class ClienteService:
         ClientRepository.deleteRepositoryCliente(nome)
 
     def updateClienteService(cliente):
-        nome = str(cliente)
-        ClientRepository.updateRepositoryCliente(nome)
+        ClientRepository.updateRepositoryCliente(cliente)

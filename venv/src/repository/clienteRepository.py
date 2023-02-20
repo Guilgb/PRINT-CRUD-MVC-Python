@@ -72,6 +72,7 @@ class ClientRepository:
 
                 for resultado in resultadoBusca:
                     return resultado
+
             clienteId = buscarIdCliente()
 
             sqlDeleteCliente = "delete from cliente where id=%s"
@@ -91,21 +92,24 @@ class ClientRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            def buscarIdCliente():
-                sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
-                valor = cliente
-                cursor.execute(sqlBuscarCliente, (valor,))
-                resultadoBusca = cursor.fetchone()
+            # def buscarIdCliente():
+            #     sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
+            #     valor = cliente
+            #     cursor.execute(sqlBuscarCliente, (valor,))
+            #     resultadoBusca = cursor.fetchone()
 
-                for resultado in resultadoBusca:
-                    return resultado
-            clienteId = buscarIdCliente()
+            #     for resultado in resultadoBusca:
+            #         print(resultado)
+            #         return resultado
+            # clienteId = buscarIdCliente()
 
             sqlDeleteCliente = "update cliente set nome=%s, cpf=%s, nascimento=%s, telefone=%s, email=%s, rua=%s, bairro=%s, numero=%s where id=%s"
-            values = (cliente.nome, cliente.cpf, cliente.nascimento,
-                      cliente.telefone, cliente.email, cliente.rua,
-                      cliente.bairro, clienteId)
-            cursor.execute(sqlDeleteCliente, (values,))
+            # values = (cliente.nome, cliente.cpf, cliente.nascimento,
+            #           cliente.telefone, cliente.email, cliente.rua,
+            #           cliente.bairro, cliente.numero, 43)
+            cursor.execute(sqlDeleteCliente, (cliente.nomeCliente, cliente.cpf, cliente.nascimentoCliente,
+                                              cliente.telefone, cliente.email, cliente.rua,
+                                              cliente.bairro, cliente.n_rua, 43))
             con.commit()
 
         except (Exception, psycopg2.DatabaseError) as error:

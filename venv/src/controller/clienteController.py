@@ -15,5 +15,5 @@ class ClienteController:
     def deleteClienteController(cliente):
         ClienteService.deleteClienteService(cliente)
 
-    def updateClienteController(cliente: Cliente):
-        Cliente.updateClienteService(cliente)
+    def updateClienteController(cliente):
+        ClienteService.updateClienteService(cliente)
