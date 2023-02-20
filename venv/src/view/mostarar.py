@@ -44,4 +44,4 @@ prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
 
 # read = ClienteController.readClienteController(cliente)
 # query = ClienteController.readAllClientesController('')
-ClienteController.updateClienteController(cliente)
+# ClienteController.updateClienteController(cliente)
