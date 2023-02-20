@@ -17,8 +17,8 @@ from src.controller.veterinarioController import VeterinarioController
 cliente = Cliente(1, 'a1', 'cpf9', 'nas8', 'tel8',
                   'mail9', 'rua9', 'num9', '9')
 
-animal = Animal(1, 'Nome Animal', 'especi2', 'sex2',
-                'raa2', 12.4, 'nasciment2', cliente)
+animal = Animal(1, 'ragavan', 'especi2', 'sex2',
+                'raa2', 12.4, 'nasciment2', 'f')
 
 funcionario = Funcionario(1, 'nome', 'nascimento',
                           'email', 'telefone', 'cargo')
@@ -43,5 +43,8 @@ prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
 # controlePro = ProntuarioController.controllerProntuario(prontuario)
 
 # read = ClienteController.readClienteController(cliente)
-# query = ClienteController.readAllClientesController('')
-# ClienteController.updateClienteController(cliente)
+# query = ClienteController.readAllClientesController('')S
+# AnimalController.controllerAnimal(animal)
+# AnimalController.updateControllerAnimal(animal)
+# AnimalController.controllerAnimal(animal)
+# AnimalController.deleteControllerAnimal(animal)

@@ -9,7 +9,6 @@ from src.model.cliente import Cliente
 from src.controller.clienteController import ClienteController
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMessageBox
-from src.view.ListarCliente import Ui_Listar
 
 
 class Ui_Cadastrar(object):

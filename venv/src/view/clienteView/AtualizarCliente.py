@@ -344,7 +344,7 @@ class Ui_Cadastrar(object):
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
         self.btnAgendar.setText(_translate("Cadastrar", "AGENDAR"))
         self.btnProntuario.setText(_translate("Cadastrar", "PRONTUÁRIO"))
-        self.txtCadastrar.setText(_translate("Cadastrar", "Cadastrar Cliente"))
+        self.txtCadastrar.setText(_translate("Cadastrar", "Atualizar Cliente"))
         self.nome.setText(_translate("Cadastrar", "NOME DO CLIENTE"))
         self.nascimento.setText(_translate("Cadastrar", "NASCIMENTO"))
         self.telefone.setText(_translate("Cadastrar", "TELEFONE"))

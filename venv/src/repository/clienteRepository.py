@@ -66,7 +66,7 @@ class ClientRepository:
 
             def buscarIdCliente():
                 sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
-                valor = cliente
+                valor = cliente.nome
                 cursor.execute(sqlBuscarCliente, (valor,))
                 resultadoBusca = cursor.fetchone()
 
@@ -99,14 +99,13 @@ class ClientRepository:
                 resultadoBusca = cursor.fetchone()
 
                 for resultado in resultadoBusca:
-                    print(resultado)
                     return resultado
             clienteId = buscarIdCliente()
 
-            sqlDeleteCliente = "update cliente set nome=%s, cpf=%s, nascimento=%s, telefone=%s, email=%s, rua=%s, bairro=%s, numero=%s where id=%s"
-            cursor.execute(sqlDeleteCliente, (cliente.nomeCliente, cliente.cpf, cliente.nascimentoCliente,
-                                              cliente.telefone, cliente.email, cliente.rua,
-                                              cliente.bairro, cliente.n_rua, clienteId))
+            sqlUpateCliente = "update cliente set nome=%s, cpf=%s, nascimento=%s, telefone=%s, email=%s, rua=%s, bairro=%s, numero=%s where id=%s"
+            cursor.execute(sqlUpateCliente, (cliente.nomeCliente, cliente.cpf, cliente.nascimentoCliente,
+                                             cliente.telefone, cliente.email, cliente.rua,
+                                             cliente.bairro, cliente.n_rua, clienteId))
             con.commit()
 
         except (Exception, psycopg2.DatabaseError) as error:

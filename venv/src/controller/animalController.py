@@ -6,11 +6,11 @@ class AnimalController:
     def controllerAnimal(animal: Animal):
         AnimalService.serviceAnimal(animal)
 
-    def readControllerAimal(animal: Animal):
-        AnimalService.readServiceAnimal(animal)
+    def readControllerAimal(self):
+        return AnimalService.readServiceAnimal('')
 
-    def deleteControllerAnimal(animal: Animal):
+    def deleteControllerAnimal(animal):
         AnimalService.deleServiceAnimal(animal)
 
-    def updateControllerAnimal(animal: Animal):
+    def updateControllerAnimal(animal):
         AnimalService.updateServiceAnimal(animal)

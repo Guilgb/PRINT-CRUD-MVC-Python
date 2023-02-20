@@ -14,22 +14,11 @@ class AnimalService:
         AnimalRepository.repositoryAnimal(
             nomeAnimal, especie, sexo, raca, peso, nascimento, cliente)
 
-    def readServiceAnimal(animal):
-        id = int(animal.id)
-        AnimalRepository.readRepositoryAnimal(id)
+    def readServiceAnimal(self):
+        return AnimalRepository.readRepositoryAnimal('')
 
     def deleServiceAnimal(animal):
-        id = int(animal.id)
-        AnimalRepository.deleteRepositoryAnimal(id)
+        AnimalRepository.deleteRepositoryAnimal(animal)
 
     def updateServiceAnimal(animal):
-        id = int(animal.id)
-        nomeAnimal = str(animal.nomeAnimal)
-        especie = str(animal.especie)
-        sexo = str(animal.sexo)
-        raca = str(animal.raca)
-        peso = float(animal.peso)
-        nascimento = str(animal.nascimento)
-        cliente = str(animal.cliente)
-        AnimalRepository.updateRepositoryAnimal(
-            id, nomeAnimal, especie, sexo, raca, peso, nascimento, cliente)
+        AnimalRepository.updateRepositoryAnimal(animal)

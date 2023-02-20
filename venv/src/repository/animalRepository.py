@@ -29,18 +29,15 @@ class AnimalRepository:
             if con is not None:
                 con.close()
 
-    def readRepositoryAnimal(animalId):
+    def readRepositoryAnimal(self):
         try:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            sqlReadAnimal = "select * from animal "
+            sqlReadAnimal = "select * from animal"
             cursor.execute(sqlReadAnimal)
             resultadoReadAnimal = cursor.fetchall()
-
-            for readAnimal in resultadoReadAnimal:
-                print(readAnimal)
-                return readAnimal
+            return resultadoReadAnimal
 
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
@@ -54,9 +51,20 @@ class AnimalRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            sqlReadAnimal = "delete from animal where nome=%s "
-            valor = animal
-            cursor.execute(sqlReadAnimal, (valor,))
+            def buscarIdAnimal():
+                sqlBuscarAnimal = "SELECT id FROM animal WHERE nome = %s"
+                valor = animal.nomeAnimal
+                cursor.execute(sqlBuscarAnimal, (valor,))
+                resultadoBusca = cursor.fetchone()
+
+                for resultado in resultadoBusca:
+                    return resultado
+
+            animalId = buscarIdAnimal()
+
+            sqlDeleteAnimal = "delete from animal where id=%s"
+            value = animalId
+            cursor.execute(sqlDeleteAnimal, (value,))
             con.commit()
 
         except (Exception, psycopg2.DatabaseError) as error:
@@ -66,22 +74,35 @@ class AnimalRepository:
             if con is not None:
                 con.close()
 
-    def updateRepositoryAnimal(id, nomeAnimal, especie, sexo, raca, peso, nascimento, cliente):
+    def updateRepositoryAnimal(animal):
         try:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            def BuscarAnimalid():
-                sqlBuscarId = 'select id from animal where nome=%s'
-                value = nomeAnimal
-                cursor.execute(sqlBuscarId, (value,))
-                dados = cursor.fetchone()
+            def buscarIdCliente():
+                sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
+                valor = animal.cliente
+                cursor.execute(sqlBuscarCliente, (valor,))
+                resultadoBusca = cursor.fetchone()
 
-                for dado in dados:
-                    return dado
+                for resultado in resultadoBusca:
+                    return resultado
+            clienteId = buscarIdCliente()
 
-            idAnimal = BuscarAnimalid()
-            
+            def buscarIdAnimal():
+                sqlBuscarAnimal = "SELECT id FROM animal WHERE nome = %s"
+                valor = animal.nomeAnimal
+                cursor.execute(sqlBuscarAnimal, (valor,))
+                resultadoBusca = cursor.fetchone()
+                for resultado in resultadoBusca:
+                    return resultado
+            animalId = buscarIdAnimal()
+
+            sqlDeleteAnimal = "update animal set nome=%s, especie=%s, sexo=%s, raca=%s, peso=%s, nascimento=%s, clienteid=%s where id=%s"
+            cursor.execute(sqlDeleteAnimal, (animal.nomeAnimal, animal.especie,
+                           animal.sexo, animal.raca, animal.peso, animal.nascimento, clienteId, animalId))
+            con.commit()
+
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
 
