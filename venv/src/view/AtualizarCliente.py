@@ -355,7 +355,7 @@ class Ui_Cadastrar(object):
         self.cidade_2.setText(_translate("Cadastrar", "Nº"))
         self.btnSalvar.setText(_translate("Cadastrar", "ATUALIZAR"))
 
-        def insert(self):
+        def insert():
             nomeCliente = self.campoNome.toPlainText()
             cpf = self.campoCPF.toPlainText()
             nascimentoCliente = self.campoNascimento.toPlainText()
@@ -365,7 +365,7 @@ class Ui_Cadastrar(object):
             bairro = self.campoBairro.toPlainText()
             cliente = Cliente(1, nomeCliente, cpf, nascimentoCliente,
                               telefone, email, rua, bairro, 1)
-            ClienteController.updateClienteController(cliente)
+            ClienteController.controllerCliente(cliente)
             msg = QMessageBox()
             # msg.setIcon(QMessageBox.information)
             msg.setText("Cliente Adicionado")
