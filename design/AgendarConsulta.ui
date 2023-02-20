@@ -584,7 +584,7 @@ text-align: center;
 color: #FFFFFF;</string>
     </property>
     <property name="text">
-     <string>BUSCAR</string>
+     <string>AGENDAR</string>
     </property>
    </widget>
   </widget>

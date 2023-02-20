@@ -87,4 +87,30 @@ class ClientRepository:
                 con.close()
 
     def updateRepositoryCliente(cliente):
-        pass
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            def buscarIdCliente():
+                sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
+                valor = cliente
+                cursor.execute(sqlBuscarCliente, (valor,))
+                resultadoBusca = cursor.fetchone()
+
+                for resultado in resultadoBusca:
+                    return resultado
+            clienteId = buscarIdCliente()
+
+            sqlDeleteCliente = "update cliente set nome=%s, cpf=%s, nascimento=%s, telefone=%s, email=%s, rua=%s, bairro=%s, numero=%s where id=%s"
+            values = (cliente.nome, cliente.cpf, cliente.nascimento,
+                      cliente.telefone, cliente.email, cliente.rua,
+                      cliente.bairro, clienteId)
+            cursor.execute(sqlDeleteCliente, (values,))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()
