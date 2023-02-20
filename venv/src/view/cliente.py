@@ -8,6 +8,8 @@
 from src.model.cliente import Cliente
 from src.controller.clienteController import ClienteController
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import QMessageBox
+from src.view.ListarCliente import Ui_Listar
 
 
 class Ui_Cadastrar(object):
@@ -330,26 +332,6 @@ class Ui_Cadastrar(object):
                                      "\n"
                                      "color: #FFFFFF;")
         self.btnSalvar.setObjectName("btnSalvar")
-        self.btnRemover = QtWidgets.QPushButton(parent=self.container)
-        self.btnRemover.setGeometry(QtCore.QRect(180, 480, 141, 61))
-        self.btnRemover.setStyleSheet("position: absolute;\n"
-                                      "width: 251px;\n"
-                                      "height: 66px;\n"
-                                      "left: 381px;\n"
-                                      "top: 884px;\n"
-                                      "\n"
-                                      "background: #D69188;\n"
-                                      "border-radius: 27px;\n"
-                                      "\n"
-                                      "font-family: \'Inter\';\n"
-                                      "font-style: normal;\n"
-                                      "font-weight: 700;\n"
-                                      "font-size: 20px;\n"
-                                      "line-height: 24px;\n"
-                                      "text-align: center;\n"
-                                      "\n"
-                                      "color: #FFFFFF;")
-        self.btnRemover.setObjectName("btnRemover")
         self.btnListar = QtWidgets.QPushButton(parent=self.container)
         self.btnListar.setGeometry(QtCore.QRect(510, 480, 141, 61))
         self.btnListar.setStyleSheet("position: absolute;\n"
@@ -392,7 +374,6 @@ class Ui_Cadastrar(object):
         self.cpf.setText(_translate("Cadastrar", "CPF"))
         self.cidade_2.setText(_translate("Cadastrar", "Nº"))
         self.btnSalvar.setText(_translate("Cadastrar", "SALVAR"))
-        self.btnRemover.setText(_translate("Cadastrar", "REMOVER"))
         self.btnListar.setText(_translate("Cadastrar", "Listar"))
 
         def insert():
@@ -406,26 +387,15 @@ class Ui_Cadastrar(object):
             cliente = Cliente(1, nomeCliente, cpf, nascimentoCliente,
                               telefone, email, rua, bairro, 1)
             ClienteController.controllerCliente(cliente)
-
-        def remove():
-            nomeCliente = self.campoNome.toPlainText()
-            cpf = self.campoCPF.toPlainText()
-            nascimentoCliente = self.campoNascimento.toPlainText()
-            telefone = self.campoTelefone.toPlainText()
-            email = self.campoTelefone.toPlainText()
-            rua = self.campoRua.toPlainText()
-            bairro = self.campoBairro.toPlainText()
-            cliente = Cliente(1, nomeCliente, cpf, nascimentoCliente,
-                              telefone, email, rua, bairro, 1)
-
-            ClienteController.deleteClienteController(cliente)
-
-        def read():
-            ClienteController.readClienteController()
+            msg = QMessageBox()
+            # msg.setIcon(QMessageBox.information)
+            msg.setText("Cliente Adicionado")
+            msg.setWindowTitle("Adicionar Cliente")
+            # msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec()
 
         self.btnSalvar.clicked.connect(insert)
-        self.btnRemover.clicked.connect(remove)
-        self.btnListar.clicked.connect(read)
+        # self.btnListar.clicked.connect('')
 
 
 if __name__ == "__main__":

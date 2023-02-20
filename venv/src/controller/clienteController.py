@@ -12,7 +12,7 @@ class ClienteController:
     def readAllClientesController(self):
         return ClienteService.readAllClientesService('')
 
-    def deleteClienteController(cliente: Cliente):
+    def deleteClienteController(cliente):
         ClienteService.deleteClienteService(cliente)
 
     def updateClienteController(cliente: Cliente):

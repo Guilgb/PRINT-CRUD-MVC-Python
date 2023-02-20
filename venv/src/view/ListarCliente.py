@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 from src.controller.clienteController import ClienteController
 
 
@@ -204,6 +204,21 @@ class Ui_Listar(object):
             self.listagemCliente.setItem(row, 7, bairrro)
 
             row = row + 1
+
+        def ExcluirCliente():
+            linha = self.listagemCliente.currentIndex().row()
+            nomeCliente = self.listagemCliente.item(linha, 1).text()
+            self.listagemCliente.removeRow(linha)
+            ClienteController.deleteClienteController(nomeCliente)
+
+            msg = QMessageBox()
+            # msg.setIcon(QMessageBox.information)
+            msg.setText("Cliente Excluido")
+            msg.setWindowTitle("Excluir Cliente")
+            # msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec()
+
+        self.btnRemover.clicked.connect(ExcluirCliente)
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
