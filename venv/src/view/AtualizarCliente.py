@@ -355,7 +355,7 @@ class Ui_Cadastrar(object):
         self.cidade_2.setText(_translate("Cadastrar", "Nº"))
         self.btnSalvar.setText(_translate("Cadastrar", "ATUALIZAR"))
 
-        def insert():
+        def update():
             nomeCliente = self.campoNome.toPlainText()
             cpf = self.campoCPF.toPlainText()
             nascimentoCliente = self.campoNascimento.toPlainText()
@@ -373,7 +373,7 @@ class Ui_Cadastrar(object):
             # msg.setStandardButtons(QMessageBox.Ok)
             msg.exec()
 
-        self.btnSalvar.clicked.connect(insert)
+        self.btnSalvar.clicked.connect(update)
 
 
 if __name__ == "__main__":
