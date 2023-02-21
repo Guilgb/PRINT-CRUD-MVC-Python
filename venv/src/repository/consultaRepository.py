@@ -30,7 +30,7 @@ class ConsultaRepository:
 
             sql = "insert into agendamento(data, horario, pagamento, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s, %s)"
             valores = (dataConsulta, horarioConsulta, pagamento,
-                       observacao, funcionarioId, animalId)
+                       observacao, animalId, funcionarioId)
             cursor.execute(sql, valores)
             con.commit()
 
@@ -40,19 +40,16 @@ class ConsultaRepository:
             if con is not None:
                 con.close()
 
-    def readConsultaRepository(animal):
+    def readConsultaRepository(self):
         con = Conexao.getConnection('')
         cursor = con.cursor()
 
         try:
-            sqlReadRepository = "select from agendamento where id=%s"
-            valor = animal
-            cursor.execute(sqlReadRepository, (valor,))
+            sqlReadRepository = "select * from agendamento"
+            cursor.execute(sqlReadRepository)
             readConsulta = cursor.fetchall()
+            return readConsulta
 
-            for consulta in readConsulta:
-                print(consulta)
-                return consulta
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:
@@ -65,7 +62,7 @@ class ConsultaRepository:
 
         try:
             sqlDeleteConsulta = "delete from agendamento where id=%s"
-            valor = consulta
+            valor = consulta.idConsulta
             cursor.execute(sqlDeleteConsulta, (valor,))
             con.commit()
 
@@ -75,13 +72,35 @@ class ConsultaRepository:
             if con is not None:
                 con.close()
 
-    def UpdateConsultaRepository(animal):
-        con = Conexao.getConnection('')
-        cursor = con.cursor()
+    def UpdateConsultaRepository(consulta):
 
         try:
-            pass
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
 
+            def buscarIdAnimal():
+                sqlBuscarAnimal = "SELECT id FROM animal WHERE nome = %s"
+                valor = consulta.animal
+                cursor.execute(sqlBuscarAnimal, (valor,))
+                resultadoBusca = cursor.fetchone()
+
+                for resultado in resultadoBusca:
+                    return resultado
+            AnimalId = buscarIdAnimal()
+
+            def buscarIdFuncionario():
+                sqlBuscarFuncionario = "SELECT id FROM funcionario WHERE nome = %s"
+                valor = consulta.nomeAnimal
+                cursor.execute(sqlBuscarFuncionario, (valor,))
+                resultadoBusca = cursor.fetchone()
+
+                for resultado in resultadoBusca:
+                    return resultado
+            FuncionarioId = buscarIdFuncionario()
+
+            sqlUpdateConsulta = "update consulta set data=%s, horario=%s, pagamento=%s, observação=%s, animalid=%s, funcionarioid=%s"
+            cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, consulta.horario,
+                           consulta.horario, consulta.pagamento, consulta.observacao, AnimalId, FuncionarioId))
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:

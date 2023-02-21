@@ -9,8 +9,8 @@ class ConsultaService:
         horarioConsulta = str(consulta.horario)
         pagamento = str(consulta.pagamento)
         observacao = str(consulta.observacao)
-        animal = str(consulta.animal.nomeAnimal)
-        funcionario = str(consulta.funcionario.nomeFuncionario)
+        animal = str(consulta.animal)
+        funcionario = str(consulta.funcionario)
 
         paraData = datetime.strptime(horarioConsulta, "%d-%b-%Y-%H:%M:%S")
 
@@ -27,4 +27,4 @@ class ConsultaService:
         ConsultaRepository.deleteConsultaRepository(idConsulta)
 
     def updateConsultaService(consulta):
-        pass
+        ConsultaRepository.UpdateConsultaRepository(consulta)

@@ -6,11 +6,11 @@ class ConsultaController:
     def controllerConsulta(agendamento: Consulta):
         ConsultaService.serviceConsulta(agendamento)
 
-    def readConsultaController(consulta: Consulta):
+    def readConsultaController(consulta):
         ConsultaService.readConsultaService(consulta)
 
-    def deleteConsultaController(consulta: Consulta):
+    def deleteConsultaController(consulta):
         ConsultaService.deleteConsultaService(consulta)
 
-    def updateConsultaController(consulta: Consulta):
+    def updateConsultaController(consulta):
         ConsultaService.updateConsultaService(consulta)

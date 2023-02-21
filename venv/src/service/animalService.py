@@ -4,7 +4,7 @@ from src.repository.animalRepository import AnimalRepository
 class AnimalService:
 
     def serviceAnimal(animal):
-        nomeAnimal = str(animal.nomeAnimal)
+        nomeAnimal = str(animal.animal)
         especie = str(animal.especie)
         sexo = str(animal.sexo)
         raca = str(animal.raca)
