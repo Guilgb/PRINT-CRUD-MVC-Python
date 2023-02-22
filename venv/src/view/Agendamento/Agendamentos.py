@@ -180,13 +180,13 @@ class Ui_Cadastrar(object):
         row = 0
         while row < tam:
             self.listagemAgendamentos.insertRow(row)
-            idAnimal = QTableWidgetItem(str(query[row][0]))
-            nomeAnimal = QTableWidgetItem(query[row][1])
-            idade = QTableWidgetItem(query[row][6])
-            sexo = QTableWidgetItem(query[row][3])
-            raca = QTableWidgetItem(query[row][4])
-            peso = QTableWidgetItem(query[row][5])
-            dono = QTableWidgetItem(query[row][7])
+            idAnimal = QTableWidgetItem(str(readConsulta[row][0]))
+            nomeAnimal = QTableWidgetItem(readConsulta[row][1])
+            idade = QTableWidgetItem(readConsulta[row][6])
+            sexo = QTableWidgetItem(readConsulta[row][3])
+            raca = QTableWidgetItem(readConsulta[row][4])
+            peso = QTableWidgetItem(readConsulta[row][5])
+            dono = QTableWidgetItem(readConsulta[row][7])
 
             self.listagemAgendamentos.setItem(row, 0, idAnimal)
             self.listagemAgendamentos.setItem(row, 1, nomeAnimal)

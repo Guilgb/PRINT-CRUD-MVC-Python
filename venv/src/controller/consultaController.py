@@ -6,8 +6,8 @@ class ConsultaController:
     def controllerConsulta(agendamento: Consulta):
         ConsultaService.serviceConsulta(agendamento)
 
-    def readConsultaController(consulta):
-        ConsultaService.readConsultaService(consulta)
+    def readConsultaController(self):
+        return ConsultaService.readConsultaService(self)
 
     def deleteConsultaController(consulta):
         ConsultaService.deleteConsultaService(consulta)
