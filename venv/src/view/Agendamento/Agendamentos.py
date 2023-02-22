@@ -106,8 +106,8 @@ class Ui_Cadastrar(object):
                                                 "\n"
                                                 "color: black;")
         self.listagemAgendamentos.setObjectName("listagemCliente")
-        readConsulta = ConsultaController.readConsultaController('')
-        tam = readConsulta.__len__()
+        readConsuta = ConsultaController.readConsultaController('')
+        tam = readConsuta.__len__()
         self.listagemAgendamentos.setColumnCount(7)
         self.listagemAgendamentos.setRowCount(tam)
         item = QtWidgets.QTableWidgetItem()
@@ -175,29 +175,43 @@ class Ui_Cadastrar(object):
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
+        query = ConsultaController.readConsultaController('')
         while (self.listagemAgendamentos.rowCount() > 0):
-            self.listagemAgendamentos.removeRow(tam)
+            self.listagemAgendamentos.removeRow(0)
         row = 0
         while row < tam:
             self.listagemAgendamentos.insertRow(row)
-            idAnimal = QTableWidgetItem(str(readConsulta[row][0]))
-            nomeAnimal = QTableWidgetItem(readConsulta[row][1])
-            idade = QTableWidgetItem(readConsulta[row][6])
-            sexo = QTableWidgetItem(readConsulta[row][3])
-            raca = QTableWidgetItem(readConsulta[row][4])
-            peso = QTableWidgetItem(readConsulta[row][5])
-            dono = QTableWidgetItem(readConsulta[row][7])
+            id = QTableWidgetItem(str(query[row][0]))
+            data = QTableWidgetItem(str(query[row][1]))
+            horario = QTableWidgetItem(str(query[row][2]))
+            pagamento = QTableWidgetItem(query[row][3])
+            obs = QTableWidgetItem(str(query[row][4]))
+            idAnimal = QTableWidgetItem(str(query[row][5]))
+            idFuncionario = QTableWidgetItem(str(query[row][6]))
 
-            self.listagemAgendamentos.setItem(row, 0, idAnimal)
-            self.listagemAgendamentos.setItem(row, 1, nomeAnimal)
-            self.listagemAgendamentos.setItem(row, 2, idade)
-            self.listagemAgendamentos.setItem(row, 3, sexo)
-            self.listagemAgendamentos.setItem(row, 4, raca)
-            self.listagemAgendamentos.setItem(row, 5, peso)
-            self.listagemAgendamentos.setItem(row, 6, especie)
-            self.listagemAgendamentos.setItem(row, 7, dono)
+            self.listagemAgendamentos.setItem(row, 0, id)
+            self.listagemAgendamentos.setItem(row, 1, data)
+            self.listagemAgendamentos.setItem(row, 2, horario)
+            self.listagemAgendamentos.setItem(row, 3, pagamento)
+            self.listagemAgendamentos.setItem(row, 4, obs)
+            self.listagemAgendamentos.setItem(row, 5, idAnimal)
+            self.listagemAgendamentos.setItem(row, 6, idFuncionario)
 
             row = row + 1
+
+        def ExcluirAgenda():
+            linha = self.listagemAgendamentos.currentIndex().row()
+            id = self.listagemAgendamentos.item(linha, 0).text()
+            self.listagemAgendamentos.removeRow(linha)
+            ConsultaController.deleteConsultaController(id)
+
+            msg = QMessageBox()
+            # msg.setIcon(QMessageBox.information)
+            msg.setText("Agendamento Excluido")
+            msg.setWindowTitle("Agendamento")
+            # msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec()
+        self.btnRemover.clicked.connect(ExcluirAgenda)
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
