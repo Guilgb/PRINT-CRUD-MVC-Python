@@ -1,4 +1,5 @@
 from src.config.database import Conexao, psycopg2
+from datetime import datetime
 
 
 class ConsultaRepository:
@@ -41,10 +42,10 @@ class ConsultaRepository:
                 con.close()
 
     def readConsultaRepository(self):
-        con = Conexao.getConnection('')
-        cursor = con.cursor()
 
         try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
             sqlReadRepository = "select * from agendamento"
             cursor.execute(sqlReadRepository)
             readConsulta = cursor.fetchall()
@@ -84,23 +85,25 @@ class ConsultaRepository:
                 cursor.execute(sqlBuscarAnimal, (valor,))
                 resultadoBusca = cursor.fetchone()
 
-                for resultado in resultadoBusca:
-                    return resultado
+                for resultadoAni in resultadoBusca:
+                    return resultadoAni
             AnimalId = buscarIdAnimal()
 
             def buscarIdFuncionario():
                 sqlBuscarFuncionario = "SELECT id FROM funcionario WHERE nome = %s"
-                valor = consulta.nomeAnimal
+                valor = consulta.funcionario
                 cursor.execute(sqlBuscarFuncionario, (valor,))
                 resultadoBusca = cursor.fetchone()
 
-                for resultado in resultadoBusca:
-                    return resultado
-            FuncionarioId = buscarIdFuncionario()
+                for resultadoFun in resultadoBusca:
+                    return resultadoFun
 
-            sqlUpdateConsulta = "update consulta set data=%s, horario=%s, pagamento=%s, observação=%s, animalid=%s, funcionarioid=%s"
-            cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, consulta.horario,
-                           consulta.horario, consulta.pagamento, consulta.observacao, AnimalId, FuncionarioId))
+            FuncionarioId = buscarIdFuncionario()
+            sqlUpdateConsulta = "update agendamento set data=%s, horario=%s, pagamento=%s, observação=%s, animalid=%s, funcionarioid=%s"
+            hora = datetime.strptime(consulta.horario, "%d-%b-%Y-%H:%M:%S")
+
+            cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, hora,
+                           consulta.pagamento, consulta.observacao, AnimalId, FuncionarioId))
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:

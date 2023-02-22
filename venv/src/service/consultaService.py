@@ -18,13 +18,11 @@ class ConsultaService:
             idConsulta, dataConsulta, paraData, pagamento, observacao,
             animal, funcionario)
 
-    def readConsultaService(consulta):
-        idConsulta = int(consulta.idConsulta)
-        ConsultaRepository.readConsultaRepository(idConsulta)
+    def readConsultaService(self):
+        return ConsultaRepository.readConsultaRepository(self)
 
     def deleteConsultaService(consulta):
-        idConsulta = int(consulta.idConsulta)
-        ConsultaRepository.deleteConsultaRepository(idConsulta)
+        ConsultaRepository.deleteConsultaRepository(consulta)
 
     def updateConsultaService(consulta):
         ConsultaRepository.UpdateConsultaRepository(consulta)

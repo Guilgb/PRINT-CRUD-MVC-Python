@@ -23,8 +23,8 @@ from src.controller.veterinarioController import VeterinarioController
 # funcionario = Funcionario(1, 'nome', 'nascimento',
 #                           'email', 'telefone', 'cargo')
 
-consulta = Consulta(1, 'data', '30-May-2020-15:59:02', 'pagamento',
-                    'obs', 'ragavan', 'nome')
+consulta = Consulta(5, 'data1', '30-May-2020-15:59:02', 'pag1a',
+                    'obs11', 'ragavan', 'nome')
 
 # vacina = Vacina(1, 'nomeVacina', 'fabricante', 'vlidade', 'volume')
 
@@ -32,12 +32,5 @@ consulta = Consulta(1, 'data', '30-May-2020-15:59:02', 'pagamento',
 
 # prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
 #                         animal, vaterinario, vacina)
-
-# clienteControle = ClienteController.deleteClienteController(cliente)
-# animalController = AnimalController.controllerAnimal(animal)
-# funcionarioController = FuncionarioController.controllerFuncionario(
-#     funcionario)
-ConsultaController.controllerConsulta(consulta)
-# vacinaControlle = VacinaController.controllerVacina(vacina)
-# veterinarioCont = VeterinarioController.controllerVeterinario(vaterinario)
-# controlePro = ProntuarioController.controllerProntuario(prontuario)
+a = ConsultaController.readConsultaController('')
+print(a)
