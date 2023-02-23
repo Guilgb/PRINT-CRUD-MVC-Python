@@ -9,10 +9,9 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from src.model.animal import Animal
 from src.controller.animalController import AnimalController
+
 from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
-
-
-class Ui_Cadastrar(object):
+class AtualizarAnimal(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
         Cadastrar.resize(900, 600)
@@ -426,7 +425,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Cadastrar = QtWidgets.QWidget()
-    ui = Ui_Cadastrar()
+    ui = AtualizarAnimal()
     ui.setupUi(Cadastrar)
     Cadastrar.show()
     sys.exit(app.exec())

@@ -10,6 +10,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMessageBox
 from src.model.animal import Animal
 from src.controller.animalController import AnimalController
+from src.view.main import Botoes
 
 
 class Ui_Cadastrar(object):
@@ -443,6 +444,7 @@ class Ui_Cadastrar(object):
             msg.exec()
 
         self.btnSalvar.clicked.connect(insert)
+        self.btnAtualizar.clicked.connect(Botoes.ListarAnimal_Click)
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 from src.controller.animalController import AnimalController
 
 
-class Ui_Cadastrar(object):
+class ListarAnimais(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
         Cadastrar.resize(900, 600)
@@ -255,7 +255,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Cadastrar = QtWidgets.QWidget()
-    ui = Ui_Cadastrar()
+    ui = ListarAnimais()
     ui.setupUi(Cadastrar)
     Cadastrar.show()
     sys.exit(app.exec())
