@@ -444,7 +444,7 @@ class Ui_Cadastrar(object):
             msg.exec()
 
         self.btnSalvar.clicked.connect(insert)
-        self.btnAtualizar.clicked.connect(Botoes.ListarAnimal_Click)
+        self.btnAtualizar.clicked.connect(self.ListarAnimal_Click())
 
 
 if __name__ == "__main__":
