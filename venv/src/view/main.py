@@ -27,11 +27,11 @@ class Botoes(object):
     #     print("Abrindo aluguel...")
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Cadastrar = QtWidgets.QWidget()
-    ui = Botoes()
-    ui.setupUi(Cadastrar)
-    Cadastrar.show()
-    sys.exit(app.exec())
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     Cadastrar = QtWidgets.QWidget()
+#     ui = Botoes()
+#     ui.setupUi(Cadastrar)
+#     Cadastrar.show()
+#     sys.exit(app.exec())
