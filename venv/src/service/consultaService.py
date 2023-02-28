@@ -11,10 +11,6 @@ class ConsultaService:
         observacao = str(consulta.observacao)
         animal = str(consulta.animal)
         funcionario = str(consulta.funcionario)
-
-        # paraData = datetime.strptime(
-        #     consulta.horarioConsulta, "%d-%b-%Y-%H:%M:%S")
-
         ConsultaRepository.repositoryConsulta(
             idConsulta, dataConsulta, horarioConsulta, pagamento, observacao,
             animal, funcionario)
