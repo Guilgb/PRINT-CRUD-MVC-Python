@@ -12,10 +12,11 @@ class ConsultaService:
         animal = str(consulta.animal)
         funcionario = str(consulta.funcionario)
 
-        paraData = datetime.strptime(horarioConsulta, "%d-%b-%Y-%H:%M:%S")
+        # paraData = datetime.strptime(
+        #     consulta.horarioConsulta, "%d-%b-%Y-%H:%M:%S")
 
         ConsultaRepository.repositoryConsulta(
-            idConsulta, dataConsulta, paraData, pagamento, observacao,
+            idConsulta, dataConsulta, horarioConsulta, pagamento, observacao,
             animal, funcionario)
 
     def readConsultaService(self):
