@@ -233,8 +233,8 @@ class ListarVaxina(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Cadastrar = QtWidgets.QWidget()
+    FrameListarVaxina = QtWidgets.QWidget()
     ui = ListarVaxina()
-    ui.setupUi(Cadastrar)
-    Cadastrar.show()
+    ui.setupUi(FrameListarVaxina)
+    FrameListarVaxina.show()
     sys.exit(app.exec_())

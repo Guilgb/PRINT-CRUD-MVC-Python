@@ -208,7 +208,8 @@ class ListarAnimais(object):
 
         def ExcluirAnimal():
             linha = self.listagemAnimal.currentIndex().row()
-            nomeAnimal = self.listagemAnimal.item(linha, 1).text()
+            nomeAnimal = self.listagemAnimal.item(linha, 0).text()
+            print(nomeAnimal)
             self.listagemAnimal.removeRow(linha)
             AnimalController.deleteControllerAnimal(nomeAnimal)
 

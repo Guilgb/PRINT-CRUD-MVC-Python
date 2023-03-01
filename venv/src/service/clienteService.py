@@ -25,8 +25,7 @@ class ClienteService:
         return ClientRepository.readAllClientesRepository('')
 
     def deleteClienteService(cliente):
-        nome = str(cliente)
-        ClientRepository.deleteRepositoryCliente(nome)
+        ClientRepository.deleteRepositoryCliente(cliente)
 
     def updateClienteService(cliente):
         ClientRepository.updateRepositoryCliente(cliente)

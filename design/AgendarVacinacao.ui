@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Cadastrar</class>
- <widget class="QWidget" name="Cadastrar">
+ <class>CadastrarVacina</class>
+ <widget class="QWidget" name="CadastrarVacina">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -233,7 +233,7 @@ color: white;
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>171</width>
+       <width>151</width>
        <height>21</height>
       </rect>
      </property>
@@ -320,7 +320,7 @@ color: #000000;</string>
       <rect>
        <x>200</x>
        <y>270</y>
-       <width>81</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -378,7 +378,7 @@ color: #000000;</string>
       <rect>
        <x>10</x>
        <y>90</y>
-       <width>161</width>
+       <width>151</width>
        <height>21</height>
       </rect>
      </property>
@@ -547,7 +547,7 @@ border-radius: 8px;</string>
       <rect>
        <x>10</x>
        <y>150</y>
-       <width>211</width>
+       <width>201</width>
        <height>16</height>
       </rect>
      </property>
@@ -576,7 +576,7 @@ color: #000000;</string>
       <rect>
        <x>370</x>
        <y>271</y>
-       <width>81</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -682,7 +682,7 @@ text-align: center;
 color: #FFFFFF;</string>
     </property>
     <property name="text">
-     <string>Listar</string>
+     <string>LISTAR</string>
     </property>
    </widget>
   </widget>

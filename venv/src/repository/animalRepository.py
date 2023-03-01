@@ -50,20 +50,8 @@ class AnimalRepository:
         try:
             con = Conexao.getConnection('')
             cursor = con.cursor()
-
-            def buscarIdAnimal():
-                sqlBuscarAnimal = "SELECT id FROM animal WHERE nome = %s"
-                valor = animal.nomeAnimal
-                cursor.execute(sqlBuscarAnimal, (valor,))
-                resultadoBusca = cursor.fetchone()
-
-                for resultado in resultadoBusca:
-                    return resultado
-
-            animalId = buscarIdAnimal()
-
             sqlDeleteAnimal = "delete from animal where id=%s"
-            value = animalId
+            value = animal
             cursor.execute(sqlDeleteAnimal, (value,))
             con.commit()
 

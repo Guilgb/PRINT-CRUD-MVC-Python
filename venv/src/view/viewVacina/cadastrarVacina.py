@@ -296,8 +296,8 @@ class Ui_Cadastrar(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Cadastrar = QtWidgets.QWidget()
+    FrameCadastrarVaxina = QtWidgets.QWidget()
     ui = Ui_Cadastrar()
-    ui.setupUi(Cadastrar)
-    Cadastrar.show()
+    ui.setupUi(FrameCadastrarVaxina)
+    FrameCadastrarVaxina.show()
     sys.exit(app.exec_())
