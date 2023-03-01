@@ -9,6 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+from src.model.vacina import Vacina
+from src.controller.vacinaController import VacinaController
 
 
 class AtualizarVaxina(object):
@@ -254,6 +257,22 @@ class AtualizarVaxina(object):
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
+
+        def update():
+            nomeVacina = self.campoNomeVacina.toPlainText()
+            validade = self.campoValidade.toPlainText()
+            fabricante = self.campoFabricante.toPlainText()
+            volume = self.campoVolume.toPlainText()
+
+            vaxina = Vacina(1, nomeVacina, fabricante, validade, volume)
+            VacinaController.updateVacinaController(vaxina)
+
+            msg = QMessageBox()
+            msg.setText("Vaxina Atualizada")
+            msg.setWindowTitle("Atualizar Vaxina")
+            msg.exec()
+
+        self.btnAtualizar.clicked.connect(update)
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate

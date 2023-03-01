@@ -21,4 +21,4 @@ class VacinaService:
         VacinaRepository.deleteVacinaRepository(vacina)
 
     def updateVacinaService(vacina):
-        pass
+        VacinaRepository.updateVacinaRepository(vacina)

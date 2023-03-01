@@ -95,7 +95,7 @@ class VacinaRepository:
             vacinaId = buscarIdVacina()
 
             sqlUpateVacina = "update vacina set nome=%s, validade=%s, fabricante=%s, volume=%s where id=%s"
-            cursor.execute(sqlUpateVacina, (vacina.nome,
+            cursor.execute(sqlUpateVacina, (vacina.nomeVacina,
                            vacina.validade, vacina.fabricante, vacina.volume, vacinaId))
             con.commit()
 
