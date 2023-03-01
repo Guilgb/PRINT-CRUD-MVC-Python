@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
 
-class Ui_Cadastrar(object):
+class CadastrarCliente(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
         Cadastrar.resize(900, 566)
@@ -400,7 +400,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Cadastrar = QtWidgets.QWidget()
-    ui = Ui_Cadastrar()
+    ui = CadastrarCliente()
     ui.setupUi(Cadastrar)
     Cadastrar.show()
     sys.exit(app.exec())

@@ -1,5 +1,6 @@
 class Vacina:
-    def __init__(self, idVacina: int, nomeVacina: str, fabricante: str, validade: str, volume: str):
+    def __init__(self, idVacina: int, nomeVacina: str, fabricante: str, 
+                 validade: str, volume: str):
         self.__idVacina = idVacina
         self.__nomeVacina = nomeVacina
         self.__fabricante = fabricante
@@ -11,7 +12,7 @@ class Vacina:
         return self.__idVacina
 
     @idVacina.setter
-    def idVacina(self, id):
+    def idVacina(self, idVacina):
         self.__idVacina = idVacina
 
     @property

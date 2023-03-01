@@ -24,15 +24,31 @@ class VacinaRepository:
 
         try:
             sqlReadVacina = "select from vacina where id=%s"
-            valor = vacina
+            valor = vacina.idVacina
             cursor.execute(sqlReadVacina, (valor,))
             readVacina = cursor.fetchall()
 
-            for vacina in readVacina:
-                print(vacina)
-                return vacina
+            for vacinas in readVacina:
+                return vacinas
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
+        finally:
+            if con is not None:
+                con.close()
+
+    def readAllRepositoryVacina(vacinaId):
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            sqlReadVacina = "select * from vacina"
+            cursor.execute(sqlReadVacina)
+            resultadoReadCliente = cursor.fetchall()
+            return resultadoReadCliente
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
         finally:
             if con is not None:
                 con.close()
@@ -42,8 +58,17 @@ class VacinaRepository:
         cursor = con.cursor()
 
         try:
+            def buscarIdVacina():
+                sqlBuscarCliente = "SELECT id FROM vacina WHERE nome = %s"
+                valor = vacina.nomeVacina
+                cursor.execute(sqlBuscarCliente, (valor,))
+                resultadoBusca = cursor.fetchone()
+
+                for resultado in resultadoBusca:
+                    return resultado
+
             sqlDeleteVacina = "delete from vacina where id=%s"
-            valor = vacina
+            valor = buscarIdVacina()
             cursor.execute(sqlDeleteVacina, (valor,))
             con.commit()
 
@@ -54,4 +79,29 @@ class VacinaRepository:
                 con.close()
 
     def updateVacinaRepository(vacina):
-        pass
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            def buscarIdVacina():
+                sqlBuscarCliente = "SELECT id FROM vacina WHERE nome = %s"
+                valor = vacina.nomeVacina
+                cursor.execute(sqlBuscarCliente, (valor,))
+                resultadoBusca = cursor.fetchone()
+
+                for resultado in resultadoBusca:
+                    return resultado
+
+            vacinaId = buscarIdVacina()
+
+            sqlUpateVacina = "update vacina set nome=%s, validade=%s, fabricante=%s, volume=%s where id=%s"
+            cursor.execute(sqlUpateVacina, (vacina.nome,
+                           vacina.validade, vacina.fabricante, vacina.volume, vacinaId))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()

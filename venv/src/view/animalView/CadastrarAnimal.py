@@ -13,6 +13,7 @@ from src.controller.animalController import AnimalController
 from src.view.animalView.ListagemAnimais import ListarAnimais
 
 
+
 class CadastrarAnimais(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
@@ -445,20 +446,21 @@ class CadastrarAnimais(object):
 
         self.btnSalvar.clicked.connect(insert)
 
+        def ListarAnimal_Click():
+            frmAnimal = QtWidgets.QMainWindow()
+            frmAnimal.setWindowFlags(frmAnimal.windowFlags())
+            ui = ListarAnimais()
+            ui.setupUi(frmAnimal)
+            frmAnimal.show()
+            
         self.btnAtualizar.clicked.connect(ListarAnimal_Click)
-
-
-def ListarAnimal_Click():
-    frmAnimal = QMainWindow()
-    ui = ListarAnimais()
-    ui.setupUi(frmAnimal)
-    frmAnimal.show()
+        
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Cadastrar = QtWidgets.QWidget()
+    Cadastrar = QtWidgets.QMainWindow()
     ui = CadastrarAnimais()
     ui.setupUi(Cadastrar)
     Cadastrar.show()

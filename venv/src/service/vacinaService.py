@@ -12,12 +12,13 @@ class VacinaService:
             idVacina, nomeVacina, fabricanteVacina, validade, volume)
 
     def readVacinaService(vacina):
-        idVacina = int(vacina.idVacina)
-        VacinaRepository.readVacinaRepository(idVacina)
+        VacinaRepository.readVacinaRepository()
+
+    def readAllVacinaSerice(self):
+        return VacinaRepository.readAllRepositoryVacina('')
 
     def deleteProntuarioService(vacina):
-        idVacina = int(vacina.idVacina)
-        VacinaRepository.deleteVacinaRepository(idVacina)
+        VacinaRepository.deleteVacinaRepository(vacina)
 
     def updateVacinaService(vacina):
         pass
