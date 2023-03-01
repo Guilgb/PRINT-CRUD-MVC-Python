@@ -284,8 +284,8 @@ class Ui_Cadastrar(object):
             ConsultaController.controllerConsulta(consulta)
             msg = QMessageBox()
             # msg.setIcon(QMessageBox.information)
-            msg.setText("Cliente Adicionado")
-            msg.setWindowTitle("Adicionar Cliente")
+            msg.setText("Agendamento Finalizado")
+            msg.setWindowTitle("Adicionar Agendamento")
             # msg.setStandardButtons(QMessageBox.Ok)
             msg.exec()
 

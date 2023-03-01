@@ -4,11 +4,11 @@ from src.repository.animalRepository import AnimalRepository
 class AnimalService:
 
     def serviceAnimal(animal):
-        nomeAnimal = str(animal.animal)
+        nomeAnimal = str(animal.nomeAnimal)
         especie = str(animal.especie)
         sexo = str(animal.sexo)
         raca = str(animal.raca)
-        peso = float(animal.peso)
+        peso = animal.peso
         nascimento = str(animal.nascimento)
         cliente = str(animal.cliente)
         AnimalRepository.repositoryAnimal(
