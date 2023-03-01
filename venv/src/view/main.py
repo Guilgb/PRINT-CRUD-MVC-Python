@@ -1,5 +1,5 @@
-from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from src.view.animalView.AtualizarAnimal import AtualizarAnimal
 from src.view.animalView.ListagemAnimais import ListarAnimais
 import sys
