@@ -283,12 +283,12 @@ class Ui_Cadastrar(object):
                                               "background: #D9D9D9;\n"
                                               "border-radius: 8px;")
         self.campoBuscarCliente.setObjectName("campoBuscarCliente")
-        self.campoSexo = QtWidgets.QTextEdit(self.frame)
-        self.campoSexo.setGeometry(QtCore.QRect(380, 120, 221, 41))
+        self.campoTipo = QtWidgets.QTextEdit(self.frame)
+        self.campoTipo.setGeometry(QtCore.QRect(380, 120, 221, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
-        self.campoSexo.setFont(font)
-        self.campoSexo.setStyleSheet("position: absolute;\n"
+        self.campoTipo.setFont(font)
+        self.campoTipo.setStyleSheet("position: absolute;\n"
                                      "width: 692px;\n"
                                      "height: 51px;\n"
                                      "left: 625px;\n"
@@ -296,7 +296,7 @@ class Ui_Cadastrar(object):
                                      "\n"
                                      "background: #D9D9D9;\n"
                                      "border-radius: 8px;")
-        self.campoSexo.setObjectName("campoSexo")
+        self.campoTipo.setObjectName("campoSexo")
         self.sexo = QtWidgets.QLabel(self.frame)
         self.sexo.setGeometry(QtCore.QRect(320, 130, 51, 21))
         self.sexo.setStyleSheet("position: absolute;\n"
@@ -422,7 +422,7 @@ class Ui_Cadastrar(object):
             peso = self.PesoBox.value()
             sexo = self.comboBox.currentText()
             raca = self.campoRaca.toPlainText()
-            tipo = self.campoSexo.toPlainText()
+            tipo = self.campoTipo.toPlainText()
             porte = self.campoPorte.toPlainText()
             status = self.campoStatus.toPlainText()
             racao = self.campoRacao.toPlainText()
