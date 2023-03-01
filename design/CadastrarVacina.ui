@@ -260,7 +260,7 @@ color: #000000;</string>
     <widget class="QLabel" name="validade">
      <property name="geometry">
       <rect>
-       <x>340</x>
+       <x>355</x>
        <y>80</y>
        <width>91</width>
        <height>20</height>
@@ -343,34 +343,9 @@ border-radius: 8px;</string>
     <widget class="QTextEdit" name="campoVolume">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>120</x>
        <y>120</y>
        <width>181</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
-
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="campoValidade">
-     <property name="geometry">
-      <rect>
-       <x>440</x>
-       <y>70</y>
-       <width>161</width>
        <height>41</height>
       </rect>
      </property>
@@ -442,6 +417,21 @@ top: 264px;
 
 background: #D9D9D9;
 border-radius: 8px;</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="dateEdit">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>70</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
     </widget>
    </widget>
