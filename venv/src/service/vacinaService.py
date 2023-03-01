@@ -17,7 +17,7 @@ class VacinaService:
     def readAllVacinaSerice(self):
         return VacinaRepository.readAllRepositoryVacina('')
 
-    def deleteProntuarioService(vacina):
+    def deleteVacinaService(vacina):
         VacinaRepository.deleteVacinaRepository(vacina)
 
     def updateVacinaService(vacina):

@@ -6,8 +6,11 @@ class VacinaController:
     def controllerVacina(vacina: Vacina):
         VacinaService.serviceVacina(vacina)
 
-    def readVacinaontroller(self):
-        return VacinaService.readVacinaService('')
+    def readVacinaontroller(vacina):
+        VacinaService.readVacinaService(vacina)
+
+    def readAllVacinaController(self):
+        return VacinaService.readAllVacinaSerice('')
 
     def deleteVacinaController(vacina):
         VacinaService.deleteVacinaService(vacina)
