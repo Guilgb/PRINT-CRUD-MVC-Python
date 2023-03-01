@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from src.controller.vacinaController import VacinaController
 from src.model.vacina import Vacina
+from src.view.viewVacina.ListaVaxina import ListarVaxina
 from PyQt5.QtWidgets import QMessageBox
 
 
@@ -274,7 +275,14 @@ class Ui_Cadastrar(object):
             # msg.setStandardButtons(QMessageBox.Ok)
             msg.exec()
 
+        def ListVaxina():
+            FrameListarVaxina = QtWidgets.QMainWindow()
+            uiList = ListarVaxina()
+            uiList.setupUi(FrameListarVaxina)
+            FrameListarVaxina.show()
+
         self.btnSalvar.clicked.connect(insert)
+        self.btnListar.clicked.connect(ListVaxina)
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
@@ -296,8 +304,8 @@ class Ui_Cadastrar(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    FrameCadastrarVaxina = QtWidgets.QWidget()
+    form = QtWidgets.QWidget()
     ui = Ui_Cadastrar()
-    ui.setupUi(FrameCadastrarVaxina)
-    FrameCadastrarVaxina.show()
+    ui.setupUi(form)
+    form.show()
     sys.exit(app.exec_())
