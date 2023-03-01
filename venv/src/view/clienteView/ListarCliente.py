@@ -207,7 +207,7 @@ class ListarCliente(object):
 
         def ExcluirCliente():
             linha = self.listagemCliente.currentIndex().row()
-            nomeCliente = self.listagemCliente.item(linha, 1).text()
+            nomeCliente = self.listagemCliente.item(linha, 0).text()
             self.listagemCliente.removeRow(linha)
             ClienteController.deleteClienteController(nomeCliente)
 

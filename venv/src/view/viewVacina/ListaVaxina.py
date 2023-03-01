@@ -195,7 +195,7 @@ class ListarVaxina(object):
 
         def ExcluirVaxina():
             linha = self.ListagemVaxina.currentIndex().row()
-            nomeVaxina = self.ListagemVaxina.item(linha, 1).text()
+            nomeVaxina = self.ListagemVaxina.item(linha, 0).text()
             self.ListagemVaxina.removeRow(linha)
             VacinaController.deleteVacinaController(nomeVaxina)
 

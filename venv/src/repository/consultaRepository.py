@@ -63,7 +63,7 @@ class ConsultaRepository:
 
         try:
             sqlDeleteConsulta = "delete from agendamento where id=%s"
-            valor = consulta.idConsulta
+            valor = consulta
             cursor.execute(sqlDeleteConsulta, (valor,))
             con.commit()
 

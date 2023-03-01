@@ -193,7 +193,7 @@ class Ui_CadastrarCliente(object):
                                   "color: #000000;")
         self.bairro.setObjectName("bairro")
         self.cpf = QtWidgets.QLabel(self.frame)
-        self.cpf.setGeometry(QtCore.QRect(410, 90, 41, 21))
+        self.cpf.setGeometry(QtCore.QRect(375, 90, 41, 21))
         self.cpf.setStyleSheet("position: absolute;\n"
                                "width: 184px;\n"
                                "height: 24px;\n"
@@ -224,7 +224,7 @@ class Ui_CadastrarCliente(object):
                                      "border-radius: 8px;")
         self.campoNome.setObjectName("campoNome")
         self.campoCPF = QtWidgets.QTextEdit(self.frame)
-        self.campoCPF.setGeometry(QtCore.QRect(450, 80, 151, 41))
+        self.campoCPF.setGeometry(QtCore.QRect(420, 80, 180, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.campoCPF.setFont(font)
@@ -327,8 +327,7 @@ class Ui_CadastrarCliente(object):
         self.dateEdit = QtWidgets.QDateEdit(self.frame)
         self.dateEdit.setGeometry(QtCore.QRect(240, 80, 121, 41))
         font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
+        font.setPointSize(10)
         font.setWeight(75)
         self.dateEdit.setFont(font)
         self.dateEdit.setMouseTracking(False)

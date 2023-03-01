@@ -32,5 +32,6 @@ consulta = Consulta(5, 'data1', '30-May-2020-15:59:02', 'pag1a',
 
 # prontuario = Prontuario(1, 'S', 'P', 'E', 'Data', 'R',
 #                         animal, vaterinario, vacina)
-a = ConsultaController.readConsultaController('')
-print(a)
+# a = ConsultaController.readConsultaController('')
+# print(a)
+

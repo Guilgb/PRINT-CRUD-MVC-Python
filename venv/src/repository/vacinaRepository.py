@@ -58,17 +58,8 @@ class VacinaRepository:
         cursor = con.cursor()
 
         try:
-            def buscarIdVacina():
-                sqlBuscarCliente = "SELECT id FROM vacina WHERE nome = %s"
-                valor = vacina.nomeVacina
-                cursor.execute(sqlBuscarCliente, (valor,))
-                resultadoBusca = cursor.fetchone()
-
-                for resultado in resultadoBusca:
-                    return resultado
-
             sqlDeleteVacina = "delete from vacina where id=%s"
-            valor = buscarIdVacina()
+            valor = vacina
             cursor.execute(sqlDeleteVacina, (valor,))
             con.commit()
 
