@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from src.controller.consultaController import ConsultaController
 from src.model.consulta import Consulta
+from src.view.Agendamento.Agendamentos import ListaConsultas
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 
 
@@ -294,6 +295,13 @@ class Ui_AgendarConsulta(object):
             msg.exec()
 
         self.btnSalvar.clicked.connect(insert)
+        self.btnListar.clicked.connect(self.Listar_consulta)
+
+    def Listar_consulta(self):
+        self.janela_listar_consulta = QtWidgets.QMainWindow()
+        self.consultaJanela = ListaConsultas()
+        self.consultaJanela.setupUi(self.janela_listar_consulta)
+        self.janela_listar_consulta.show()
 
     def retranslateUi(self, AgendarConsulta):
         _translate = QtCore.QCoreApplication.translate

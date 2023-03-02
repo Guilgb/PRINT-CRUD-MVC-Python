@@ -380,6 +380,9 @@ class Ui_AtualizarCliente(object):
         QtCore.QMetaObject.connectSlotsByName(CadastrarCliente)
 
         def update():
+            clienteid = ListarCliente()
+
+            print(clienteid)
             nomeCliente = self.campoNome.toPlainText()
             cpf = self.campoCPF.toPlainText()
             nascimento = self.dateEdit.date().toPyDate()
@@ -387,7 +390,7 @@ class Ui_AtualizarCliente(object):
             email = self.campoTelefone.toPlainText()
             rua = self.campoRua.toPlainText()
             bairro = self.campoBairro.toPlainText()
-            cliente = Cliente(1, nomeCliente, cpf, nascimento,
+            cliente = Cliente(clienteid, nomeCliente, cpf, nascimento,
                               telefone, email, rua, bairro, 12)
             ClienteController.updateClienteController(cliente)
             msg = QMessageBox()
