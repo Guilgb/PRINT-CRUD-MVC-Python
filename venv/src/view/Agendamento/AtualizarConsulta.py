@@ -281,16 +281,17 @@ class Ui_AtualizarConsulta(object):
         dataConsulta = self.dateEdit.date().toPyDate()
         horario = self.timeEdit.dateTime().toPyDateTime()
         horarioFinal1 = str(horario)
-        ano = horarioFinal1[0:4]
-        dia = horarioFinal1[5:7]
-        mes = horarioFinal1[8:10]
-        anoCom = dia + '-' + mes + '-' + ano + '-00:00:00'
+        # ano = horarioFinal1[0:4]
+        # dia = horarioFinal1[5:7]
+        # mes = horarioFinal1[8:10]
+        # anoCom = dia + '-' + mes + '-' + ano + '-00:00:00'
+        # a = str(anoCom)
         observacao = self.campoRetorno
         animal = self.campoBuscarAnimal
         funcionario = self.campoBuscarAnimal
 
         consulta = Consulta(self.consultaId, dataConsulta,
-                            anoCom, observacao, animal, funcionario)
+                            horarioFinal1, observacao, animal, funcionario)
 
         ConsultaController.updateConsultaController(consulta)
         msg = QMessageBox()

@@ -29,7 +29,7 @@ class ConsultaRepository:
             animalId = BuscarIdAnimal()
             funcionarioId = buscarIdFuncionario()
 
-            sql = "insert into agendamento(data, horario, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s)"
+            sql = "insert into agendamento(diaAgendamento, momentoAgendamento, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s)"
             valores = (dataConsulta, horarioConsulta,
                        observacao, animalId, funcionarioId)
             cursor.execute(sql, valores)
@@ -79,10 +79,9 @@ class ConsultaRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            sqlUpdateConsulta = "update agendamento set data=%s, horario=%s, observação=%s, animalid=%s, funcionarioid=%s"
-            hora = datetime.strptime(consulta.horario, "%d-%b-%Y-%H:%M:%S")
+            sqlUpdateConsulta = "update agendamento set dataAgendamento=%s, horarioAgendamento=%s, observação=%s, animalid=%s, funcionarioid=%s"
 
-            cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, hora,
+            cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, consulta.horario,
                                                consulta.observacao, consulta.animal, consulta.funcionario))
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
