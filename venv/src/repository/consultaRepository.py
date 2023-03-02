@@ -79,7 +79,7 @@ class ConsultaRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            sqlUpdateConsulta = "update agendamento set dataAgendamento=%s, horarioAgendamento=%s, observação=%s, animalid=%s, funcionarioid=%s"
+            sqlUpdateConsulta = "update agendamento set dia=%s, momento=%s, observação=%s, animalid=%s, funcionarioid=%s"
 
             cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, consulta.horario,
                                                consulta.observacao, consulta.animal, consulta.funcionario))
