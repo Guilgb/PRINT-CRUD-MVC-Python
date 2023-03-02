@@ -10,6 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from src.controller.vacinaController import VacinaController
 from src.model.vacina import Vacina
+from src.view.viewVacina.ListaVaxina import ListarVaxina
 from PyQt5.QtWidgets import QMessageBox
 
 
@@ -266,6 +267,13 @@ class CadastrarVacina(object):
             msg.exec()
 
         self.btnSalvar.clicked.connect(insert)
+        self.btnListar.clicked.connect(self.Lista_vacina)
+
+    def Lista_vacina(self):
+        self.janela_listar_vacina = QtWidgets.QMainWindow()
+        self.vacinaJanela = ListarVaxina()
+        self.vacinaJanela.setupUi(self.janela_listar_vacina)
+        self.janela_listar_vacina.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate

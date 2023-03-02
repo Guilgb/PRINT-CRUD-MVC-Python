@@ -228,13 +228,3 @@ class ListarVaxina(object):
         item.setText(_translate("Cadastrar", "VOLUME"))
         self.btnAtualizar.setText(_translate("Cadastrar", "ATUALIZAR"))
         self.btnRemover.setText(_translate("Cadastrar", "REMOVER"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    FrameListarVaxina = QtWidgets.QWidget()
-    ui = ListarVaxina()
-    ui.setupUi(FrameListarVaxina)
-    FrameListarVaxina.show()
-    sys.exit(app.exec_())

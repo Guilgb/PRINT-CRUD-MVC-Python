@@ -1,28 +1,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from src.view.animalView.CadastrarAnimal import CadastrarAnimais
-from src.view.animalView.ListagemAnimais import ListarAnimais
+from src.view.viewVacina.cadastrarVacina import CRUDVacina
 import sys
 
 
 class Botoes(object):
-    def Animal_Click():
-        app = QtWidgets.QApplication(sys.argv)
-        frmAnimal = QtWidgets.QMainWindow()
-        ui = CadastrarAnimais()
-        ui.setupUi(frmAnimal)
-        frmAnimal.show()
-        sys.exit(app.exec())
-
-    def ListarAnimal_Click():
-        a = CadastrarAnimais()
-        app = QtWidgets.QApplication(sys.argv)
-        frmAnimal = QtWidgets.QMainWindow()
-        frmAnimal.setWindowFlags(frmAnimal.windowFlags())
-        ui = ListarAnimais()
-        ui.setupUi(frmAnimal)
-        frmAnimal.show()
-        sys.exit(app.exec())
+    def Listavacina(self):
+        self.janela_vacina = QtWidgets.QMainWindow()
+        self.vacinaJanela = CRUDVacina()
+        self.vacinaJanela.setupUi(self.janela_vacina)
+        self.janela_vacina.show()
 
 
-Botoes.Animal_Click()
+Botoes.vacina('')
