@@ -11,7 +11,6 @@
 from src.model.cliente import Cliente
 from src.controller.clienteController import ClienteController
 from PyQt5 import QtCore, QtGui, QtWidgets
-from src.view.clienteView.ListarCliente import ListarCliente
 from src.view.animalView.CadastrarAnimal import CadastrarAnimal
 from src.view.Agendamento.AgendarConsulta import Ui_AgendarConsulta
 from PyQt5.QtWidgets import QMessageBox
@@ -335,26 +334,6 @@ class Ui_AtualizarCliente(object):
         self.dateEdit.setFont(font)
         self.dateEdit.setMouseTracking(False)
         self.dateEdit.setObjectName("dateEdit")
-        self.btnListar = QtWidgets.QPushButton(self.container)
-        self.btnListar.setGeometry(QtCore.QRect(510, 480, 141, 61))
-        self.btnListar.setStyleSheet("position: absolute;\n"
-                                     "width: 251px;\n"
-                                     "height: 66px;\n"
-                                     "left: 381px;\n"
-                                     "top: 884px;\n"
-                                     "\n"
-                                     "background: #304456;\n"
-                                     "border-radius: 27px;\n"
-                                     "\n"
-                                     "font-family: \'Inter\';\n"
-                                     "font-style: normal;\n"
-                                     "font-weight: 700;\n"
-                                     "font-size: 20px;\n"
-                                     "line-height: 24px;\n"
-                                     "text-align: center;\n"
-                                     "\n"
-                                     "color: #FFFFFF;")
-        self.btnListar.setObjectName("btnAtualizar")
         self.btnAtualizar = QtWidgets.QPushButton(self.container)
         self.btnAtualizar.setGeometry(QtCore.QRect(30, 480, 141, 61))
         self.btnAtualizar.setStyleSheet("position: absolute;\n"
@@ -378,11 +357,11 @@ class Ui_AtualizarCliente(object):
 
         self.retranslateUi(CadastrarCliente)
         QtCore.QMetaObject.connectSlotsByName(CadastrarCliente)
+        # print(self.recebeid)
 
         def update():
-            clienteid = ListarCliente()
-
-            print(clienteid)
+            self.idcampo
+            print(self.idcampo)
             nomeCliente = self.campoNome.toPlainText()
             cpf = self.campoCPF.toPlainText()
             nascimento = self.dateEdit.date().toPyDate()
@@ -390,7 +369,7 @@ class Ui_AtualizarCliente(object):
             email = self.campoTelefone.toPlainText()
             rua = self.campoRua.toPlainText()
             bairro = self.campoBairro.toPlainText()
-            cliente = Cliente(clienteid, nomeCliente, cpf, nascimento,
+            cliente = Cliente(self.idcampo, nomeCliente, cpf, nascimento,
                               telefone, email, rua, bairro, 12)
             ClienteController.updateClienteController(cliente)
             msg = QMessageBox()
@@ -399,9 +378,11 @@ class Ui_AtualizarCliente(object):
             msg.exec()
 
         self.btnAtualizar.clicked.connect(update)
-        self.btnListar.clicked.connect(self.ListarClientes)
         self.btnCadastrar.clicked.connect(self.CadastroAnimais)
         self.btnAgendar.clicked.connect(self.CadastroAgendamentos)
+
+    def recebeid(self, id: int):
+        return id
 
     def CadastroAnimais(self):
         self.janela_listar_animais = QtWidgets.QMainWindow()
@@ -414,12 +395,6 @@ class Ui_AtualizarCliente(object):
         self.agendamento_janela = Ui_AgendarConsulta()
         self.agendamento_janela.setupUi(self.janela_agendamentos)
         self.janela_agendamentos.show()
-
-    def ListarClientes(self):
-        self.janela_listar_vacina = QtWidgets.QMainWindow()
-        self.vacinaJanela = ListarCliente()
-        self.vacinaJanela.setupUi(self.janela_listar_vacina)
-        self.janela_listar_vacina.show()
 
     def retranslateUi(self, CadastrarCliente):
         _translate = QtCore.QCoreApplication.translate
@@ -445,7 +420,6 @@ class Ui_AtualizarCliente(object):
         self.cpf.setText(_translate("CadastrarCliente", "CPF"))
         self.btnAtualizar.setText(_translate("CadastrarCliente", "ATUALIZAR"))
         self.cidade_2.setText(_translate("CadastrarCliente", "Nº"))
-        self.btnListar.setText(_translate("CadastrarCliente", "LISTAR"))
 
 
 if __name__ == "__main__":

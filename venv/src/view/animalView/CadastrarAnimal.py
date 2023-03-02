@@ -13,7 +13,6 @@ from PyQt5.QtCore import pyqtRemoveInputHook
 from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 from src.model.animal import Animal
 from src.controller.animalController import AnimalController
-from src.view.clienteView.ListarCliente import ListarCliente
 from src.view.animalView.ListagemAnimais import ListarAnimais
 
 
@@ -448,12 +447,6 @@ class CadastrarAnimal(object):
         self.animaisJanela = ListarAnimais()
         self.animaisJanela.setupUi(self.janela_listar_animais)
         self.janela_listar_animais.show()
-
-    def Listar_clientes(self):
-        self.janela_listar_vacina = QtWidgets.QMainWindow()
-        self.vacinaJanela = ListarCliente()
-        self.vacinaJanela.setupUi(self.janela_listar_vacina)
-        self.janela_listar_vacina.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate

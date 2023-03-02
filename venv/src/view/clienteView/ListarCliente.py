@@ -8,8 +8,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
-from src.view.clienteView.AtualizarCliente import Ui_AtualizarCliente
 from src.controller.clienteController import ClienteController
+from src.view.clienteView.AtualizarCliente import Ui_AtualizarCliente
 
 
 class ListarCliente(object):
@@ -222,13 +222,13 @@ class ListarCliente(object):
         self.btnRemover.clicked.connect(ExcluirCliente)
 
     def AtualizarCliente(self):
-        linha = self.listagemCliente.currentIndex().row()
-        nomeCliente = self.listagemCliente.item(linha, 0).text()
+        self.linha = self.listagemCliente.currentIndex().row()
+        self.idCliente = self.listagemCliente.item(self.linha, 0).text()
         self.janela_atualizar_cliente = QtWidgets.QMainWindow()
         self.atualizar_cliente = Ui_AtualizarCliente()
+        self.atualizar_cliente.idcampo = self.idCliente
         self.atualizar_cliente.setupUi(self.janela_atualizar_cliente)
         self.janela_atualizar_cliente.show()
-        return nomeCliente
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
