@@ -183,11 +183,11 @@ class ListaConsultas(object):
         while row < tam:
             self.listagemAgendamentos.insertRow(row)
             id = QTableWidgetItem(str(query[row][0]))
-            data = QTableWidgetItem(str(query[row][1]))
-            horario = QTableWidgetItem(str(query[row][2]))
-            obs = QTableWidgetItem(str(query[row][3]))
-            idAnimal = QTableWidgetItem(str(query[row][4]))
-            idFuncionario = QTableWidgetItem(str(query[row][5]))
+            data = QTableWidgetItem(str(query[row][4]))
+            horario = QTableWidgetItem(str(query[row][5]))
+            obs = QTableWidgetItem(str(query[row][1]))
+            idAnimal = QTableWidgetItem(str(query[row][2]))
+            idFuncionario = QTableWidgetItem(str(query[row][3]))
 
             self.listagemAgendamentos.setItem(row, 0, id)
             self.listagemAgendamentos.setItem(row, 1, data)

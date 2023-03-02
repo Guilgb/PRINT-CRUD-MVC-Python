@@ -29,7 +29,7 @@ class ConsultaRepository:
             animalId = BuscarIdAnimal()
             funcionarioId = buscarIdFuncionario()
 
-            sql = "insert into agendamento(diaAgendamento, momentoAgendamento, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s)"
+            sql = "insert into agendamento(dia, momento, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s)"
             valores = (dataConsulta, horarioConsulta,
                        observacao, animalId, funcionarioId)
             cursor.execute(sql, valores)
