@@ -9,6 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from src.controller.vacinaController import VacinaController
+from src.view.viewVacina.ListaVaxina import ListarVaxina
 from src.model.vacina import Vacina
 from PyQt5.QtWidgets import QMessageBox
 
@@ -264,6 +265,13 @@ class AtualizarVacina(object):
             msg.exec()
 
         self.btnAtualizar.clicked.connect(update)
+        self.btnListar.clicked.connect(self.Lista_vacina)
+
+    def Lista_vacina(self):
+        self.janela_listar_vacina = QtWidgets.QMainWindow()
+        self.vacinaJanela = ListarVaxina()
+        self.vacinaJanela.setupUi(self.janela_listar_vacina)
+        self.janela_listar_vacina.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
@@ -273,7 +281,7 @@ class AtualizarVacina(object):
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
         self.btnAgendar.setText(_translate("Cadastrar", "AGENDAR"))
         self.btnProntuario.setText(_translate("Cadastrar", "PRONTUÁRIO"))
-        self.txtCadastrar.setText(_translate("Cadastrar", "Cadastrar Vacina"))
+        self.txtCadastrar.setText(_translate("Cadastrar", "Atualizar Vacinas"))
         self.nomeVacina.setText(_translate("Cadastrar", "NOME DA VACINA"))
         self.validade.setText(_translate("Cadastrar", "VALIDADE"))
         self.dataFabricacao.setText(_translate("Cadastrar", "VOLUME"))

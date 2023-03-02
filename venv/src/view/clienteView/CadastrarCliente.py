@@ -10,6 +10,9 @@
 
 from src.model.cliente import Cliente
 from src.controller.clienteController import ClienteController
+from src.view.clienteView.ListarCliente import ListarCliente
+from src.view.animalView.CadastrarAnimal import CadastrarAnimal
+from src.view.Agendamento.AgendarConsulta import Ui_AgendarConsulta
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
@@ -352,26 +355,26 @@ class Ui_CadastrarCliente(object):
                                      "\n"
                                      "color: #FFFFFF;")
         self.btnSalvar.setObjectName("btnSalvar")
-        self.btnAtualizar = QtWidgets.QPushButton(self.container)
-        self.btnAtualizar.setGeometry(QtCore.QRect(510, 480, 141, 61))
-        self.btnAtualizar.setStyleSheet("position: absolute;\n"
-                                        "width: 251px;\n"
-                                        "height: 66px;\n"
-                                        "left: 381px;\n"
-                                        "top: 884px;\n"
-                                        "\n"
-                                        "background: #304456;\n"
-                                        "border-radius: 27px;\n"
-                                        "\n"
-                                        "font-family: \'Inter\';\n"
-                                        "font-style: normal;\n"
-                                        "font-weight: 700;\n"
-                                        "font-size: 20px;\n"
-                                        "line-height: 24px;\n"
-                                        "text-align: center;\n"
-                                        "\n"
-                                        "color: #FFFFFF;")
-        self.btnAtualizar.setObjectName("btnAtualizar")
+        self.btnListar = QtWidgets.QPushButton(self.container)
+        self.btnListar.setGeometry(QtCore.QRect(510, 480, 141, 61))
+        self.btnListar.setStyleSheet("position: absolute;\n"
+                                     "width: 251px;\n"
+                                     "height: 66px;\n"
+                                     "left: 381px;\n"
+                                     "top: 884px;\n"
+                                     "\n"
+                                     "background: #304456;\n"
+                                     "border-radius: 27px;\n"
+                                     "\n"
+                                     "font-family: \'Inter\';\n"
+                                     "font-style: normal;\n"
+                                     "font-weight: 700;\n"
+                                     "font-size: 20px;\n"
+                                     "line-height: 24px;\n"
+                                     "text-align: center;\n"
+                                     "\n"
+                                     "color: #FFFFFF;")
+        self.btnListar.setObjectName("btnListar")
 
         self.retranslateUi(CadastrarCliente)
         QtCore.QMetaObject.connectSlotsByName(CadastrarCliente)
@@ -395,13 +398,35 @@ class Ui_CadastrarCliente(object):
             msg.exec()
 
         self.btnSalvar.clicked.connect(insert)
+        self.btnListar.clicked.connect(self.ListarClientes)
+        self.btnCadastrar.clicked.connect(self.CadastroAnimais)
+        self.btnAgendar.clicked.connect(self.CadastroAgendamentos)
+
+    def CadastroAnimais(self):
+        self.janela_listar_animais = QtWidgets.QMainWindow()
+        self.animais_janela = CadastrarAnimal()
+        self.animais_janela.setupUi(self.janela_listar_animais)
+        self.janela_listar_animais.show()
+
+    def CadastroAgendamentos(self):
+        self.janela_agendamentos = QtWidgets.QMainWindow()
+        self.agendamento_janela = Ui_AgendarConsulta()
+        self.agendamento_janela.setupUi(self.janela_agendamentos)
+        self.janela_agendamentos.show()
+
+    def ListarClientes(self):
+        self.janela_listar_vacina = QtWidgets.QMainWindow()
+        self.vacinaJanela = ListarCliente()
+        self.vacinaJanela.setupUi(self.janela_listar_vacina)
+        self.janela_listar_vacina.show()
 
     def retranslateUi(self, CadastrarCliente):
         _translate = QtCore.QCoreApplication.translate
         CadastrarCliente.setWindowTitle(
             _translate("CadastrarCliente", "Cadastrar"))
         self.btnInicio.setText(_translate("CadastrarCliente", "INICIO"))
-        self.btnCadastrar.setText(_translate("CadastrarCliente", "CADASTRAR"))
+        self.btnCadastrar.setText(_translate(
+            "CadastrarCliente", "CADASTRAR ANIMAL"))
         self.healthypets.setText(_translate(
             "CadastrarCliente", "HEALTHY PETS"))
         self.btnAgendar.setText(_translate("CadastrarCliente", "AGENDAR"))
@@ -419,7 +444,7 @@ class Ui_CadastrarCliente(object):
         self.cpf.setText(_translate("CadastrarCliente", "CPF"))
         self.cidade_2.setText(_translate("CadastrarCliente", "Nº"))
         self.btnSalvar.setText(_translate("CadastrarCliente", "SALVAR"))
-        self.btnAtualizar.setText(_translate("CadastrarCliente", "LISTAR"))
+        self.btnListar.setText(_translate("CadastrarCliente", "LISTAR"))
 
 
 if __name__ == "__main__":

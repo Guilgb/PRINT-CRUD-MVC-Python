@@ -16,7 +16,7 @@ from src.controller.animalController import AnimalController
 from src.view.animalView.ListagemAnimais import ListarAnimais
 
 
-class Ui_Cadastrar(object):
+class CadastrarAnimal(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
         Cadastrar.resize(900, 600)
@@ -467,7 +467,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Cadastrar = QtWidgets.QWidget()
-    ui = Ui_Cadastrar()
+    ui = CadastrarAnimal()
     ui.setupUi(Cadastrar)
     Cadastrar.show()
     sys.exit(app.exec_())
