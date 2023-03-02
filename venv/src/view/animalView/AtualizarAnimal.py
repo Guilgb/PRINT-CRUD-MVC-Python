@@ -14,6 +14,7 @@ from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 from src.model.animal import Animal
 from src.controller.animalController import AnimalController
 from src.view.animalView.ListagemAnimais import ListarAnimais
+from src.view.clienteView.ListarCliente import ListarCliente
 
 
 class AtualizarAnimal(object):
@@ -34,12 +35,12 @@ class AtualizarAnimal(object):
         self.btnInicio.setStyleSheet("background-color: rgb(48, 68, 86);\n"
                                      "color: white;")
         self.btnInicio.setObjectName("btnInicio")
-        self.btnCadastrar = QtWidgets.QPushButton(self.navegation)
-        self.btnCadastrar.setGeometry(QtCore.QRect(0, 210, 221, 101))
-        self.btnCadastrar.setAutoFillBackground(False)
-        self.btnCadastrar.setStyleSheet("background-color: rgb(91, 113, 133);\n"
-                                        "color: white;")
-        self.btnCadastrar.setObjectName("btnCadastrar")
+        self.btnListarClientes = QtWidgets.QPushButton(self.navegation)
+        self.btnListarClientes.setGeometry(QtCore.QRect(0, 210, 221, 101))
+        self.btnListarClientes.setAutoFillBackground(False)
+        self.btnListarClientes.setStyleSheet("background-color: rgb(91, 113, 133);\n"
+                                             "color: white;")
+        self.btnListarClientes.setObjectName("btnCadastrar")
         self.healthypets = QtWidgets.QPushButton(self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))
@@ -369,15 +370,35 @@ class AtualizarAnimal(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
 
+        self.btnListar = QtWidgets.QPushButton(self.container)
+        self.btnListar.setGeometry(QtCore.QRect(500, 470, 141, 61))
+        self.btnListar.setStyleSheet("position: absolute;\n"
+                                     "width: 251px;\n"
+                                     "height: 66px;\n"
+                                     "left: 381px;\n"
+                                     "top: 884px;\n"
+                                     "\n"
+                                     "background: #304456;\n"
+                                     "border-radius: 27px;\n"
+                                     "\n"
+                                     "font-family: \'Inter\';\n"
+                                     "font-style: normal;\n"
+                                     "font-weight: 700;\n"
+                                     "font-size: 20px;\n"
+                                     "line-height: 24px;\n"
+                                     "text-align: center;\n"
+                                     "\n"
+                                     "color: #FFFFFF;")
+        self.btnListar.setObjectName("btnListar")
         self.btnAtualizar = QtWidgets.QPushButton(self.container)
-        self.btnAtualizar.setGeometry(QtCore.QRect(500, 470, 141, 61))
+        self.btnAtualizar.setGeometry(QtCore.QRect(20, 470, 141, 61))
         self.btnAtualizar.setStyleSheet("position: absolute;\n"
                                         "width: 251px;\n"
                                         "height: 66px;\n"
                                         "left: 381px;\n"
                                         "top: 884px;\n"
                                         "\n"
-                                        "background: #304456;\n"
+                                        "background-color: rgb(85, 170, 127);\n"
                                         "border-radius: 27px;\n"
                                         "\n"
                                         "font-family: \'Inter\';\n"
@@ -392,10 +413,6 @@ class AtualizarAnimal(object):
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
-        idade = self.idadeBox.value()
-        peso = self.PesoBox.value()
-
-        print(idade, peso)
 
         def update():
             nomeAnimal = self.campoNomeAnimal.toPlainText()
@@ -418,14 +435,29 @@ class AtualizarAnimal(object):
             msg.exec()
 
         self.btnAtualizar.clicked.connect(update)
+        self.btnListarClientes.clicked.connect(self.Listar_clientes)
+        self.btnListar.clicked.connect(self.Listar_Animais)
+
+    def Listar_clientes(self):
+        self.janela_listar_vacina = QtWidgets.QMainWindow()
+        self.vacinaJanela = ListarCliente()
+        self.vacinaJanela.setupUi(self.janela_listar_vacina)
+        self.janela_listar_vacina.show()
+
+    def Listar_Animais(self):
+        self.janela_listar_animais = QtWidgets.QMainWindow()
+        self.animaisJanela = ListarAnimais()
+        self.animaisJanela.setupUi(self.janela_listar_animais)
+        self.janela_listar_animais.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
         Cadastrar.setWindowTitle(_translate("Cadastrar", "Cadastrar"))
         self.btnInicio.setText(_translate("Cadastrar", "INICIO"))
-        self.btnCadastrar.setText(_translate("Cadastrar", "CADASTRAR"))
+        self.btnListarClientes.setText(
+            _translate("Cadastrar", "LISTAR CLIENTES"))
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
-        self.txtCadastrar.setText(_translate("Cadastrar", "Cadastrar Animal"))
+        self.txtCadastrar.setText(_translate("Cadastrar", "Atualizar Animal"))
         self.nomeAnimal.setText(_translate("Cadastrar", "NOME DO ANIMAL"))
         self.porte.setText(_translate("Cadastrar", "PORTE"))
         self.raca.setText(_translate("Cadastrar", "RAÇA"))
@@ -438,7 +470,8 @@ class AtualizarAnimal(object):
         self.peso.setText(_translate("Cadastrar", "PESO"))
         self.comboBox.setItemText(0, _translate("Cadastrar", "MACHO"))
         self.comboBox.setItemText(1, _translate("Cadastrar", "FEMEA"))
-        self.btnAtualizar.setText(_translate("Cadastrar", "Atualizar"))
+        self.btnAtualizar.setText(_translate("Cadastrar", "ATUALIZAR"))
+        self.btnListar.setText(_translate("Cadastrar", "LISTAR"))
 
 
 if __name__ == "__main__":
