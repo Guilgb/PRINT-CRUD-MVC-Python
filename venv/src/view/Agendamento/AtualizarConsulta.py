@@ -273,16 +273,24 @@ class Ui_AtualizarConsulta(object):
 
         self.retranslateUi(AgendarConsulta)
         QtCore.QMetaObject.connectSlotsByName(AgendarConsulta)
+        self.btnAtualizar.clicked.connect(self.update)
 
     def update(self):
-        dataConsulta = self.dateEdit
-        horario = self.data
-        pagamento = ''
+        self.consultaId
+        print(self.consultaId)
+        dataConsulta = self.dateEdit.date().toPyDate()
+        horario = self.timeEdit.dateTime().toPyDateTime()
+        horarioFinal1 = str(horario)
+        ano = horarioFinal1[0:4]
+        dia = horarioFinal1[5:7]
+        mes = horarioFinal1[8:10]
+        anoCom = dia + '-' + mes + '-' + ano + '-00:00:00'
         observacao = self.campoRetorno
         animal = self.campoBuscarAnimal
         funcionario = self.campoBuscarAnimal
-        consulta = Consulta(1, dataConsulta, horario,
-                            pagamento, observacao, animal, funcionario)
+
+        consulta = Consulta(self.consultaId, dataConsulta,
+                            anoCom, observacao, animal, funcionario)
 
         ConsultaController.updateConsultaController(consulta)
         msg = QMessageBox()

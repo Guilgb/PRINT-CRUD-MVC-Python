@@ -440,7 +440,7 @@ class CadastrarAnimal(object):
 
         self.btnSalvar.clicked.connect(insert)
         self.btnListar.clicked.connect(self.Listar_Animais)
-        self.btnListarClientes.clicked.connect(self.Listar_clientes)
+        # self.btnListarClientes.clicked.connect(self.Listar_clientes)
 
     def Listar_Animais(self):
         self.janela_listar_animais = QtWidgets.QMainWindow()
