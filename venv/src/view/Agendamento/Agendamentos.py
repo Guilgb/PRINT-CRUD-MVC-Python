@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from src.model.consulta import Consulta
 from src.controller.consultaController import ConsultaController
+from src.view.Agendamento.AtualizarConsulta import Ui_AtualizarConsulta
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 
 
@@ -184,15 +185,13 @@ class ListaConsultas(object):
             id = QTableWidgetItem(str(query[row][0]))
             data = QTableWidgetItem(str(query[row][1]))
             horario = QTableWidgetItem(str(query[row][2]))
-            pagamento = QTableWidgetItem(query[row][3])
-            obs = QTableWidgetItem(str(query[row][4]))
-            idAnimal = QTableWidgetItem(str(query[row][5]))
-            idFuncionario = QTableWidgetItem(str(query[row][6]))
+            obs = QTableWidgetItem(str(query[row][3]))
+            idAnimal = QTableWidgetItem(str(query[row][4]))
+            idFuncionario = QTableWidgetItem(str(query[row][5]))
 
             self.listagemAgendamentos.setItem(row, 0, id)
             self.listagemAgendamentos.setItem(row, 1, data)
             self.listagemAgendamentos.setItem(row, 2, horario)
-            self.listagemAgendamentos.setItem(row, 3, pagamento)
             self.listagemAgendamentos.setItem(row, 4, obs)
             self.listagemAgendamentos.setItem(row, 5, idAnimal)
             self.listagemAgendamentos.setItem(row, 6, idFuncionario)
@@ -212,6 +211,16 @@ class ListaConsultas(object):
             # msg.setStandardButtons(QMessageBox.Ok)
             msg.exec()
         self.btnRemover.clicked.connect(ExcluirAgenda)
+        self.btnAtualizar.clicked.connect(self.AtualizarConsulta)
+
+    def AtualizarConsulta(self):
+        self.linha = self.listagemAgendamentos.currentIndex().row()
+        self.idConsulta = self.listagemAgendamentos.item(self.linha, 0).text()
+        self.janela_atualizar_consulta = QtWidgets.QMainWindow()
+        self.atualizar_consulta = Ui_AtualizarConsulta()
+        self.atualizar_consulta.consultaId = self.idConsulta
+        self.atualizar_consulta.setupUi(self.janela_atualizar_consulta)
+        self.janela_atualizar_consulta.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
@@ -228,8 +237,6 @@ class ListaConsultas(object):
         item.setText(_translate("Cadastrar", "DATA"))
         item = self.listagemAgendamentos.horizontalHeaderItem(2)
         item.setText(_translate("Cadastrar", "HORÁRIO"))
-        item = self.listagemAgendamentos.horizontalHeaderItem(3)
-        item.setText(_translate("Cadastrar", "PAGAMENTO"))
         item = self.listagemAgendamentos.horizontalHeaderItem(4)
         item.setText(_translate("Cadastrar", "OBSERVAÇÃO"))
         item = self.listagemAgendamentos.horizontalHeaderItem(5)

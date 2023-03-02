@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 class ConsultaRepository:
-    def repositoryConsulta(idConsulta, dataConsulta, horarioConsulta, pagamento, observacao, animal, funcionario):
+    def repositoryConsulta(idConsulta, dataConsulta, horarioConsulta, observacao, animal, funcionario):
 
         con = Conexao.getConnection('')
         cursor = con.cursor()
@@ -29,8 +29,8 @@ class ConsultaRepository:
             animalId = BuscarIdAnimal()
             funcionarioId = buscarIdFuncionario()
 
-            sql = "insert into agendamento(data, horario, pagamento, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s, %s)"
-            valores = (dataConsulta, horarioConsulta, pagamento,
+            sql = "insert into agendamento(data, horario, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s)"
+            valores = (dataConsulta, horarioConsulta,
                        observacao, animalId, funcionarioId)
             cursor.execute(sql, valores)
             con.commit()
@@ -79,31 +79,11 @@ class ConsultaRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            def buscarIdAnimal():
-                sqlBuscarAnimal = "SELECT id FROM animal WHERE nome = %s"
-                valor = consulta.animal
-                cursor.execute(sqlBuscarAnimal, (valor,))
-                resultadoBusca = cursor.fetchone()
-
-                for resultadoAni in resultadoBusca:
-                    return resultadoAni
-            AnimalId = buscarIdAnimal()
-
-            def buscarIdFuncionario():
-                sqlBuscarFuncionario = "SELECT id FROM funcionario WHERE nome = %s"
-                valor = consulta.funcionario
-                cursor.execute(sqlBuscarFuncionario, (valor,))
-                resultadoBusca = cursor.fetchone()
-
-                for resultadoFun in resultadoBusca:
-                    return resultadoFun
-
-            FuncionarioId = buscarIdFuncionario()
-            sqlUpdateConsulta = "update agendamento set data=%s, horario=%s, pagamento=%s, observação=%s, animalid=%s, funcionarioid=%s"
+            sqlUpdateConsulta = "update agendamento set data=%s, horario=%s, observação=%s, animalid=%s, funcionarioid=%s"
             hora = datetime.strptime(consulta.horario, "%d-%b-%Y-%H:%M:%S")
 
             cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, hora,
-                           consulta.pagamento, consulta.observacao, AnimalId, FuncionarioId))
+                                               consulta.observacao, consulta.animal, consulta.funcionario))
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:

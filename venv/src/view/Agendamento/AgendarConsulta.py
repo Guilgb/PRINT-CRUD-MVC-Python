@@ -285,7 +285,7 @@ class Ui_AgendarConsulta(object):
             funcionario = self.campoBuscarCliente.toPlainText()
 
             consulta = Consulta(1, dataConsulta, horarioFinal,
-                                'pagamento', observacao, animal, funcionario)
+                                observacao, animal, funcionario)
             ConsultaController.controllerConsulta(consulta)
             msg = QMessageBox()
             # msg.setIcon(QMessageBox.information)

@@ -4,13 +4,12 @@ from src.model.animal import Animal
 
 class Consulta(Funcionario, Animal):
     def __init__(self, idConsulta: int, dataConsulta: str, horario: str,
-                 pagamento: str, observacao: str,
+                 observacao: str,
                  animal: str, funcionario: str):
 
         self.__idConsulta = idConsulta
         self.__dataConsulta = dataConsulta
         self.__horario = horario
-        self.__pagamento = pagamento
         self.__observacao = observacao
         self.__animal = animal
         self.__funcionario = funcionario
@@ -38,14 +37,6 @@ class Consulta(Funcionario, Animal):
     @ horario.setter
     def horario(self, horario):
         self.__horario = horario
-
-    @ property
-    def pagamento(self):
-        return self.__pagamento
-
-    @ pagamento.setter
-    def pagamento(self, pagamento):
-        self.__pagamento = pagamento
 
     @ property
     def observacao(self):

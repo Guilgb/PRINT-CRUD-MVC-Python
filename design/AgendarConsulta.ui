@@ -63,26 +63,6 @@ color: white;</string>
      <string>INICIO</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCadastrar">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>210</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(91, 113, 133);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>CADASTRAR</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="healthypets">
     <property name="enabled">
      <bool>false</bool>
@@ -107,46 +87,6 @@ color: white;</string>
     </property>
     <property name="text">
      <string>HEALTHY PETS</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnAgendar">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>310</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(48, 68, 86);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>AGENDAR</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnProntuario">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>410</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(91, 113, 133);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>PRONTUÁRIO</string>
     </property>
    </widget>
   </widget>
@@ -207,7 +147,7 @@ color: white;
 </string>
     </property>
     <property name="text">
-     <string>Agendar Consulta</string>
+     <string>Atualizar Consulta</string>
     </property>
    </widget>
    <widget class="QFrame" name="frame">
@@ -233,7 +173,7 @@ color: white;
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>121</width>
+       <width>71</width>
        <height>21</height>
       </rect>
      </property>
@@ -254,7 +194,7 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>NOME ANIMA</string>
+      <string>ANIMAL</string>
      </property>
     </widget>
     <widget class="QLabel" name="data">
@@ -320,7 +260,7 @@ color: #000000;</string>
       <rect>
        <x>10</x>
        <y>209</y>
-       <width>121</width>
+       <width>131</width>
        <height>21</height>
       </rect>
      </property>
@@ -349,7 +289,7 @@ color: #000000;</string>
       <rect>
        <x>10</x>
        <y>90</y>
-       <width>191</width>
+       <width>131</width>
        <height>21</height>
       </rect>
      </property>
@@ -370,13 +310,13 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>NOME FUNCIONARIO</string>
+      <string>FUNCIONARIO</string>
      </property>
     </widget>
     <widget class="QTextEdit" name="campoBuscarAnimal">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>89</x>
        <y>20</y>
        <width>461</width>
        <height>41</height>
@@ -401,9 +341,9 @@ border-radius: 8px;</string>
     <widget class="QTextEdit" name="campoBuscarCliente">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>149</x>
        <y>80</y>
-       <width>391</width>
+       <width>401</width>
        <height>41</height>
       </rect>
      </property>
@@ -478,8 +418,72 @@ border-radius: 8px;</string>
       </font>
      </property>
     </widget>
+    <widget class="QPushButton" name="buscasAnimal">
+     <property name="geometry">
+      <rect>
+       <x>557</x>
+       <y>20</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 251px;
+height: 66px;
+left: 381px;
+top: 884px;
+
+background-color: rgb(85, 170, 127);
+border-radius: 27px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #FFFFFF;</string>
+     </property>
+     <property name="text">
+      <string>B</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BuscarFuncionario">
+     <property name="geometry">
+      <rect>
+       <x>558</x>
+       <y>80</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 251px;
+height: 66px;
+left: 381px;
+top: 884px;
+
+background-color: rgb(85, 170, 127);
+border-radius: 27px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #FFFFFF;</string>
+     </property>
+     <property name="text">
+      <string>B</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="btnSalvar">
+   <widget class="QPushButton" name="btnAtualizar">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -508,39 +512,7 @@ text-align: center;
 color: #FFFFFF;</string>
     </property>
     <property name="text">
-     <string>SALVAR</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnListar">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>390</y>
-      <width>141</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">position: absolute;
-width: 251px;
-height: 66px;
-left: 381px;
-top: 884px;
-
-background: #304456;
-border-radius: 27px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 24px;
-text-align: center;
-
-color: #FFFFFF;</string>
-    </property>
-    <property name="text">
-     <string>LISTAR</string>
+     <string>Atualizar</string>
     </property>
    </widget>
   </widget>

@@ -7,12 +7,11 @@ class ConsultaService:
         idConsulta = int(consulta.idConsulta)
         dataConsulta = str(consulta.dataConsulta)
         horarioConsulta = str(consulta.horario)
-        pagamento = str(consulta.pagamento)
         observacao = str(consulta.observacao)
         animal = str(consulta.animal)
         funcionario = str(consulta.funcionario)
         ConsultaRepository.repositoryConsulta(
-            idConsulta, dataConsulta, horarioConsulta, pagamento, observacao,
+            idConsulta, dataConsulta, horarioConsulta, observacao,
             animal, funcionario)
 
     def readConsultaService(self):

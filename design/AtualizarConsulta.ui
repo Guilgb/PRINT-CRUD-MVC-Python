@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Cadastrar</class>
- <widget class="QWidget" name="Cadastrar">
+ <class>AgendarConsulta</class>
+ <widget class="QWidget" name="AgendarConsulta">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -63,26 +63,6 @@ color: white;</string>
      <string>INICIO</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCadastrar">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>210</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(91, 113, 133);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>CADASTRAR</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="healthypets">
     <property name="enabled">
      <bool>false</bool>
@@ -107,46 +87,6 @@ color: white;</string>
     </property>
     <property name="text">
      <string>HEALTHY PETS</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnAgendar">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>310</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(48, 68, 86);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>AGENDAR</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnProntuario">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>410</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(91, 113, 133);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>PRONTUÁRIO</string>
     </property>
    </widget>
   </widget>
@@ -232,8 +172,8 @@ color: white;
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>90</y>
-       <width>131</width>
+       <y>30</y>
+       <width>71</width>
        <height>21</height>
       </rect>
      </property>
@@ -254,14 +194,14 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>NOME ANIMAL</string>
+      <string>ANIMAL</string>
      </property>
     </widget>
     <widget class="QLabel" name="data">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>210</y>
+       <y>150</y>
        <width>51</width>
        <height>20</height>
       </rect>
@@ -290,8 +230,8 @@ color: #000000;</string>
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>210</y>
-       <width>81</width>
+       <y>150</y>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -319,9 +259,9 @@ color: #000000;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>270</y>
-       <width>141</width>
-       <height>20</height>
+       <y>209</y>
+       <width>131</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -348,8 +288,8 @@ color: #000000;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>150</y>
-       <width>191</width>
+       <y>90</y>
+       <width>131</width>
        <height>21</height>
       </rect>
      </property>
@@ -370,17 +310,22 @@ text-align: center;
 color: #000000;</string>
      </property>
      <property name="text">
-      <string>NOME FUNCIONARIO</string>
+      <string>FUNCIONARIO</string>
      </property>
     </widget>
     <widget class="QTextEdit" name="campoBuscarAnimal">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>80</y>
-       <width>441</width>
+       <x>89</x>
+       <y>20</y>
+       <width>461</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">position: absolute;
@@ -396,51 +341,16 @@ border-radius: 8px;</string>
     <widget class="QTextEdit" name="campoBuscarCliente">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>140</y>
-       <width>391</width>
+       <x>149</x>
+       <y>80</y>
+       <width>401</width>
        <height>41</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
-
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="campoData">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>200</y>
-       <width>111</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
-
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="campoHora">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>200</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">position: absolute;
@@ -457,11 +367,16 @@ border-radius: 8px;</string>
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>260</y>
+       <y>200</y>
        <width>421</width>
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">position: absolute;
 width: 692px;
@@ -473,57 +388,102 @@ background: #D9D9D9;
 border-radius: 8px;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="campoBuscarAnimal_2">
+    <widget class="QDateEdit" name="dateEdit">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>70</x>
+       <y>150</y>
+       <width>110</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QTimeEdit" name="timeEdit">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>150</y>
+       <width>118</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buscasAnimal">
+     <property name="geometry">
+      <rect>
+       <x>557</x>
        <y>20</y>
-       <width>111</width>
+       <width>51</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">position: absolute;
-width: 692px;
-height: 51px;
-left: 625px;
-top: 264px;
+width: 251px;
+height: 66px;
+left: 381px;
+top: 884px;
 
-background: #D9D9D9;
-border-radius: 8px;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="IDConsulta">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>141</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">position: absolute;
-width: 184px;
-height: 24px;
-left: 420px;
-top: 277px;
+background-color: rgb(85, 170, 127);
+border-radius: 27px;
 
 font-family: 'Inter';
 font-style: normal;
-font-weight: 300;
+font-weight: 700;
 font-size: 20px;
 line-height: 24px;
 text-align: center;
 
-color: #000000;</string>
+color: #FFFFFF;</string>
      </property>
      <property name="text">
-      <string>ID CONSULTA</string>
+      <string>B</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BuscarFuncionario">
+     <property name="geometry">
+      <rect>
+       <x>558</x>
+       <y>80</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 251px;
+height: 66px;
+left: 381px;
+top: 884px;
+
+background-color: rgb(85, 170, 127);
+border-radius: 27px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #FFFFFF;</string>
+     </property>
+     <property name="text">
+      <string>B</string>
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="btnSalvar">
+   <widget class="QPushButton" name="btnAtualizar">
     <property name="geometry">
      <rect>
       <x>20</x>
