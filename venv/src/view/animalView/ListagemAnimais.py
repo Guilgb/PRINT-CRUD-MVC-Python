@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 from src.controller.animalController import AnimalController
+from src.view.animalView.AtualizarAnimal import Ui_AtualizarAnimal
 
 
 class ListarAnimais(object):
@@ -209,7 +210,6 @@ class ListarAnimais(object):
         def ExcluirAnimal():
             linha = self.listagemAnimal.currentIndex().row()
             nomeAnimal = self.listagemAnimal.item(linha, 0).text()
-            print(nomeAnimal)
             self.listagemAnimal.removeRow(linha)
             AnimalController.deleteControllerAnimal(nomeAnimal)
 
@@ -221,6 +221,16 @@ class ListarAnimais(object):
             msg.exec()
 
         self.btnRemover.clicked.connect(ExcluirAnimal)
+        self.btnAtualizar.clicked.connect(self.AtualizarAnimal)
+
+    def AtualizarAnimal(self):
+        self.linha = self.listagemAnimal.currentIndex().row()
+        self.idAnimal = self.listagemAnimal.item(self.linha, 0).text()
+        self.janela_atualizar_animal = QtWidgets.QMainWindow()
+        self.atualizar_animal = Ui_AtualizarAnimal()
+        self.atualizar_animal.animalId = self.idAnimal
+        self.atualizar_animal.setupUi(self.janela_atualizar_animal)
+        self.janela_atualizar_animal.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate

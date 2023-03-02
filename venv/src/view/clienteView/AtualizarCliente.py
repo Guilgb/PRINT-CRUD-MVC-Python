@@ -358,31 +358,26 @@ class Ui_AtualizarCliente(object):
         self.retranslateUi(CadastrarCliente)
         QtCore.QMetaObject.connectSlotsByName(CadastrarCliente)
         # print(self.recebeid)
-
-        def update():
-            self.idcampo
-            print(self.idcampo)
-            nomeCliente = self.campoNome.toPlainText()
-            cpf = self.campoCPF.toPlainText()
-            nascimento = self.dateEdit.date().toPyDate()
-            telefone = self.campoTelefone.toPlainText()
-            email = self.campoTelefone.toPlainText()
-            rua = self.campoRua.toPlainText()
-            bairro = self.campoBairro.toPlainText()
-            cliente = Cliente(self.idcampo, nomeCliente, cpf, nascimento,
-                              telefone, email, rua, bairro, 12)
-            ClienteController.updateClienteController(cliente)
-            msg = QMessageBox()
-            msg.setText("Cliente Atualizado")
-            msg.setWindowTitle("Atualizar Cliente")
-            msg.exec()
-
-        self.btnAtualizar.clicked.connect(update)
+        self.btnAtualizar.clicked.connect(self.update)
         self.btnCadastrar.clicked.connect(self.CadastroAnimais)
         self.btnAgendar.clicked.connect(self.CadastroAgendamentos)
 
-    def recebeid(self, id: int):
-        return id
+    def update(self):
+        self.idcampo
+        nomeCliente = self.campoNome.toPlainText()
+        cpf = self.campoCPF.toPlainText()
+        nascimento = self.dateEdit.date().toPyDate()
+        telefone = self.campoTelefone.toPlainText()
+        email = self.campoTelefone.toPlainText()
+        rua = self.campoRua.toPlainText()
+        bairro = self.campoBairro.toPlainText()
+        cliente = Cliente(self.idcampo, nomeCliente, cpf, nascimento,
+                          telefone, email, rua, bairro, 12)
+        ClienteController.updateClienteController(cliente)
+        msg = QMessageBox()
+        msg.setText("Cliente Atualizado")
+        msg.setWindowTitle("Atualizar Cliente")
+        msg.exec()
 
     def CadastroAnimais(self):
         self.janela_listar_animais = QtWidgets.QMainWindow()

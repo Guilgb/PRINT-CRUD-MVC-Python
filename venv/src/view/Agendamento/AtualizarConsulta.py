@@ -280,23 +280,24 @@ class Ui_Cadastrar(object):
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
 
-        def update():
-            dataConsulta = self.campoData.toPlainText()
-            horario = self.campoHora.toPlainText()
-            observacao = self.campoRetorno.toPlainText()
-            animal = self.campoBuscarAnimal.toPlainText()
-            funcionario = self.campoBuscarCliente.toPlainText()
+    def update(self):
+        self.consultaId = ''
+        dataConsulta = self.campoData.toPlainText()
+        horario = self.campoHora.toPlainText()
+        observacao = self.campoRetorno.toPlainText()
+        animal = self.campoBuscarAnimal.toPlainText()
+        funcionario = self.campoBuscarCliente.toPlainText()
 
-            consulta = Consulta(1, dataConsulta, horario,
-                                'pagamento', observacao, animal, funcionario)
-            ConsultaController.updateConsultaController(consulta)
+        consulta = Consulta(self.consultaId, dataConsulta, horario,
+                            'pagamento', observacao, animal, funcionario)
+        ConsultaController.updateConsultaController(consulta)
 
-            msg = QMessageBox()
-            msg.setText("Animal Atualizado")
-            msg.setWindowTitle("Atualizar Animal")
-            msg.exec()
+        msg = QMessageBox()
+        msg.setText("Animal Atualizado")
+        msg.setWindowTitle("Atualizar Animal")
+        msg.exec()
 
-        self.btnSalvar.clicked.connect(update)
+        self.btnSalvar.clicked.connect(self.update)
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate

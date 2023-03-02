@@ -13,11 +13,9 @@ from PyQt5.QtCore import pyqtRemoveInputHook
 from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 from src.model.animal import Animal
 from src.controller.animalController import AnimalController
-from src.view.animalView.ListagemAnimais import ListarAnimais
-from src.view.clienteView.ListarCliente import ListarCliente
 
 
-class AtualizarAnimal(object):
+class Ui_AtualizarAnimal(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
         Cadastrar.resize(900, 600)
@@ -369,27 +367,6 @@ class AtualizarAnimal(object):
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
-
-        self.btnListar = QtWidgets.QPushButton(self.container)
-        self.btnListar.setGeometry(QtCore.QRect(500, 470, 141, 61))
-        self.btnListar.setStyleSheet("position: absolute;\n"
-                                     "width: 251px;\n"
-                                     "height: 66px;\n"
-                                     "left: 381px;\n"
-                                     "top: 884px;\n"
-                                     "\n"
-                                     "background: #304456;\n"
-                                     "border-radius: 27px;\n"
-                                     "\n"
-                                     "font-family: \'Inter\';\n"
-                                     "font-style: normal;\n"
-                                     "font-weight: 700;\n"
-                                     "font-size: 20px;\n"
-                                     "line-height: 24px;\n"
-                                     "text-align: center;\n"
-                                     "\n"
-                                     "color: #FFFFFF;")
-        self.btnListar.setObjectName("btnListar")
         self.btnAtualizar = QtWidgets.QPushButton(self.container)
         self.btnAtualizar.setGeometry(QtCore.QRect(20, 470, 141, 61))
         self.btnAtualizar.setStyleSheet("position: absolute;\n"
@@ -413,49 +390,36 @@ class AtualizarAnimal(object):
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
+        self.btnAtualizar.clicked.connect(self.update)
 
-        def update():
-            nomeAnimal = self.campoNomeAnimal.toPlainText()
-            idade = self.idadeBox.value()
-            peso = self.PesoBox.value()
-            tipo = self.campoTipo.toPlainText()
-            raca = self.campoRaca.toPlainText()
-            sexo = self.comboBox.currentText()
-            porte = self.campoPorte.toPlainText()
-            status = self.campoStatus.toPlainText()
-            racao = self.campoRacao.toPlainText()
-            tutor = self.campoBuscarCliente.toPlainText()
+    def update(self):
+        self.animalId
 
-            animal = Animal(1, nomeAnimal, tipo, sexo,
-                            raca, peso, idade, tutor)
-            AnimalController.updateControllerAnimal(animal)
-            msg = QMessageBox()
-            msg.setText("Animal Atualizado")
-            msg.setWindowTitle("Atualizar Animal")
-            msg.exec()
+        nomeAnimal = self.campoNomeAnimal.toPlainText()
+        idade = self.idadeBox.value()
+        peso = self.PesoBox.value()
+        tipo = self.campoTipo.toPlainText()
+        raca = self.campoRaca.toPlainText()
+        sexo = self.comboBox.currentText()
+        porte = self.campoPorte.toPlainText()
+        status = self.campoStatus.toPlainText()
+        racao = self.campoRacao.toPlainText()
+        tutor = self.campoBuscarCliente.toPlainText()
 
-        self.btnAtualizar.clicked.connect(update)
-        self.btnListarClientes.clicked.connect(self.Listar_clientes)
-        self.btnListar.clicked.connect(self.Listar_Animais)
-
-    def Listar_clientes(self):
-        self.janela_listar_vacina = QtWidgets.QMainWindow()
-        self.vacinaJanela = ListarCliente()
-        self.vacinaJanela.setupUi(self.janela_listar_vacina)
-        self.janela_listar_vacina.show()
-
-    def Listar_Animais(self):
-        self.janela_listar_animais = QtWidgets.QMainWindow()
-        self.animaisJanela = ListarAnimais()
-        self.animaisJanela.setupUi(self.janela_listar_animais)
-        self.janela_listar_animais.show()
+        animal = Animal(self.animalId, nomeAnimal, tipo,
+                        sexo, raca, peso, idade, tutor)
+        AnimalController.updateControllerAnimal(animal)
+        msg = QMessageBox()
+        msg.setText("Animal Atualizado")
+        msg.setWindowTitle("Atualizar Animal")
+        msg.exec()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
         Cadastrar.setWindowTitle(_translate("Cadastrar", "Cadastrar"))
         self.btnInicio.setText(_translate("Cadastrar", "INICIO"))
         self.btnListarClientes.setText(
-            _translate("Cadastrar", "LISTAR CLIENTES"))
+            _translate("Cadastrar", "CADASTRAR"))
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
         self.txtCadastrar.setText(_translate("Cadastrar", "Atualizar Animal"))
         self.nomeAnimal.setText(_translate("Cadastrar", "NOME DO ANIMAL"))
@@ -471,14 +435,13 @@ class AtualizarAnimal(object):
         self.comboBox.setItemText(0, _translate("Cadastrar", "MACHO"))
         self.comboBox.setItemText(1, _translate("Cadastrar", "FEMEA"))
         self.btnAtualizar.setText(_translate("Cadastrar", "ATUALIZAR"))
-        self.btnListar.setText(_translate("Cadastrar", "LISTAR"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Cadastrar = QtWidgets.QWidget()
-    ui = AtualizarAnimal()
+    ui = Ui_AtualizarAnimal()
     ui.setupUi(Cadastrar)
     Cadastrar.show()
     sys.exit(app.exec_())
