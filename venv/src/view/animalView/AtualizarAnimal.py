@@ -269,7 +269,7 @@ class Ui_AtualizarAnimal(object):
                                        "border-radius: 8px;")
         self.campoStatus.setObjectName("campoStatus")
         self.campoBuscarCliente = QtWidgets.QTextEdit(self.frame)
-        self.campoBuscarCliente.setGeometry(QtCore.QRect(180, 270, 421, 41))
+        self.campoBuscarCliente.setGeometry(QtCore.QRect(180, 270, 360, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.campoBuscarCliente.setFont(font)
@@ -387,6 +387,26 @@ class Ui_AtualizarAnimal(object):
                                         "\n"
                                         "color: #FFFFFF;")
         self.btnAtualizar.setObjectName("btnAtualizar")
+        self.btnBusca = QtWidgets.QPushButton(self.container)
+        self.btnBusca.setGeometry(QtCore.QRect(570, 330, 45, 40))
+        self.btnBusca.setStyleSheet("position: absolute;\n"
+                                    "width: 251px;\n"
+                                    "height: 66px;\n"
+                                    "left: 381px;\n"
+                                    "top: 884px;\n"
+                                    "\n"
+                                    "background-color: rgb(85, 170, 127);\n"
+                                    "border-radius: 27px;\n"
+                                    "\n"
+                                    "font-family: \'Inter\';\n"
+                                    "font-style: normal;\n"
+                                    "font-weight: 700;\n"
+                                    "font-size: 20px;\n"
+                                    "line-height: 24px;\n"
+                                    "text-align: center;\n"
+                                    "\n"
+                                    "color: #FFFFFF;")
+        self.btnBusca.setObjectName("btnBusca")
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
@@ -409,6 +429,7 @@ class Ui_AtualizarAnimal(object):
         animal = Animal(self.animalId, nomeAnimal, tipo,
                         sexo, raca, peso, idade, tutor)
         AnimalController.updateControllerAnimal(animal)
+
         msg = QMessageBox()
         msg.setText("Animal Atualizado")
         msg.setWindowTitle("Atualizar Animal")
@@ -435,6 +456,7 @@ class Ui_AtualizarAnimal(object):
         self.comboBox.setItemText(0, _translate("Cadastrar", "MACHO"))
         self.comboBox.setItemText(1, _translate("Cadastrar", "FEMEA"))
         self.btnAtualizar.setText(_translate("Cadastrar", "ATUALIZAR"))
+        self.btnBusca.setText(_translate("Cadastrar", "B"))
 
 
 if __name__ == "__main__":
