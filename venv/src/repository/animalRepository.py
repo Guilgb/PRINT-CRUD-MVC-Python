@@ -59,7 +59,8 @@ class AnimalRepository:
 
             sqlDeleteAnimal = "update animal set nome=%s, especie=%s, sexo=%s, raca=%s, peso=%s, nascimento=%s, clienteid=%s where id=%s"
             cursor.execute(sqlDeleteAnimal, (animal.nomeAnimal, animal.especie,
-                           animal.sexo, animal.raca, animal.peso, animal.nascimento, animal.cliente, animal.id))
+                           animal.sexo, animal.raca, animal.peso,
+                           animal.nascimento, animal.cliente, animal.id))
             con.commit()
 
         except (Exception, psycopg2.DatabaseError) as error:

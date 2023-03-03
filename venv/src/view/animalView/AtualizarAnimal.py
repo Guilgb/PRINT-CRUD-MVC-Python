@@ -13,6 +13,7 @@ from PyQt5.QtCore import pyqtRemoveInputHook
 from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 from src.model.animal import Animal
 from src.controller.animalController import AnimalController
+from src.view.animalView.ListaClienteAnimal import ListaClienteAnimal
 
 
 class Ui_AtualizarAnimal(object):
@@ -411,6 +412,13 @@ class Ui_AtualizarAnimal(object):
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
         self.btnAtualizar.clicked.connect(self.update)
+        self.btnBusca.clicked.connect(self.selecionarCliente)
+
+    def selecionarCliente(self):
+        self.janela_listar_cliente = QtWidgets.QMainWindow()
+        self.listar_cliente = ListaClienteAnimal()
+        self.listar_cliente.setupUi(self.janela_listar_cliente)
+        self.janela_listar_cliente.show()
 
     def update(self):
         self.animalId
@@ -424,10 +432,10 @@ class Ui_AtualizarAnimal(object):
         porte = self.campoPorte.toPlainText()
         status = self.campoStatus.toPlainText()
         racao = self.campoRacao.toPlainText()
-        tutor = self.campoBuscarCliente.toPlainText()
+        idcliente = self.listar_cliente.SelecionarCliente()
 
         animal = Animal(self.animalId, nomeAnimal, tipo,
-                        sexo, raca, peso, idade, tutor)
+                        sexo, raca, peso, idade, idcliente)
         AnimalController.updateControllerAnimal(animal)
 
         msg = QMessageBox()
