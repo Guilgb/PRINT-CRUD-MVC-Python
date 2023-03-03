@@ -10,6 +10,8 @@
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
 from src.model.consulta import Consulta
+from src.view.Agendamento.SelecionarAnimais import SelecionarAnimal
+from src.view.Agendamento.SelecionarFuncionario import SelecionarFuncionario
 from src.controller.consultaController import ConsultaController
 
 
@@ -210,46 +212,46 @@ class Ui_AtualizarConsulta(object):
         font.setPointSize(12)
         self.timeEdit.setFont(font)
         self.timeEdit.setObjectName("timeEdit")
-        self.buscasAnimal = QtWidgets.QPushButton(self.frame)
-        self.buscasAnimal.setGeometry(QtCore.QRect(557, 20, 51, 41))
-        self.buscasAnimal.setStyleSheet("position: absolute;\n"
-                                        "width: 251px;\n"
-                                        "height: 66px;\n"
-                                        "left: 381px;\n"
-                                        "top: 884px;\n"
-                                        "\n"
-                                        "background-color: rgb(85, 170, 127);\n"
-                                        "border-radius: 27px;\n"
-                                        "\n"
-                                        "font-family: \'Inter\';\n"
-                                        "font-style: normal;\n"
-                                        "font-weight: 700;\n"
-                                        "font-size: 20px;\n"
-                                        "line-height: 24px;\n"
-                                        "text-align: center;\n"
-                                        "\n"
-                                        "color: #FFFFFF;")
-        self.buscasAnimal.setObjectName("buscasAnimal")
-        self.BuscarFuncionario = QtWidgets.QPushButton(self.frame)
-        self.BuscarFuncionario.setGeometry(QtCore.QRect(558, 80, 51, 41))
-        self.BuscarFuncionario.setStyleSheet("position: absolute;\n"
-                                             "width: 251px;\n"
-                                             "height: 66px;\n"
-                                             "left: 381px;\n"
-                                             "top: 884px;\n"
-                                             "\n"
-                                             "background-color: rgb(85, 170, 127);\n"
-                                             "border-radius: 27px;\n"
-                                             "\n"
-                                             "font-family: \'Inter\';\n"
-                                             "font-style: normal;\n"
-                                             "font-weight: 700;\n"
-                                             "font-size: 20px;\n"
-                                             "line-height: 24px;\n"
-                                             "text-align: center;\n"
-                                             "\n"
-                                             "color: #FFFFFF;")
-        self.BuscarFuncionario.setObjectName("BuscarFuncionario")
+        self.btnbuscasAnimal = QtWidgets.QPushButton(self.frame)
+        self.btnbuscasAnimal.setGeometry(QtCore.QRect(557, 20, 51, 41))
+        self.btnbuscasAnimal.setStyleSheet("position: absolute;\n"
+                                           "width: 251px;\n"
+                                           "height: 66px;\n"
+                                           "left: 381px;\n"
+                                           "top: 884px;\n"
+                                           "\n"
+                                           "background-color: rgb(85, 170, 127);\n"
+                                           "border-radius: 27px;\n"
+                                           "\n"
+                                           "font-family: \'Inter\';\n"
+                                           "font-style: normal;\n"
+                                           "font-weight: 700;\n"
+                                           "font-size: 20px;\n"
+                                           "line-height: 24px;\n"
+                                           "text-align: center;\n"
+                                           "\n"
+                                           "color: #FFFFFF;")
+        self.btnbuscasAnimal.setObjectName("buscasAnimal")
+        self.btnBuscarFuncionario = QtWidgets.QPushButton(self.frame)
+        self.btnBuscarFuncionario.setGeometry(QtCore.QRect(558, 80, 51, 41))
+        self.btnBuscarFuncionario.setStyleSheet("position: absolute;\n"
+                                                "width: 251px;\n"
+                                                "height: 66px;\n"
+                                                "left: 381px;\n"
+                                                "top: 884px;\n"
+                                                "\n"
+                                                "background-color: rgb(85, 170, 127);\n"
+                                                "border-radius: 27px;\n"
+                                                "\n"
+                                                "font-family: \'Inter\';\n"
+                                                "font-style: normal;\n"
+                                                "font-weight: 700;\n"
+                                                "font-size: 20px;\n"
+                                                "line-height: 24px;\n"
+                                                "text-align: center;\n"
+                                                "\n"
+                                                "color: #FFFFFF;")
+        self.btnBuscarFuncionario.setObjectName("BuscarFuncionario")
         self.btnAtualizar = QtWidgets.QPushButton(self.container)
         self.btnAtualizar.setGeometry(QtCore.QRect(20, 390, 141, 61))
         self.btnAtualizar.setStyleSheet("position: absolute;\n"
@@ -274,10 +276,25 @@ class Ui_AtualizarConsulta(object):
         self.retranslateUi(AgendarConsulta)
         QtCore.QMetaObject.connectSlotsByName(AgendarConsulta)
         self.btnAtualizar.clicked.connect(self.update)
+        self.btnbuscasAnimal.clicked.connect(self.SelecionarNaAnimal)
+        self.btnBuscarFuncionario.clicked.connect(self.SelecionarFuncionario)
+
+    def SelecionarNaAnimal(self):
+        self.listar_animal_selecao = QtWidgets.QMainWindow()
+        self.listar_animal = SelecionarAnimal()
+        self.listar_animal.setupUi(self.listar_animal_selecao)
+        self.listar_animal_selecao.show()
+
+    def SelecionarFuncionario(self):
+        self.listar_funcionario_selecao = QtWidgets.QMainWindow()
+        self.listar_funcionario = SelecionarFuncionario()
+        self.listar_funcionario.setupUi(self.listar_animal_selecao)
+        self.listar_animal_selecao.show()
 
     def update(self):
         self.consultaId
-        print(self.consultaId)
+        idanimal = self.listar_animal.SelecionarAnimal()
+        idfuncionario = self.listar_funcionario.SelecionarFuncionario()
         dataConsulta = self.dateEdit.date().toPyDate()
         horario = self.timeEdit.dateTime().toPyDateTime()
         horarioFinal1 = str(horario)
@@ -285,8 +302,7 @@ class Ui_AtualizarConsulta(object):
         animal = self.campoBuscarAnimal.toPlainText()
         funcionario = self.campoBuscarAnimal.toPlainText()
 
-        consulta = Consulta(self.consultaId, dataConsulta,
-                            horarioFinal1, observacao, animal, funcionario)
+        consulta = Consulta(self.consultaId, dataConsulta, horario, observacao, idanimal, idfuncionario)
 
         ConsultaController.updateConsultaController(consulta)
         msg = QMessageBox()
@@ -307,8 +323,8 @@ class Ui_AtualizarConsulta(object):
         self.hora.setText(_translate("AgendarConsulta", "HORA"))
         self.retorno.setText(_translate("AgendarConsulta", "OBSERVAÇÃO"))
         self.buscaCliente.setText(_translate("AgendarConsulta", "FUNCIONARIO"))
-        self.buscasAnimal.setText(_translate("AgendarConsulta", "B"))
-        self.BuscarFuncionario.setText(_translate("AgendarConsulta", "B"))
+        self.btnbuscasAnimal.setText(_translate("AgendarConsulta", "B"))
+        self.btnBuscarFuncionario.setText(_translate("AgendarConsulta", "B"))
         self.btnAtualizar.setText(_translate("AgendarConsulta", "Atualizar"))
 
 

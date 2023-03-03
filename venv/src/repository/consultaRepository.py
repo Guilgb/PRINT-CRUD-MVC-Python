@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 class ConsultaRepository:
-    
+
     def repositoryConsulta(idConsulta, dataConsulta, horarioConsulta, observacao, animal, funcionario):
 
         con = Conexao.getConnection('')
@@ -60,10 +60,10 @@ class ConsultaRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            sqlUpdateConsulta = "update agendamento set dia=%s, momento=%s, observação=%s, animalid=%s, funcionarioid=%s"
+            sqlUpdateConsulta = "update agendamento set dia=%s, momento=%s, observação=%s, animalid=%s, funcionarioid=%s where id=%s"
 
             cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, consulta.horario,
-                                               consulta.observacao, consulta.animal, consulta.funcionario))
+                                               consulta.observacao, consulta.animal, consulta.funcionario, consulta.idConsulta))
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:
