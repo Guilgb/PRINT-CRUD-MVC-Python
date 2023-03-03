@@ -11,7 +11,7 @@
 from src.model.cliente import Cliente
 from src.controller.clienteController import ClienteController
 from PyQt5 import QtCore, QtGui, QtWidgets
-from src.view.animalView.CadastrarAnimal import CadastrarAnimal
+# from src.view.animalView.CadastrarAnimal import CadastrarAnimal
 from src.view.Agendamento.AgendarConsulta import Ui_AgendarConsulta
 from PyQt5.QtWidgets import QMessageBox
 
@@ -359,7 +359,7 @@ class Ui_AtualizarCliente(object):
         QtCore.QMetaObject.connectSlotsByName(CadastrarCliente)
         # print(self.recebeid)
         self.btnAtualizar.clicked.connect(self.update)
-        self.btnCadastrar.clicked.connect(self.CadastroAnimais)
+        # self.btnCadastrar.clicked.connect(self.CadastroAnimais)
         self.btnAgendar.clicked.connect(self.CadastroAgendamentos)
 
     def update(self):
@@ -379,11 +379,11 @@ class Ui_AtualizarCliente(object):
         msg.setWindowTitle("Atualizar Cliente")
         msg.exec()
 
-    def CadastroAnimais(self):
-        self.janela_listar_animais = QtWidgets.QMainWindow()
-        self.animais_janela = CadastrarAnimal()
-        self.animais_janela.setupUi(self.janela_listar_animais)
-        self.janela_listar_animais.show()
+    # def CadastroAnimais(self):
+    #     self.janela_listar_animais = QtWidgets.QMainWindow()
+    #     self.animais_janela = CadastrarAnimal()
+    #     self.animais_janela.setupUi(self.janela_listar_animais)
+    #     self.janela_listar_animais.show()
 
     def CadastroAgendamentos(self):
         self.janela_agendamentos = QtWidgets.QMainWindow()

@@ -14,6 +14,8 @@ from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 from src.model.animal import Animal
 from src.controller.animalController import AnimalController
 from src.view.animalView.ListagemAnimais import ListarAnimais
+from src.view.clienteView.ListarCliente import ListarCliente
+from src.view.animalView.ListaClienteAnimal import ListaClienteAnimal
 
 
 class CadastrarAnimal(object):
@@ -270,7 +272,7 @@ class CadastrarAnimal(object):
                                        "border-radius: 8px;")
         self.campoStatus.setObjectName("campoStatus")
         self.campoBuscarCliente = QtWidgets.QTextEdit(self.frame)
-        self.campoBuscarCliente.setGeometry(QtCore.QRect(180, 270, 421, 41))
+        self.campoBuscarCliente.setGeometry(QtCore.QRect(180, 270, 370, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.campoBuscarCliente.setFont(font)
@@ -408,39 +410,74 @@ class CadastrarAnimal(object):
                                      "\n"
                                      "color: #FFFFFF;")
         self.btnListar.setObjectName("btnAtualizar")
+        self.btnBusca = QtWidgets.QPushButton(self.container)
+        self.btnBusca.setGeometry(QtCore.QRect(580, 330, 40, 40))
+        self.btnBusca.setStyleSheet("position: absolute;\n"
+                                    "width: 251px;\n"
+                                    "height: 66px;\n"
+                                    "left: 381px;\n"
+                                    "top: 884px;\n"
+                                    "\n"
+                                    "background-color: rgb(85, 170, 127);\n"
+                                    "border-radius: 27px;\n"
+                                    "\n"
+                                    "font-family: \'Inter\';\n"
+                                    "font-style: normal;\n"
+                                    "font-weight: 700;\n"
+                                    "font-size: 20px;\n"
+                                    "line-height: 24px;\n"
+                                    "text-align: center;\n"
+                                    "\n"
+                                    "color: #FFFFFF;")
+        self.btnBusca.setObjectName("btnBusca")
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
         idade = self.idadeBox.value()
         peso = self.PesoBox.value()
 
-        print(idade, peso)
-
-        def insert():
-            nomeAnimal = self.campoNomeAnimal.toPlainText()
-            idade = self.idadeBox.value()
-            peso = self.PesoBox.value()
-            sexo = self.comboBox.currentText()
-            raca = self.campoRaca.toPlainText()
-            tipo = self.campoTipo.toPlainText()
-            porte = self.campoPorte.toPlainText()
-            status = self.campoStatus.toPlainText()
-            racao = self.campoRacao.toPlainText()
-            tutor = self.campoBuscarCliente.toPlainText()
-
-            animal = Animal(1, nomeAnimal, tipo, sexo,
-                            raca, peso, idade, tutor)
-            AnimalController.controllerAnimal(animal)
-            msg = QMessageBox()
-            # msg.setIcon(QMessageBox.information)
-            msg.setText("Cliente Adicionado")
-            msg.setWindowTitle("Adicionar Cliente")
-            # msg.setStandardButtons(QMessageBox.Ok)
-            msg.exec()
-
-        self.btnSalvar.clicked.connect(insert)
+        self.btnSalvar.clicked.connect(self.insert)
         self.btnListar.clicked.connect(self.Listar_Animais)
-        # self.btnListarClientes.clicked.connect(self.Listar_clientes)
+        self.btnBusca.clicked.connect(self.selecionarCliente)
+        self.btnListarClientes.clicked.connect(self.Listar_Cliente)
+
+    def selecionarCliente(self):
+        self.janela_listar_cliente = QtWidgets.QMainWindow()
+        self.listar_cliente = ListaClienteAnimal()
+        self.listar_cliente.setupUi(self.janela_listar_cliente)
+        self.janela_listar_cliente.show()
+
+    def insert(self):
+        idcliente = self.listar_cliente.SelecionarCliente()
+        idCli = 2
+        print(idCli)
+        nomeAnimal = self.campoNomeAnimal.toPlainText()
+        idade = self.idadeBox.value()
+        peso = self.PesoBox.value()
+        sexo = self.comboBox.currentText()
+        raca = self.campoRaca.toPlainText()
+        tipo = self.campoTipo.toPlainText()
+        porte = self.campoPorte.toPlainText()
+        status = self.campoStatus.toPlainText()
+        racao = self.campoRacao.toPlainText()
+        tutor = self.campoBuscarCliente.toPlainText()
+
+        animal = Animal(idCli, nomeAnimal, tipo, sexo, raca, peso,
+                        idade, idcliente)
+        AnimalController.controllerAnimal(animal)
+
+        msg = QMessageBox()
+        # msg.setIcon(QMessageBox.information)
+        msg.setText("Animal Adicionado")
+        msg.setWindowTitle("Adicionar Animal")
+        # msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec()
+
+    def Listar_Cliente(self):
+        self.janela_listar_cliente = QtWidgets.QMainWindow()
+        self.clienteJanela = ListarCliente()
+        self.clienteJanela.setupUi(self.janela_listar_cliente)
+        self.janela_listar_cliente.show()
 
     def Listar_Animais(self):
         self.janela_listar_animais = QtWidgets.QMainWindow()
@@ -470,6 +507,7 @@ class CadastrarAnimal(object):
         self.comboBox.setItemText(1, _translate("Cadastrar", "FEMEA"))
         self.btnSalvar.setText(_translate("Cadastrar", "SALVAR"))
         self.btnListar.setText(_translate("Cadastrar", "LISTAR"))
+        self.btnBusca.setText(_translate("Cadastrar", "B"))
 
 
 if __name__ == "__main__":

@@ -8,19 +8,9 @@ class AnimalRepository:
         cursor = con.cursor()
 
         try:
-            def buscarIdCliente():
-                sqlBuscarCliente = "SELECT id FROM cliente WHERE nome = %s"
-                valor = cliente
-                cursor.execute(sqlBuscarCliente, (valor,))
-                resultadoBusca = cursor.fetchone()
-
-                for resultado in resultadoBusca:
-                    return resultado
-
-            resultadoFinal = buscarIdCliente()
             sql = "insert into animal (nome, especie, sexo, raca, peso, nascimento, clienteId) values(%s, %s, %s, %s, %s, %s, %s);"
             value = (nomeAnimal, especie, sexo,
-                     raca, peso, nascimento, resultadoFinal)
+                     raca, peso, nascimento, cliente)
             cursor.execute(sql, value)
             con.commit()
         except (Exception, psycopg2.DatabaseError) as error:
