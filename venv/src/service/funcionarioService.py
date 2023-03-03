@@ -13,9 +13,8 @@ class FuncionarioService:
         FuncionarioRepository.insertFuncionario(
             idFuncionario, nomeFuncionario, nascimentoFuncionario, emailFuncionario, telefoneFuncionario, cargo)
 
-    def serviceReadFuncionario(funcionario):
-        idFuncionario = int(funcionario.idFuncionario)
-        FuncionarioRepository.readFuncionarioRepository(idFuncionario)
+    def serviceReadFuncionario(self):
+        return FuncionarioRepository.readFuncionarioRepository(self)
 
     def serviceDeleteFuncionario(funcionario):
         idFuncionario = int(funcionario.idFuncionario)

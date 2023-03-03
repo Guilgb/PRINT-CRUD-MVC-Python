@@ -20,21 +20,19 @@ class FuncionarioRepository:
             if con is not None:
                 con.close()
 
-    def readFuncionarioRepository(funcionario):
+    def readFuncionarioRepository(self):
         con = Conexao.getConnection('')
         cursor = con.cursor()
 
         try:
-            sqlReadRepository = "select from funcionario where id=%s"
-            valor = funcionario
-            cursor.execute(sqlReadRepository, (valor,))
+            sqlReadRepository = "select * from funcionario"
+            cursor.execute(sqlReadRepository)
             readFuncionario = cursor.fetchall()
+            return readFuncionario
 
-            for funcionario in readFuncionario:
-                print(funcionario)
-                return funcionario
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
+
         finally:
             if con is not None:
                 con.close()

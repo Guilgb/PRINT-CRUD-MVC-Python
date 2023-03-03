@@ -6,8 +6,8 @@ class FuncionarioController:
     def controllerFuncionario(funcionario: Funcionario):
         FuncionarioService.serviceFuncionario(funcionario)
 
-    def readFucionarioController(funcionario):
-        FuncionarioService.serviceReadFuncionario(funcionario)
+    def readFucionarioController(self):
+        return FuncionarioService.serviceReadFuncionario(self)
 
     def deleteFuncionarioController(funcionario):
         FuncionarioService.serviceDeleteFuncionario(funcionario)

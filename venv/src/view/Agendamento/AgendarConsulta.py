@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from src.controller.consultaController import ConsultaController
 from src.model.consulta import Consulta
 from src.view.Agendamento.Agendamentos import ListaConsultas
+from src.view.Agendamento.SelecionarAnimais import SelecionarAnimal
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 
 
@@ -315,10 +316,18 @@ class Ui_AgendarConsulta(object):
 
         self.retranslateUi(AgendarConsulta)
         QtCore.QMetaObject.connectSlotsByName(AgendarConsulta)
+        self.btnBuscarAnimal.clicked.connect(self.SelecionarNaAnimal)
         self.btnSalvar.clicked.connect(self.insert)
         self.btnListar.clicked.connect(self.Listar_consulta)
 
+    def SelecionarNaAnimal(self):
+        self.listar_animal_selecao = QtWidgets.QMainWindow()
+        self.listar_animal = SelecionarAnimal()
+        self.listar_animal.setupUi(self.listar_animal_selecao)
+        self.listar_animal_selecao.show()
+
     def insert(self):
+        idanimal = self.listar_animal.SelecionarAnimal()
         dataConsulta = self.dateEdit.date().toPyDate()
         horario = self.timeEdit.dateTime().toPyDateTime()
         horarioFinal1 = str(horario)
@@ -329,7 +338,7 @@ class Ui_AgendarConsulta(object):
         funcionario = self.campoBuscarCliente.toPlainText()
 
         consulta = Consulta(1, dataConsulta, horarioFinal,
-                            observacao, animal, funcionario)
+                            observacao, idanimal, funcionario)
         ConsultaController.controllerConsulta(consulta)
         msg = QMessageBox()
         # msg.setIcon(QMessageBox.information)

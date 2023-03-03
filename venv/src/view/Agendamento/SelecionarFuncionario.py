@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
-from src.controller.animalController import AnimalController
+from src.controller.funcionarioController import FuncionarioController
 
 
 class SelecionarAnimal(object):
@@ -70,54 +70,50 @@ class SelecionarAnimal(object):
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
-        self.listagemAnimal = QtWidgets.QTableWidget(parent=self.frame)
-        self.listagemAnimal.setGeometry(QtCore.QRect(20, 10, 591, 431))
-        self.listagemAnimal.setStyleSheet("position: absolute;\n"
-                                          "width: 397px;\n"
-                                          "height: 36px;\n"
-                                          "left: 299px;\n"
-                                          "top: 80px;\n"
-                                          "background-color:rgb(201, 201, 201);\n"
-                                          "\n"
-                                          "font-family: \'Inter\';\n"
-                                          "font-style: normal;\n"
-                                          "font-weight: 100;\n"
-                                          "font-size:12px;\n"
-                                          "line-height: 39px;\n"
-                                          "text-align: center;\n"
-                                          "\n"
-                                          "color: black;")
-        self.listagemAnimal.setObjectName("listagemCliente")
-        readAnimal = AnimalController.readControllerAimal('')
-        tam = readAnimal.__len__()
-        self.listagemAnimal.setColumnCount(8)
-        self.listagemAnimal.setRowCount(tam)
+        self.listagemFuncionario = QtWidgets.QTableWidget(parent=self.frame)
+        self.listagemFuncionario.setGeometry(QtCore.QRect(20, 10, 591, 431))
+        self.listagemFuncionario.setStyleSheet("position: absolute;\n"
+                                               "width: 397px;\n"
+                                               "height: 36px;\n"
+                                               "left: 299px;\n"
+                                               "top: 80px;\n"
+                                               "background-color:rgb(201, 201, 201);\n"
+                                               "\n"
+                                               "font-family: \'Inter\';\n"
+                                               "font-style: normal;\n"
+                                               "font-weight: 100;\n"
+                                               "font-size:12px;\n"
+                                               "line-height: 39px;\n"
+                                               "text-align: center;\n"
+                                               "\n"
+                                               "color: black;")
+        self.listagemFuncionario.setObjectName("listagemCliente")
+        readFuncionario = FuncionarioController.readFucionarioController('')
+        tam = readFuncionario.__len__()
+        self.listagemFuncionario.setColumnCount(6)
+        self.listagemFuncionario.setRowCount(tam)
         item = QtWidgets.QTableWidgetItem()
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         item.setFont(font)
-        self.listagemAnimal.setHorizontalHeaderItem(0, item)
+        self.listagemFuncionario.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         item.setFont(font)
-        self.listagemAnimal.setHorizontalHeaderItem(1, item)
+        self.listagemFuncionario.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        self.listagemAnimal.setHorizontalHeaderItem(2, item)
+        self.listagemFuncionario.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
-        self.listagemAnimal.setHorizontalHeaderItem(3, item)
+        self.listagemFuncionario.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
-        self.listagemAnimal.setHorizontalHeaderItem(4, item)
+        self.listagemFuncionario.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
-        self.listagemAnimal.setHorizontalHeaderItem(5, item)
+        self.listagemFuncionario.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
-        self.listagemAnimal.setHorizontalHeaderItem(6, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.listagemAnimal.setHorizontalHeaderItem(7, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.listagemAnimal.setHorizontalHeaderItem(8, item)
+
         self.btnSelecionarAnimal = QtWidgets.QPushButton(parent=self.container)
         self.btnSelecionarAnimal.setGeometry(QtCore.QRect(500, 520, 141, 61))
         self.btnSelecionarAnimal.setStyleSheet("position: absolute;\n"
@@ -137,43 +133,40 @@ class SelecionarAnimal(object):
                                                "text-align: center;\n"
                                                "\n"
                                                "color: #FFFFFF;")
-        self.btnSelecionarAnimal.setObjectName("btnAtualizar")
+        self.btnSelecionarAnimal.setObjectName("btnSelecionar")
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
 
-        query = AnimalController.readControllerAimal('')
+        query = FuncionarioController.readFucionarioController('')
 
-        while (self.listagemAnimal.rowCount() > 0):
-            self.listagemAnimal.removeRow(0)
+        while (self.listagemFuncionario.rowCount() > 0):
+            self.listagemFuncionario.removeRow(0)
         row = 0
         while row < tam:
-            self.listagemAnimal.insertRow(row)
-            idAnimal = QTableWidgetItem(str(query[row][0]))
-            nomeAnimal = QTableWidgetItem(query[row][1])
-            idade = QTableWidgetItem(query[row][6])
-            sexo = QTableWidgetItem(query[row][3])
-            raca = QTableWidgetItem(query[row][4])
-            peso = QTableWidgetItem(query[row][5])
-            dono = QTableWidgetItem(query[row][7])
-            especie = QTableWidgetItem(query[row][2])
+            self.listagemFuncionario.insertRow(row)
+            idFuncionario = QTableWidgetItem(str(query[row][0]))
+            nomeFuncionario = QTableWidgetItem(query[row][1])
+            idade = QTableWidgetItem(query[row][2])
+            email = QTableWidgetItem(query[row][3])
+            telefone = QTableWidgetItem(query[row][4])
+            cargo = QTableWidgetItem(query[row][5])
 
-            self.listagemAnimal.setItem(row, 0, idAnimal)
-            self.listagemAnimal.setItem(row, 1, nomeAnimal)
-            self.listagemAnimal.setItem(row, 2, idade)
-            self.listagemAnimal.setItem(row, 3, sexo)
-            self.listagemAnimal.setItem(row, 4, raca)
-            self.listagemAnimal.setItem(row, 5, peso)
-            self.listagemAnimal.setItem(row, 6, especie)
-            self.listagemAnimal.setItem(row, 7, dono)
+            self.listagemFuncionario.setItem(row, 0, idFuncionario)
+            self.listagemFuncionario.setItem(row, 1, nomeFuncionario)
+            self.listagemFuncionario.setItem(row, 2, idade)
+            self.listagemFuncionario.setItem(row, 3, email)
+            self.listagemFuncionario.setItem(row, 4, telefone)
+            self.listagemFuncionario.setItem(row, 5, cargo)
 
             row = row + 1
 
         # self.btnSelecionarAnimal.clicked.connect(self.AtualizarAnimal)
-    def SelecionarAnimal(self):
-        self.linha = self.listagemAnimal.currentIndex().row()
-        self.idAnimal = self.listagemAnimal.item(self.linha, 0).text()
-        return self.idAnimal
+    def SelecionarFuncionario(self):
+        self.linha = self.listagemFuncionario.currentIndex().row()
+        self.idFuncionario = self.listagemFuncionario.item(
+            self.linha, 0).text()
+        return self.idFuncionario
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
@@ -182,22 +175,18 @@ class SelecionarAnimal(object):
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
         self.txtCadastrar.setText(_translate(
             "Cadastrar", "LISTAGEM DE ANIMAIS"))
-        item = self.listagemAnimal.horizontalHeaderItem(0)
+        item = self.listagemFuncionario.horizontalHeaderItem(0)
         item.setText(_translate("Cadastrar", "ID"))
-        item = self.listagemAnimal.horizontalHeaderItem(1)
+        item = self.listagemFuncionario.horizontalHeaderItem(1)
         item.setText(_translate("Cadastrar", "NOME"))
-        item = self.listagemAnimal.horizontalHeaderItem(2)
-        item.setText(_translate("Cadastrar", "IDADE"))
-        item = self.listagemAnimal.horizontalHeaderItem(3)
-        item.setText(_translate("Cadastrar", "SEXO"))
-        item = self.listagemAnimal.horizontalHeaderItem(4)
-        item.setText(_translate("Cadastrar", "RACA"))
-        item = self.listagemAnimal.horizontalHeaderItem(5)
-        item.setText(_translate("Cadastrar", "PESO"))
-        item = self.listagemAnimal.horizontalHeaderItem(6)
-        item.setText(_translate("Cadastrar", "DONO"))
-        item = self.listagemAnimal.horizontalHeaderItem(7)
-        item.setText(_translate("Cadastrar", "RACAO"))
+        item = self.listagemFuncionario.horizontalHeaderItem(2)
+        item.setText(_translate("Cadastrar", "NASCIMENTO"))
+        item = self.listagemFuncionario.horizontalHeaderItem(3)
+        item.setText(_translate("Cadastrar", "EMAIL"))
+        item = self.listagemFuncionario.horizontalHeaderItem(4)
+        item.setText(_translate("Cadastrar", "TELEFONE"))
+        item = self.listagemFuncionario.horizontalHeaderItem(5)
+        item.setText(_translate("Cadastrar", "CARGO"))
         self.btnSelecionarAnimal.setText(_translate("Cadastrar", "SELECIONAR"))
 
 
