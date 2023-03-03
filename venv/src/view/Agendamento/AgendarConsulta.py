@@ -92,7 +92,7 @@ class Ui_AgendarConsulta(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.buscaAnimal = QtWidgets.QLabel(self.frame)
-        self.buscaAnimal.setGeometry(QtCore.QRect(10, 30, 121, 21))
+        self.buscaAnimal.setGeometry(QtCore.QRect(10, 30, 141, 21))
         self.buscaAnimal.setStyleSheet("position: absolute;\n"
                                        "width: 184px;\n"
                                        "height: 24px;\n"
@@ -177,7 +177,7 @@ class Ui_AgendarConsulta(object):
                                         "color: #000000;")
         self.buscaCliente.setObjectName("buscaCliente")
         self.campoBuscarAnimal = QtWidgets.QTextEdit(self.frame)
-        self.campoBuscarAnimal.setGeometry(QtCore.QRect(140, 20, 461, 41))
+        self.campoBuscarAnimal.setGeometry(QtCore.QRect(140, 20, 420, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.campoBuscarAnimal.setFont(font)
@@ -191,7 +191,7 @@ class Ui_AgendarConsulta(object):
                                              "border-radius: 8px;")
         self.campoBuscarAnimal.setObjectName("campoBuscarAnimal")
         self.campoBuscarCliente = QtWidgets.QTextEdit(self.frame)
-        self.campoBuscarCliente.setGeometry(QtCore.QRect(210, 80, 391, 41))
+        self.campoBuscarCliente.setGeometry(QtCore.QRect(210, 80, 350, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.campoBuscarCliente.setFont(font)
@@ -250,6 +250,7 @@ class Ui_AgendarConsulta(object):
                                      "\n"
                                      "color: #FFFFFF;")
         self.btnSalvar.setObjectName("btnSalvar")
+
         self.btnListar = QtWidgets.QPushButton(self.container)
         self.btnListar.setGeometry(QtCore.QRect(500, 390, 141, 61))
         self.btnListar.setStyleSheet("position: absolute;\n"
@@ -270,32 +271,72 @@ class Ui_AgendarConsulta(object):
                                      "\n"
                                      "color: #FFFFFF;")
         self.btnListar.setObjectName("btnListar")
+        self.btnBuscarAnimal = QtWidgets.QPushButton(self.container)
+        self.btnBuscarAnimal.setGeometry(QtCore.QRect(590, 80, 41, 41))
+        self.btnBuscarAnimal.setStyleSheet("position: absolute;\n"
+                                           "width: 251px;\n"
+                                           "height: 66px;\n"
+                                           "left: 381px;\n"
+                                           "top: 884px;\n"
+                                           "\n"
+                                           "background: rgb(85, 170, 127);\n"
+                                           "border-radius: 27px;\n"
+                                           "\n"
+                                           "font-family: \'Inter\';\n"
+                                           "font-style: normal;\n"
+                                           "font-weight: 700;\n"
+                                           "font-size: 20px;\n"
+                                           "line-height: 24px;\n"
+                                           "text-align: center;\n"
+                                           "\n"
+                                           "color: #FFFFFF;")
+        self.btnBuscarAnimal.setObjectName("btnBuscarAnimal")
+
+        self.btnBuscarFuncionario = QtWidgets.QPushButton(self.container)
+        self.btnBuscarFuncionario.setGeometry(QtCore.QRect(590, 140, 41, 41))
+        self.btnBuscarFuncionario.setStyleSheet("position: absolute;\n"
+                                                "width: 251px;\n"
+                                                "height: 66px;\n"
+                                                "left: 381px;\n"
+                                                "top: 884px;\n"
+                                                "\n"
+                                                "background: rgb(85, 170, 127);\n"
+                                                "border-radius: 27px;\n"
+                                                "\n"
+                                                "font-family: \'Inter\';\n"
+                                                "font-style: normal;\n"
+                                                "font-weight: 700;\n"
+                                                "font-size: 20px;\n"
+                                                "line-height: 24px;\n"
+                                                "text-align: center;\n"
+                                                "\n"
+                                                "color: #FFFFFF;")
+        self.btnBuscarFuncionario.setObjectName("btnBuscarFuncionario")
 
         self.retranslateUi(AgendarConsulta)
         QtCore.QMetaObject.connectSlotsByName(AgendarConsulta)
-
-        def insert():
-            dataConsulta = self.dateEdit.date().toPyDate()
-            horario = self.timeEdit.dateTime().toPyDateTime()
-            horarioFinal1 = str(horario)
-            horarioFinal = horarioFinal1[10:20]
-
-            observacao = self.campoRetorno.toPlainText()
-            animal = self.campoBuscarAnimal.toPlainText()
-            funcionario = self.campoBuscarCliente.toPlainText()
-
-            consulta = Consulta(1, dataConsulta, horarioFinal,
-                                observacao, animal, funcionario)
-            ConsultaController.controllerConsulta(consulta)
-            msg = QMessageBox()
-            # msg.setIcon(QMessageBox.information)
-            msg.setText("Agendamento Finalizado")
-            msg.setWindowTitle("Adicionar Agendamento")
-            # msg.setStandardButtons(QMessageBox.Ok)
-            msg.exec()
-
-        self.btnSalvar.clicked.connect(insert)
+        self.btnSalvar.clicked.connect(self.insert)
         self.btnListar.clicked.connect(self.Listar_consulta)
+
+    def insert(self):
+        dataConsulta = self.dateEdit.date().toPyDate()
+        horario = self.timeEdit.dateTime().toPyDateTime()
+        horarioFinal1 = str(horario)
+        horarioFinal = horarioFinal1[10:20]
+
+        observacao = self.campoRetorno.toPlainText()
+        animal = self.campoBuscarAnimal.toPlainText()
+        funcionario = self.campoBuscarCliente.toPlainText()
+
+        consulta = Consulta(1, dataConsulta, horarioFinal,
+                            observacao, animal, funcionario)
+        ConsultaController.controllerConsulta(consulta)
+        msg = QMessageBox()
+        # msg.setIcon(QMessageBox.information)
+        msg.setText("Agendamento Finalizado")
+        msg.setWindowTitle("Adicionar Agendamento")
+        # msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec()
 
     def Listar_consulta(self):
         self.janela_listar_consulta = QtWidgets.QMainWindow()
@@ -314,7 +355,7 @@ class Ui_AgendarConsulta(object):
         self.btnProntuario.setText(_translate("AgendarConsulta", "PRONTUÁRIO"))
         self.txtCadastrar.setText(_translate(
             "AgendarConsulta", "Agendar Consulta"))
-        self.buscaAnimal.setText(_translate("AgendarConsulta", "NOME ANIMA"))
+        self.buscaAnimal.setText(_translate("AgendarConsulta", "NOME ANIMAL"))
         self.data.setText(_translate("AgendarConsulta", "DATA"))
         self.hora.setText(_translate("AgendarConsulta", "HORA"))
         self.retorno.setText(_translate("AgendarConsulta", "OBSERVAÇÃO"))
@@ -322,6 +363,8 @@ class Ui_AgendarConsulta(object):
             "AgendarConsulta", "NOME FUNCIONARIO"))
         self.btnSalvar.setText(_translate("AgendarConsulta", "SALVAR"))
         self.btnListar.setText(_translate("AgendarConsulta", "LISTAR"))
+        self.btnBuscarAnimal.setText(_translate("AgendarConsulta", "B"))
+        self.btnBuscarFuncionario.setText(_translate("AgendarConsulta", "B"))
 
 
 if __name__ == "__main__":

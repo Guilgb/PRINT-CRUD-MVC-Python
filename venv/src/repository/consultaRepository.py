@@ -3,35 +3,16 @@ from datetime import datetime
 
 
 class ConsultaRepository:
+    
     def repositoryConsulta(idConsulta, dataConsulta, horarioConsulta, observacao, animal, funcionario):
 
         con = Conexao.getConnection('')
         cursor = con.cursor()
 
         try:
-            def BuscarIdAnimal():
-                sqlBuscarAnimal = "SELECT id FROM animal where nome = %s"
-                valor = animal
-                cursor.execute(sqlBuscarAnimal, (valor,))
-                resultadoAnimal = cursor.fetchone()
-
-                for idanimal in resultadoAnimal:
-                    return idanimal
-
-            def buscarIdFuncionario():
-                sqlBuscarFuncionario = "SELECT id from funcionario where nome= %s"
-                valor = funcionario
-                cursor.execute(sqlBuscarFuncionario, (valor,))
-                resultadoBuscaFuncionario = cursor.fetchone()
-                for resultadoIdFuncionario in resultadoBuscaFuncionario:
-                    return resultadoIdFuncionario
-
-            animalId = BuscarIdAnimal()
-            funcionarioId = buscarIdFuncionario()
-
             sql = "insert into agendamento(dia, momento, observação, animalid, funcionarioid) values( %s, %s, %s, %s, %s)"
             valores = (dataConsulta, horarioConsulta,
-                       observacao, animalId, funcionarioId)
+                       observacao, animal, funcionario)
             cursor.execute(sql, valores)
             con.commit()
 
