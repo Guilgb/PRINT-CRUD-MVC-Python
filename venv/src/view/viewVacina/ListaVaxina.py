@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 from src.controller.vacinaController import VacinaController
+from src.view.viewVacina.AtualizarVaxina import AtualizarVacina
 
 
 class ListarVaxina(object):
@@ -175,19 +176,30 @@ class ListarVaxina(object):
 
             row = row + 1
 
-        def ExcluirVaxina():
-            linha = self.ListagemVaxina.currentIndex().row()
-            nomeVaxina = self.ListagemVaxina.item(linha, 0).text()
-            self.ListagemVaxina.removeRow(linha)
-            VacinaController.deleteVacinaController(nomeVaxina)
+        self.btnRemover.clicked.connect(self.ExcluirVaxina)
+        self.btnAtualizar.clicked.connect(self.AtualiazarVaxina)
 
-            msg = QMessageBox()
-            # msg.setIcon(QMessageBox.information)
-            msg.setText("Vaxina Excluida")
-            msg.setWindowTitle("Excluir Vaxina")
-            # msg.setStandardButtons(QMessageBox.Ok)
-            msg.exec()
-        self.btnRemover.clicked.connect(ExcluirVaxina)
+    def ExcluirVaxina(self):
+        linha = self.ListagemVaxina.currentIndex().row()
+        nomeVaxina = self.ListagemVaxina.item(self.linha, 0).text()
+        self.ListagemVaxina.removeRow(linha)
+        VacinaController.deleteVacinaController(nomeVaxina)
+
+        msg = QMessageBox()
+        # msg.setIcon(QMessageBox.information)
+        msg.setText("Vaxina Excluida")
+        msg.setWindowTitle("Excluir Vaxina")
+        # msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec()
+
+    def AtualiazarVaxina(self):
+        self.linha = self.ListagemVaxina.currentIndex().row()
+        self.nomeVaxina = self.ListagemVaxina.item(self.linha, 0).text()
+        self.janela_atualizar_vaxina = QtWidgets.QMainWindow()
+        self.atualizar_vaxina = AtualizarVacina()
+        self.atualizar_vaxina.idvacina = self.nomeVaxina
+        self.atualizar_vaxina.setupUi(self.janela_atualizar_vaxina)
+        self.janela_atualizar_vaxina.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate

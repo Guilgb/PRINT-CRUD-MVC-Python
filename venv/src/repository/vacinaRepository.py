@@ -74,20 +74,9 @@ class VacinaRepository:
             con = Conexao.getConnection('')
             cursor = con.cursor()
 
-            def buscarIdVacina():
-                sqlBuscarCliente = "SELECT id FROM vacina WHERE nome = %s"
-                valor = vacina.nomeVacina
-                cursor.execute(sqlBuscarCliente, (valor,))
-                resultadoBusca = cursor.fetchone()
-
-                for resultado in resultadoBusca:
-                    return resultado
-
-            vacinaId = buscarIdVacina()
-
             sqlUpateVacina = "update vacina set nome=%s, validade=%s, fabricante=%s, volume=%s where id=%s"
             cursor.execute(sqlUpateVacina, (vacina.nomeVacina,
-                           vacina.validade, vacina.fabricante, vacina.volume, vacinaId))
+                           vacina.validade, vacina.fabricante, vacina.volume, vacina.idVacina))
             con.commit()
 
         except (Exception, psycopg2.DatabaseError) as error:

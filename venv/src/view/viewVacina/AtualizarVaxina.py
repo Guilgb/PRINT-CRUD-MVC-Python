@@ -9,7 +9,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from src.controller.vacinaController import VacinaController
-from src.view.viewVacina.ListaVaxina import ListarVaxina
 from src.model.vacina import Vacina
 from PyQt5.QtWidgets import QMessageBox
 
@@ -208,52 +207,27 @@ class AtualizarVacina(object):
                                         "\n"
                                         "color: #FFFFFF;")
         self.btnAtualizar.setObjectName("btnSalvar")
-        self.btnListar = QtWidgets.QPushButton(self.container)
-        self.btnListar.setGeometry(QtCore.QRect(500, 280, 141, 61))
-        self.btnListar.setStyleSheet("position: absolute;\n"
-                                     "width: 251px;\n"
-                                     "height: 66px;\n"
-                                     "left: 381px;\n"
-                                     "top: 884px;\n"
-                                     "\n"
-                                     "background: #304456;\n"
-                                     "border-radius: 27px;\n"
-                                     "\n"
-                                     "font-family: \'Inter\';\n"
-                                     "font-style: normal;\n"
-                                     "font-weight: 700;\n"
-                                     "font-size: 20px;\n"
-                                     "line-height: 24px;\n"
-                                     "text-align: center;\n"
-                                     "\n"
-                                     "color: #FFFFFF;")
-        self.btnListar.setObjectName("btnListar")
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
 
-        def update():
-            nomeVacina = self.campoNomeVacina.toPlainText()
-            validade = self.dateEdit.date().toPyDate()
-            fabricante = self.campoFabricante.toPlainText()
-            volume = self.campoVolume.toPlainText()
+        self.btnAtualizar.clicked.connect(self.update)
 
-            vaxina = Vacina(1, nomeVacina, fabricante, validade, volume)
-            VacinaController.updateVacinaController(vaxina)
+    def update(self):
+        self.idvacina
+        nomeVacina = self.campoNomeVacina.toPlainText()
+        validade = self.dateEdit.date().toPyDate()
+        fabricante = self.campoFabricante.toPlainText()
+        volume = self.campoVolume.toPlainText()
 
-            msg = QMessageBox()
-            msg.setText("Vaxina Atualizada")
-            msg.setWindowTitle("Atualizar Vaxina")
-            msg.exec()
+        vaxina = Vacina(self.idvacina, nomeVacina,
+                        fabricante, validade, volume)
+        VacinaController.updateVacinaController(vaxina)
 
-        self.btnAtualizar.clicked.connect(update)
-        self.btnListar.clicked.connect(self.Lista_vacina)
-
-    def Lista_vacina(self):
-        self.janela_listar_vacina = QtWidgets.QMainWindow()
-        self.vacinaJanela = ListarVaxina()
-        self.vacinaJanela.setupUi(self.janela_listar_vacina)
-        self.janela_listar_vacina.show()
+        msg = QMessageBox()
+        msg.setText("Vaxina Atualizada")
+        msg.setWindowTitle("Atualizar Vaxina")
+        msg.exec()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
@@ -266,7 +240,6 @@ class AtualizarVacina(object):
         self.dataFabricacao.setText(_translate("Cadastrar", "VOLUME"))
         self.fabricante.setText(_translate("Cadastrar", "FABRICANTE"))
         self.btnAtualizar.setText(_translate("Cadastrar", "ATUALIZAR"))
-        self.btnListar.setText(_translate("Cadastrar", "LISTAR"))
 
 
 if __name__ == "__main__":
