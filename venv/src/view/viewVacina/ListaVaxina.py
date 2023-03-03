@@ -180,10 +180,10 @@ class ListarVaxina(object):
         self.btnAtualizar.clicked.connect(self.AtualiazarVaxina)
 
     def ExcluirVaxina(self):
-        linha = self.ListagemVaxina.currentIndex().row()
-        nomeVaxina = self.ListagemVaxina.item(self.linha, 0).text()
-        self.ListagemVaxina.removeRow(linha)
-        VacinaController.deleteVacinaController(nomeVaxina)
+        self.linha = self.ListagemVaxina.currentIndex().row()
+        self.nomeVaxina = self.ListagemVaxina.item(self.linha, 0).text()
+        self.ListagemVaxina.removeRow(self.linha)
+        VacinaController.deleteVacinaController(self.nomeVaxina)
 
         msg = QMessageBox()
         # msg.setIcon(QMessageBox.information)
