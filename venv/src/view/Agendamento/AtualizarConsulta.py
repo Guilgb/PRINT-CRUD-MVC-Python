@@ -293,8 +293,10 @@ class Ui_AtualizarConsulta(object):
 
     def update(self):
         self.consultaId
+        print(self.consultaId)
         idanimal = self.listar_animal.SelecionarAnimal()
         idfuncionario = self.listar_funcionario.SelecionarFuncionario()
+        print(idanimal, idfuncionario)
         dataConsulta = self.dateEdit.date().toPyDate()
         horario = self.timeEdit.dateTime().toPyDateTime()
         horarioFinal1 = str(horario)
@@ -302,7 +304,8 @@ class Ui_AtualizarConsulta(object):
         animal = self.campoBuscarAnimal.toPlainText()
         funcionario = self.campoBuscarAnimal.toPlainText()
 
-        consulta = Consulta(self.consultaId, dataConsulta, horario, observacao, idanimal, idfuncionario)
+        consulta = Consulta(self.consultaId, dataConsulta,
+                            horario, observacao, idanimal, idfuncionario)
 
         ConsultaController.updateConsultaController(consulta)
         msg = QMessageBox()

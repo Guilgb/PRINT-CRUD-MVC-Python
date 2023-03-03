@@ -64,6 +64,7 @@ class ConsultaRepository:
 
             cursor.execute(sqlUpdateConsulta, (consulta.dataConsulta, consulta.horario,
                                                consulta.observacao, consulta.animal, consulta.funcionario, consulta.idConsulta))
+            con.commit()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:
