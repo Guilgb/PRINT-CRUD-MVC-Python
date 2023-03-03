@@ -13,6 +13,7 @@ from src.controller.consultaController import ConsultaController
 from src.model.consulta import Consulta
 from src.view.Agendamento.Agendamentos import ListaConsultas
 from src.view.Agendamento.SelecionarAnimais import SelecionarAnimal
+from src.view.Agendamento.SelecionarFuncionario import SelecionarFuncionario
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 
 
@@ -319,6 +320,7 @@ class Ui_AgendarConsulta(object):
         self.btnBuscarAnimal.clicked.connect(self.SelecionarNaAnimal)
         self.btnSalvar.clicked.connect(self.insert)
         self.btnListar.clicked.connect(self.Listar_consulta)
+        self.btnBuscarFuncionario.clicked.connect(self.SelecionarFuncionario)
 
     def SelecionarNaAnimal(self):
         self.listar_animal_selecao = QtWidgets.QMainWindow()
@@ -326,8 +328,15 @@ class Ui_AgendarConsulta(object):
         self.listar_animal.setupUi(self.listar_animal_selecao)
         self.listar_animal_selecao.show()
 
+    def SelecionarFuncionario(self):
+        self.listar_funcionario_selecao = QtWidgets.QMainWindow()
+        self.listar_funcionario = SelecionarFuncionario()
+        self.listar_funcionario.setupUi(self.listar_animal_selecao)
+        self.listar_animal_selecao.show()
+
     def insert(self):
         idanimal = self.listar_animal.SelecionarAnimal()
+        idfuncionario = self.listar_funcionario.SelecionarFuncionario()
         dataConsulta = self.dateEdit.date().toPyDate()
         horario = self.timeEdit.dateTime().toPyDateTime()
         horarioFinal1 = str(horario)
@@ -338,7 +347,7 @@ class Ui_AgendarConsulta(object):
         funcionario = self.campoBuscarCliente.toPlainText()
 
         consulta = Consulta(1, dataConsulta, horarioFinal,
-                            observacao, idanimal, funcionario)
+                            observacao, idanimal, idfuncionario)
         ConsultaController.controllerConsulta(consulta)
         msg = QMessageBox()
         # msg.setIcon(QMessageBox.information)
