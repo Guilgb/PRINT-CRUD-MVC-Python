@@ -15,3 +15,12 @@ class VeterinarioService:
             idVeterinario, nomeVeterinario, cpfVeterinario,
             nascimentoVeterinario, telefoneVeterinario, emailVeterinario,
             formacao)
+
+    def readServiceVeterinario(self):
+        return VeterinarioRepository.readVeterinarioRepository('')
+
+    def deleteServiceVeterinario(veterinario):
+        VeterinarioRepository.deleteVeterinarioRepository(veterinario)
+
+    def updateServiceVeterinario(veterinario):
+        VeterinarioRepository.updateveterinarioRepository(veterinario)

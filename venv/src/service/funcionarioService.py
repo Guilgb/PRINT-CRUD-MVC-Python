@@ -11,14 +11,14 @@ class FuncionarioService:
         cargo = str(funcionario.cargo)
 
         FuncionarioRepository.insertFuncionario(
-            idFuncionario, nomeFuncionario, nascimentoFuncionario, emailFuncionario, telefoneFuncionario, cargo)
+            idFuncionario, nomeFuncionario, nascimentoFuncionario,
+            emailFuncionario, telefoneFuncionario, cargo)
 
     def serviceReadFuncionario(self):
         return FuncionarioRepository.readFuncionarioRepository(self)
 
     def serviceDeleteFuncionario(funcionario):
-        idFuncionario = int(funcionario.idFuncionario)
-        FuncionarioRepository.deleteFuncionarioRepository(idFuncionario)
+        FuncionarioRepository.deleteFuncionarioRepository(funcionario)
 
     def serviceUpdateFuncionario(funcionario):
-        pass
+        FuncionarioRepository.updateFuncionarioRepository(funcionario)

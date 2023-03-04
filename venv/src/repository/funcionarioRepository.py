@@ -54,4 +54,18 @@ class FuncionarioRepository:
                 con.close()
 
     def updateFuncionarioRepository(funcionario):
-        pass
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            sqlUpateCliente = "update funcionario set nome=%s, nascimento=%s, email=%s, telefone=%s, cargo=%s where id=%s"
+            cursor.execute(sqlUpateCliente, (funcionario.nomeFuncionario, funcionario.nascimentoFuncionario,
+                           funcionario.emailFuncionario, funcionario.telefoneFuncionario, funcionario.cargo, funcionario.idFuncionario))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()

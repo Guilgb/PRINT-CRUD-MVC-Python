@@ -18,7 +18,7 @@ from src.view.clienteView.ListarCliente import ListarCliente
 from src.view.animalView.ListaClienteAnimal import ListaClienteAnimal
 
 
-class CadastrarAnimal(object):
+class Ui_CadastrarAnimal(object):
     def setupUi(self, Cadastrar):
         Cadastrar.setObjectName("Cadastrar")
         Cadastrar.resize(900, 600)
@@ -514,7 +514,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Cadastrar = QtWidgets.QWidget()
-    ui = CadastrarAnimal()
+    ui = Ui_CadastrarAnimal()
     ui.setupUi(Cadastrar)
     Cadastrar.show()
     sys.exit(app.exec_())
