@@ -156,7 +156,7 @@ color: white;
       <x>30</x>
       <y>70</y>
       <width>621</width>
-      <height>271</height>
+      <height>321</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -226,7 +226,7 @@ color: #000000;</string>
       <string>DATA DE NASCIMENTO</string>
      </property>
     </widget>
-    <widget class="QLabel" name="telefone">
+    <widget class="QLabel" name="cargo">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -379,12 +379,66 @@ border-radius: 8px;</string>
       <bool>false</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="telefone_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 184px;
+height: 24px;
+left: 420px;
+top: 277px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #000000;</string>
+     </property>
+     <property name="text">
+      <string>TELEFONE</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="campoTelefone">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>260</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 692px;
+height: 51px;
+left: 625px;
+top: 264px;
+
+background: #D9D9D9;
+border-radius: 8px;</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="btnSalvar">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>350</y>
+      <y>400</y>
       <width>141</width>
       <height>61</height>
      </rect>
