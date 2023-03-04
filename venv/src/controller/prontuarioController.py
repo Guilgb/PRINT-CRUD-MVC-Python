@@ -6,8 +6,8 @@ class ProntuarioController:
     def controllerProntuario(prontuario: Prontuario):
         ProntuarioService.serviceProntuario(prontuario)
 
-    def readProntuarioontroller(prontuario):
-        ProntuarioService.readProntuarioService(prontuario)
+    def readProntuarioontroller(self):
+        return ProntuarioService.readProntuarioService('')
 
     def deleteProntuarioController(prontuario):
         ProntuarioService.deleteProntuarioService(prontuario)
