@@ -14,6 +14,7 @@ from src.view.viewVacina.CadastrarVaxina import Ui_CadastrarVacina
 from src.view.Agendamento.AgendarConsulta import Ui_AgendarConsulta
 from src.view.funcionarioView.CadastroFuncionario import Ui_CadastrarFuncionario
 from src.view.veterinarioView.CadastrarVeterinario import Ui_CadastrarVeterinario
+from src.view.prontuarioView.CadastrarProntuario import Ui_CadastrarProntuario
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -100,6 +101,7 @@ class Ui_Telainicial(object):
         self.btnAgendar_4.clicked.connect(self.Cad_Consulta)
         self.btnFuncionario.clicked.connect(self.Cad_Funcionario)
         self.btnVeterinario.clicked.connect(self.Cad_Veterinario)
+        self.btnProntuarios.clicked.connect(self.Cad_Prontuario)
 
     def Cad_Funcionario(self):
         self.janela_cad_funcionario = QtWidgets.QMainWindow()
@@ -118,6 +120,12 @@ class Ui_Telainicial(object):
         self.Animais_Janela = Ui_CadastrarAnimal()
         self.Animais_Janela.setupUi(self.janela_cad_animais)
         self.janela_cad_animais.show()
+
+    def Cad_Prontuario(self):
+        self.janela_cad_pront = QtWidgets.QMainWindow()
+        self.cad_pront = Ui_CadastrarProntuario()
+        self.cad_pront.setupUi(self.janela_cad_pront)
+        self.janela_cad_pront.show()
 
     def Cad_Vacina(self):
         self.janela_cad_vacina = QtWidgets.QMainWindow()

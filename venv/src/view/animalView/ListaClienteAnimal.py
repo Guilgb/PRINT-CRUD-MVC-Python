@@ -87,7 +87,7 @@ class ListaClienteAnimal(object):
                                            "\n"
                                            "color: black;")
         readCliente = ClienteController.readAllClientesController('')
-        tam = readCliente.__len__()
+        tam = readCliente
 
         self.listagemCliente.setObjectName("listagemCliente")
         self.listagemCliente.setColumnCount(8)

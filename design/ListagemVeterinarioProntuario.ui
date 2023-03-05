@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Cadastrar</class>
+ <widget class="QWidget" name="Cadastrar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>240</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastrar</string>
+  </property>
+  <widget class="QFrame" name="navegation">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>221</width>
+     <height>741</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(48, 68, 86)</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="healthypets">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>221</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="accessibleName">
+     <string/>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(91, 113, 133);
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>HEALTHY PETS</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="container">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>0</y>
+     <width>920</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>920</width>
+     <height>600</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>920</width>
+     <height>740</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(201, 201, 201)</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="txtCadastrar">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>431</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 397px;
+height: 36px;
+left: 299px;
+top: 80px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+text-align: center;
+
+color: white;
+</string>
+    </property>
+    <property name="text">
+     <string>LISTAGEM VATERINÁRIO</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>621</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTableWidget" name="listagemCliente">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>591</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">position: absolute;
+width: 397px;
+height: 36px;
+left: 299px;
+top: 80px;
+background-color:rgb(201, 201, 201);
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 100;
+font-size:12px;
+line-height: 39px;
+text-align: center;
+
+color: black;</string>
+     </property>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>NOME</string>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>NASCIMENTO</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>CPF</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>TELEFONE</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>EMAIL</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>FORMAÇÃO</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btnAtualizar">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>520</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 251px;
+height: 66px;
+left: 381px;
+top: 884px;
+
+background: #304456;
+border-radius: 27px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #FFFFFF;</string>
+    </property>
+    <property name="text">
+     <string>SELECIONAR</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

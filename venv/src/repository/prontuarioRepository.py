@@ -19,16 +19,16 @@ class ProntuarioRepository:
             if con is not None:
                 con.close()
 
-    def readProntuarioRepository(prontuario):
+    def readProntuarioRepository(self):
         con = Conexao.getConnection('')
         cursor = con.cursor()
 
         try:
-            sqlReadProntuario = "select from prontuario where id=%s"
-            valor = prontuario
-            cursor.execute(sqlReadProntuario, (valor,))
+            sqlReadProntuario = "select * from prontuario"
+            cursor.execute(sqlReadProntuario)
             readProntuario = cursor.fetchall()
             return readProntuario
+
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:

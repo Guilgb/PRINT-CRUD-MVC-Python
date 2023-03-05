@@ -9,8 +9,8 @@ class ProntuarioService:
         especie = str(prontuario.especie)
         dataProntuario = str(prontuario.dataProntuario)
         racaProntuario = str(prontuario.racaProntuario)
-        animal = str(prontuario.animal.nomeAnimal)
-        veterinario = str(prontuario.veterinario.nomeVeterinario)
+        animal = int(prontuario.animal)
+        veterinario = int(prontuario.veterinario)
 
         ProntuarioRepository.repositoryProntuario(
             idProntuario, sexo, porte, especie, dataProntuario, racaProntuario, animal, veterinario)
