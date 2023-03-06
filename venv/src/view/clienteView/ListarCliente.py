@@ -182,11 +182,11 @@ class ListarCliente(object):
             self.listagemCliente.setItem(row, 0, idCliente)
             self.listagemCliente.setItem(row, 1, nomeCliente)
             self.listagemCliente.setItem(row, 2, nascimentoCliente)
-            self.listagemCliente.setItem(row, 4, telefoneCliente)
-            self.listagemCliente.setItem(row, 5, emailCliente)
-            self.listagemCliente.setItem(row, 3, rua)
+            self.listagemCliente.setItem(row, 7, telefoneCliente)
+            self.listagemCliente.setItem(row, 4, emailCliente)
+            self.listagemCliente.setItem(row, 5, rua)
             self.listagemCliente.setItem(row, 6, numero)
-            self.listagemCliente.setItem(row, 7, bairrro)
+            self.listagemCliente.setItem(row, 3, bairrro)
 
             row = row + 1
 

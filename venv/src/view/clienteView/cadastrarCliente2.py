@@ -33,7 +33,6 @@ class Ui_CadastrarCliente(object):
         self.btnInicio.setStyleSheet("background-color: rgb(48, 68, 86);\n"
                                      "color: white;")
         self.btnInicio.setObjectName("btnInicio")
-
         self.healthypets = QtWidgets.QPushButton(self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))
@@ -177,7 +176,7 @@ class Ui_CadastrarCliente(object):
                                   "color: #000000;")
         self.bairro.setObjectName("bairro")
         self.cpf = QtWidgets.QLabel(self.frame)
-        self.cpf.setGeometry(QtCore.QRect(375, 90, 41, 21))
+        self.cpf.setGeometry(QtCore.QRect(410, 90, 41, 21))
         self.cpf.setStyleSheet("position: absolute;\n"
                                "width: 184px;\n"
                                "height: 24px;\n"
@@ -208,7 +207,7 @@ class Ui_CadastrarCliente(object):
                                      "border-radius: 8px;")
         self.campoNome.setObjectName("campoNome")
         self.campoCPF = QtWidgets.QTextEdit(self.frame)
-        self.campoCPF.setGeometry(QtCore.QRect(420, 80, 180, 41))
+        self.campoCPF.setGeometry(QtCore.QRect(450, 80, 151, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.campoCPF.setFont(font)
@@ -311,7 +310,8 @@ class Ui_CadastrarCliente(object):
         self.dateEdit = QtWidgets.QDateEdit(self.frame)
         self.dateEdit.setGeometry(QtCore.QRect(240, 80, 121, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(20)
+        font.setBold(True)
         font.setWeight(75)
         self.dateEdit.setFont(font)
         self.dateEdit.setMouseTracking(False)
@@ -336,50 +336,48 @@ class Ui_CadastrarCliente(object):
                                      "\n"
                                      "color: #FFFFFF;")
         self.btnSalvar.setObjectName("btnSalvar")
-        self.btnListar = QtWidgets.QPushButton(self.container)
-        self.btnListar.setGeometry(QtCore.QRect(510, 480, 141, 61))
-        self.btnListar.setStyleSheet("position: absolute;\n"
-                                     "width: 251px;\n"
-                                     "height: 66px;\n"
-                                     "left: 381px;\n"
-                                     "top: 884px;\n"
-                                     "\n"
-                                     "background: #304456;\n"
-                                     "border-radius: 27px;\n"
-                                     "\n"
-                                     "font-family: \'Inter\';\n"
-                                     "font-style: normal;\n"
-                                     "font-weight: 700;\n"
-                                     "font-size: 20px;\n"
-                                     "line-height: 24px;\n"
-                                     "text-align: center;\n"
-                                     "\n"
-                                     "color: #FFFFFF;")
-        self.btnListar.setObjectName("btnListar")
+        self.btnAtualizar = QtWidgets.QPushButton(self.container)
+        self.btnAtualizar.setGeometry(QtCore.QRect(510, 480, 141, 61))
+        self.btnAtualizar.setStyleSheet("position: absolute;\n"
+                                        "width: 251px;\n"
+                                        "height: 66px;\n"
+                                        "left: 381px;\n"
+                                        "top: 884px;\n"
+                                        "\n"
+                                        "background: #304456;\n"
+                                        "border-radius: 27px;\n"
+                                        "\n"
+                                        "font-family: \'Inter\';\n"
+                                        "font-style: normal;\n"
+                                        "font-weight: 700;\n"
+                                        "font-size: 20px;\n"
+                                        "line-height: 24px;\n"
+                                        "text-align: center;\n"
+                                        "\n"
+                                        "color: #FFFFFF;")
+        self.btnAtualizar.setObjectName("btnAtualizar")
 
         self.retranslateUi(CadastrarCliente)
         QtCore.QMetaObject.connectSlotsByName(CadastrarCliente)
+        self.btnSalvar.clicked.connect(self.insert)
+        self.btnAtualizar.clicked.connect(self.ListarClientes)
 
-        def insert():
-            nomeCliente = self.campoNome.toPlainText()
-            cpf = self.campoCPF.toPlainText()
-            nascimento = self.dateEdit.date().toPyDate()
-            telefone = self.campoTelefone.toPlainText()
-            email = self.campoEmail.toPlainText()
-            rua = self.campoRua.toPlainText()
-            bairro = self.campoBairro.toPlainText()
-            cliente = Cliente(1, nomeCliente, cpf, nascimento,
-                              telefone, email, rua, bairro, 1)
-            ClienteController.controllerCliente(cliente)
-            msg = QMessageBox()
-            # msg.setIcon(QMessageBox.information)
-            msg.setText("Cliente Adicionado")
-            msg.setWindowTitle("Adicionar Cliente")
-            # msg.setStandardButtons(QMessageBox.Ok)
-            msg.exec()
-
-        self.btnSalvar.clicked.connect(insert)
-        self.btnListar.clicked.connect(self.ListarClientes)
+    def insert(self):
+        nomeCliente = self.campoNome.toPlainText()
+        cpf = self.campoCPF.toPlainText()
+        nascimento = self.dateEdit.date().toPyDate()
+        telefone = self.campoTelefone.toPlainText()
+        email = self.campoEmail.toPlainText()
+        rua = self.campoRua.toPlainText()
+        bairro = self.campoBairro.toPlainText()
+        cliente = Cliente(1, nomeCliente, cpf, nascimento, telefone, email, rua, bairro, 1)
+        ClienteController.controllerCliente(cliente)
+        msg = QMessageBox()
+        # msg.setIcon(QMessageBox.information)
+        msg.setText("Cliente Adicionado")
+        msg.setWindowTitle("Adicionar Cliente")
+        # msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec()
 
     def ListarClientes(self):
         self.janela_listar_vacina = QtWidgets.QMainWindow()
@@ -406,7 +404,7 @@ class Ui_CadastrarCliente(object):
         self.cpf.setText(_translate("CadastrarCliente", "CPF"))
         self.cidade_2.setText(_translate("CadastrarCliente", "Nº"))
         self.btnSalvar.setText(_translate("CadastrarCliente", "SALVAR"))
-        self.btnListar.setText(_translate("CadastrarCliente", "LISTAR"))
+        self.btnAtualizar.setText(_translate("CadastrarCliente", "LISTAR"))
 
 
 if __name__ == "__main__":

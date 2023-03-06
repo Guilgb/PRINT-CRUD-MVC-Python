@@ -63,26 +63,6 @@ color: white;</string>
      <string>INICIO</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCadastrar">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>210</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(91, 113, 133);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>CADASTRAR</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="healthypets">
     <property name="enabled">
      <bool>false</bool>
@@ -107,46 +87,6 @@ color: white;</string>
     </property>
     <property name="text">
      <string>HEALTHY PETS</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnAgendar">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>310</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(48, 68, 86);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>AGENDAR</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnProntuario">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>410</y>
-      <width>221</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(91, 113, 133);
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>PRONTUÁRIO</string>
     </property>
    </widget>
   </widget>
