@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 from src.controller.prontuarioController import ProntuarioController
+from src.view.prontuarioView.AtualizarProntuario import Ui_AtualizarProntuario
 
 
 class Ui_ListarProntuario(object):
@@ -158,10 +159,10 @@ class Ui_ListarProntuario(object):
                                       "color: #FFFFFF;")
         self.btnRemover.setObjectName("btnRemover")
         self.btnRemover.clicked.connect(self.excluirProntuario)
+        self.btnAtualizar.clicked.connect(self.AtualizarProntuario)
 
         self.retranslateUi(Cadastrar)
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
-
         query = ProntuarioController.readProntuarioontroller('')
 
         while (self.listagemProntuario.rowCount() > 0):
@@ -182,7 +183,7 @@ class Ui_ListarProntuario(object):
             self.listagemProntuario.setItem(row, 0, id)
             self.listagemProntuario.setItem(row, 1, raca)
             self.listagemProntuario.setItem(row, 2, data)
-            self.listagemProntuario.setItem(row, 3, especie)
+            self.listagemProntuario.setItem(row, 3, especie) 
             self.listagemProntuario.setItem(row, 4, porte)
             self.listagemProntuario.setItem(row, 5, sexo)
             self.listagemProntuario.setItem(row, 6, idanimal)
@@ -200,8 +201,19 @@ class Ui_ListarProntuario(object):
         # msg.setIcon(QMessageBox.information)
         msg.setText("Prontuario Excluido")
         msg.setWindowTitle("Excluir Prontuario")
-        # msg.setStandardButtons(QMessageBox.Ok)
+        # msg.setStandardB
+        # uttons(QMessageBox.Ok)
         msg.exec()
+
+    def AtualizarProntuario(self):
+        self.linha = self.listagemProntuario.currentIndex().row()
+        self.idprontuario = self.listagemProntuario.item(
+            self.linha, 0).text()
+        self.janela_prontuario_atualizar = QtWidgets.QMainWindow()
+        self.janela_prontuario = Ui_AtualizarProntuario()
+        self.janela_prontuario.idprontuario = self.idprontuario
+        self.janela_prontuario.setupUi(self.janela_prontuario_atualizar)
+        self.janela_prontuario_atualizar.show()
 
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
