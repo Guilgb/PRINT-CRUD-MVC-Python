@@ -177,17 +177,17 @@ class Ui_ListarProntuario(object):
             especie = QTableWidgetItem(query[row][3])
             porte = QTableWidgetItem(query[row][4])
             sexo = QTableWidgetItem(query[row][5])
-            idanimal = QTableWidgetItem(query[row][6])
-            idveterinario = QTableWidgetItem(query[row][7])
+            animal = QTableWidgetItem(query[row][6])
+            veterinario = QTableWidgetItem(query[row][7])
 
             self.listagemProntuario.setItem(row, 0, id)
             self.listagemProntuario.setItem(row, 1, raca)
             self.listagemProntuario.setItem(row, 2, data)
-            self.listagemProntuario.setItem(row, 3, especie) 
+            self.listagemProntuario.setItem(row, 3, especie)
             self.listagemProntuario.setItem(row, 4, porte)
             self.listagemProntuario.setItem(row, 5, sexo)
-            self.listagemProntuario.setItem(row, 6, idanimal)
-            self.listagemProntuario.setItem(row, 7, idveterinario)
+            self.listagemProntuario.setItem(row, 6, animal)
+            self.listagemProntuario.setItem(row, 7, veterinario)
 
             row = row + 1
 
