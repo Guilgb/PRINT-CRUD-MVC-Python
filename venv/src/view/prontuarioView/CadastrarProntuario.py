@@ -347,22 +347,22 @@ class Ui_CadastrarProntuario(object):
         self.btnListar = QtWidgets.QPushButton(self.container)
         self.btnListar.setGeometry(QtCore.QRect(500, 400, 141, 61))
         self.btnListar.setStyleSheet("position: absolute;\n"
-                                        "width: 251px;\n"
-                                        "height: 66px;\n"
-                                        "left: 381px;\n"
-                                        "top: 884px;\n"
-                                        "\n"
-                                        "background: #304456;\n"
-                                        "border-radius: 27px;\n"
-                                        "\n"
-                                        "font-family: \'Inter\';\n"
-                                        "font-style: normal;\n"
-                                        "font-weight: 700;\n"
-                                        "font-size: 20px;\n"
-                                        "line-height: 24px;\n"
-                                        "text-align: center;\n"
-                                        "\n"
-                                        "color: #FFFFFF;")
+                                     "width: 251px;\n"
+                                     "height: 66px;\n"
+                                     "left: 381px;\n"
+                                     "top: 884px;\n"
+                                     "\n"
+                                     "background: #304456;\n"
+                                     "border-radius: 27px;\n"
+                                     "\n"
+                                     "font-family: \'Inter\';\n"
+                                     "font-style: normal;\n"
+                                     "font-weight: 700;\n"
+                                     "font-size: 20px;\n"
+                                     "line-height: 24px;\n"
+                                     "text-align: center;\n"
+                                     "\n"
+                                     "color: #FFFFFF;")
         self.btnListar.setObjectName("btnAtualizar")
 
         self.retranslateUi(Cadastrar)
@@ -393,8 +393,8 @@ class Ui_CadastrarProntuario(object):
     def insert(self):
         raca = self.campoRaca.toPlainText()
         data = self.dateEdit.date().toPyDate()
-        especie = self.campoSexo.toPlainText()
-        porte = self.campoSexo.toPlainText()
+        especie = self.campoEspecie.toPlainText()
+        porte = self.campoPorte.toPlainText()
         sexo = self.campoSexo.toPlainText()
         self.animalId = self.listar_animal.SelecionarAnimal()
         self.veterinarioId = self.listar_vet.SelecionarVet()
