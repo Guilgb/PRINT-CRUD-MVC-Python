@@ -34,12 +34,6 @@ class Ui_AtualizarCliente(object):
         self.btnInicio.setStyleSheet("background-color: rgb(48, 68, 86);\n"
                                      "color: white;")
         self.btnInicio.setObjectName("btnInicio")
-        self.btnCadastrar = QtWidgets.QPushButton(self.navegation)
-        self.btnCadastrar.setGeometry(QtCore.QRect(0, 210, 221, 101))
-        self.btnCadastrar.setAutoFillBackground(False)
-        self.btnCadastrar.setStyleSheet("background-color: rgb(91, 113, 133);\n"
-                                        "color: white;")
-        self.btnCadastrar.setObjectName("btnCadastrar")
         self.healthypets = QtWidgets.QPushButton(self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))
@@ -48,18 +42,6 @@ class Ui_AtualizarCliente(object):
         self.healthypets.setStyleSheet("background-color: rgb(91, 113, 133);\n"
                                        "color: white;")
         self.healthypets.setObjectName("healthypets")
-        self.btnAgendar = QtWidgets.QPushButton(self.navegation)
-        self.btnAgendar.setGeometry(QtCore.QRect(0, 310, 221, 101))
-        self.btnAgendar.setAutoFillBackground(False)
-        self.btnAgendar.setStyleSheet("background-color: rgb(48, 68, 86);\n"
-                                      "color: white;")
-        self.btnAgendar.setObjectName("btnAgendar")
-        self.btnProntuario = QtWidgets.QPushButton(self.navegation)
-        self.btnProntuario.setGeometry(QtCore.QRect(0, 410, 221, 101))
-        self.btnProntuario.setAutoFillBackground(False)
-        self.btnProntuario.setStyleSheet("background-color: rgb(91, 113, 133);\n"
-                                         "color: white;")
-        self.btnProntuario.setObjectName("btnProntuario")
         self.container = QtWidgets.QFrame(CadastrarCliente)
         self.container.setGeometry(QtCore.QRect(220, 0, 920, 600))
         self.container.setMinimumSize(QtCore.QSize(920, 600))
@@ -360,7 +342,7 @@ class Ui_AtualizarCliente(object):
         # print(self.recebeid)
         self.btnAtualizar.clicked.connect(self.update)
         # self.btnCadastrar.clicked.connect(self.CadastroAnimais)
-        self.btnAgendar.clicked.connect(self.CadastroAgendamentos)
+        # self.btnAgendar.clicked.connect(self.CadastroAgendamentos)
 
     def update(self):
         self.idcampo
@@ -390,13 +372,8 @@ class Ui_AtualizarCliente(object):
         CadastrarCliente.setWindowTitle(
             _translate("CadastrarCliente", "Cadastrar"))
         self.btnInicio.setText(_translate("CadastrarCliente", "INICIO"))
-        self.btnCadastrar.setText(_translate(
-            "CadastrarCliente", "CADASTRAR ANIMAL"))
         self.healthypets.setText(_translate(
             "CadastrarCliente", "HEALTHY PETS"))
-        self.btnAgendar.setText(_translate("CadastrarCliente", "AGENDAR"))
-        self.btnProntuario.setText(_translate(
-            "CadastrarCliente", "PRONTUÁRIO"))
         self.txtCadastrar.setText(_translate(
             "CadastrarCliente", "Atualizar Cliente"))
         self.nome.setText(_translate("CadastrarCliente", "NOME DO CLIENTE"))
