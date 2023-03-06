@@ -30,12 +30,7 @@ class ListarCliente(object):
         self.btnInicio.setStyleSheet("background-color: rgb(48, 68, 86);\n"
                                      "color: white;")
         self.btnInicio.setObjectName("btnInicio")
-        self.btnCadastrar = QtWidgets.QPushButton(parent=self.navegation)
-        self.btnCadastrar.setGeometry(QtCore.QRect(0, 210, 221, 101))
-        self.btnCadastrar.setAutoFillBackground(False)
-        self.btnCadastrar.setStyleSheet("background-color: rgb(91, 113, 133);\n"
-                                        "color: white;")
-        self.btnCadastrar.setObjectName("btnCadastrar")
+       
         self.healthypets = QtWidgets.QPushButton(parent=self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))
@@ -44,18 +39,7 @@ class ListarCliente(object):
         self.healthypets.setStyleSheet("background-color: rgb(91, 113, 133);\n"
                                        "color: white;")
         self.healthypets.setObjectName("healthypets")
-        self.btnAgendar = QtWidgets.QPushButton(parent=self.navegation)
-        self.btnAgendar.setGeometry(QtCore.QRect(0, 310, 221, 101))
-        self.btnAgendar.setAutoFillBackground(False)
-        self.btnAgendar.setStyleSheet("background-color: rgb(48, 68, 86);\n"
-                                      "color: white;")
-        self.btnAgendar.setObjectName("btnAgendar")
-        self.btnProntuario = QtWidgets.QPushButton(parent=self.navegation)
-        self.btnProntuario.setGeometry(QtCore.QRect(0, 410, 221, 101))
-        self.btnProntuario.setAutoFillBackground(False)
-        self.btnProntuario.setStyleSheet("background-color: rgb(91, 113, 133);\n"
-                                         "color: white;")
-        self.btnProntuario.setObjectName("btnProntuario")
+        
         self.container = QtWidgets.QFrame(parent=Cadastrar)
         self.container.setGeometry(QtCore.QRect(220, 0, 920, 600))
         self.container.setMinimumSize(QtCore.QSize(920, 600))
@@ -198,9 +182,9 @@ class ListarCliente(object):
             self.listagemCliente.setItem(row, 0, idCliente)
             self.listagemCliente.setItem(row, 1, nomeCliente)
             self.listagemCliente.setItem(row, 2, nascimentoCliente)
-            self.listagemCliente.setItem(row, 3, telefoneCliente)
-            self.listagemCliente.setItem(row, 4, emailCliente)
-            self.listagemCliente.setItem(row, 5, rua)
+            self.listagemCliente.setItem(row, 4, telefoneCliente)
+            self.listagemCliente.setItem(row, 5, emailCliente)
+            self.listagemCliente.setItem(row, 3, rua)
             self.listagemCliente.setItem(row, 6, numero)
             self.listagemCliente.setItem(row, 7, bairrro)
 
@@ -234,10 +218,7 @@ class ListarCliente(object):
         _translate = QtCore.QCoreApplication.translate
         Cadastrar.setWindowTitle(_translate("Cadastrar", "Cadastrar"))
         self.btnInicio.setText(_translate("Cadastrar", "INICIO"))
-        self.btnCadastrar.setText(_translate("Cadastrar", "CADASTRAR"))
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
-        self.btnAgendar.setText(_translate("Cadastrar", "AGENDAR"))
-        self.btnProntuario.setText(_translate("Cadastrar", "PRONTUÁRIO"))
         self.txtCadastrar.setText(_translate(
             "Cadastrar", "LISTAGEM DE CLIENTES"))
         item = self.listagemCliente.horizontalHeaderItem(0)
