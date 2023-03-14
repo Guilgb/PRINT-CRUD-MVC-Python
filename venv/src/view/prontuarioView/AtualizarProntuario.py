@@ -371,8 +371,8 @@ class Ui_AtualizarProntuario(object):
         ProntuarioController.updateProntuarioController(prontuario)
 
         msg = QMessageBox()
-        msg.setText("Funcionario Atualizada")
-        msg.setWindowTitle("Atualizar Funcionario")
+        msg.setText("Prontuário Atualizado")
+        msg.setWindowTitle("Atualizar Prontuário")
         msg.exec()
 
     def retranslateUi(self, Cadastrar):

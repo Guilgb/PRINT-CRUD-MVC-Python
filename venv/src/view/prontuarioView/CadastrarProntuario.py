@@ -398,8 +398,8 @@ class Ui_CadastrarProntuario(object):
 
         msg = QMessageBox()
         # msg.setIcon(QMessageBox.information)
-        msg.setText("Cliente Adicionado")
-        msg.setWindowTitle("Adicionar Cliente")
+        msg.setText("Prontuário Adicionado")
+        msg.setWindowTitle("Adicionar Prontuário")
         # msg.setStandardButtons(QMessageBox.Ok)
         msg.exec()
 
