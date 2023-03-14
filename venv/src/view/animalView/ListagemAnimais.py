@@ -24,6 +24,7 @@ class ListarAnimais(object):
         self.navegation.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.navegation.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.navegation.setObjectName("navegation")
+
         self.healthypets = QtWidgets.QPushButton(parent=self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))
@@ -32,6 +33,7 @@ class ListarAnimais(object):
         self.healthypets.setStyleSheet("background-color: rgb(91, 113, 133);\n"
                                        "color: white;")
         self.healthypets.setObjectName("healthypets")
+
         self.container = QtWidgets.QFrame(parent=Cadastrar)
         self.container.setGeometry(QtCore.QRect(220, 0, 920, 600))
         self.container.setMinimumSize(QtCore.QSize(920, 600))
@@ -157,6 +159,7 @@ class ListarAnimais(object):
         QtCore.QMetaObject.connectSlotsByName(Cadastrar)
 
         query = AnimalController.readControllerAimal('')
+        print(query[0][7])
 
         while (self.listagemAnimal.rowCount() > 0):
             self.listagemAnimal.removeRow(0)
@@ -169,7 +172,7 @@ class ListarAnimais(object):
             sexo = QTableWidgetItem(query[row][3])
             raca = QTableWidgetItem(query[row][4])
             peso = QTableWidgetItem(query[row][5])
-            dono = QTableWidgetItem(query[row][7])
+            dono = QTableWidgetItem(str(query[row][7]))
             especie = QTableWidgetItem(query[row][2])
 
             self.listagemAnimal.setItem(row, 0, idAnimal)
@@ -178,8 +181,8 @@ class ListarAnimais(object):
             self.listagemAnimal.setItem(row, 3, sexo)
             self.listagemAnimal.setItem(row, 4, raca)
             self.listagemAnimal.setItem(row, 5, peso)
-            self.listagemAnimal.setItem(row, 6, especie)
-            self.listagemAnimal.setItem(row, 7, dono)
+            self.listagemAnimal.setItem(row, 7, especie)
+            self.listagemAnimal.setItem(row, 6, dono)
 
             row = row + 1
 

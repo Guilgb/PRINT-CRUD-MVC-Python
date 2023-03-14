@@ -427,7 +427,6 @@ class Ui_CadastrarAnimal(object):
         self.btnSalvar.clicked.connect(self.insert)
         self.btnListar.clicked.connect(self.Listar_Animais)
         self.btnBusca.clicked.connect(self.selecionarCliente)
-        self.btnListarClientes.clicked.connect(self.Listar_Cliente)
 
     def selecionarCliente(self):
         self.janela_listar_cliente = QtWidgets.QMainWindow()
