@@ -24,12 +24,6 @@ class ListarCliente(object):
         self.navegation.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.navegation.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.navegation.setObjectName("navegation")
-        self.btnInicio = QtWidgets.QPushButton(parent=self.navegation)
-        self.btnInicio.setGeometry(QtCore.QRect(0, 110, 221, 101))
-        self.btnInicio.setAutoFillBackground(False)
-        self.btnInicio.setStyleSheet("background-color: rgb(48, 68, 86);\n"
-                                     "color: white;")
-        self.btnInicio.setObjectName("btnInicio")
        
         self.healthypets = QtWidgets.QPushButton(parent=self.navegation)
         self.healthypets.setEnabled(False)
@@ -217,7 +211,6 @@ class ListarCliente(object):
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
         Cadastrar.setWindowTitle(_translate("Cadastrar", "Cadastrar"))
-        self.btnInicio.setText(_translate("Cadastrar", "INICIO"))
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
         self.txtCadastrar.setText(_translate(
             "Cadastrar", "LISTAGEM DE CLIENTES"))

@@ -28,18 +28,6 @@ class Ui_AtualizarAnimal(object):
         self.navegation.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.navegation.setFrameShadow(QtWidgets.QFrame.Raised)
         self.navegation.setObjectName("navegation")
-        self.btnInicio = QtWidgets.QPushButton(self.navegation)
-        self.btnInicio.setGeometry(QtCore.QRect(0, 110, 221, 101))
-        self.btnInicio.setAutoFillBackground(False)
-        self.btnInicio.setStyleSheet("background-color: rgb(48, 68, 86);\n"
-                                     "color: white;")
-        self.btnInicio.setObjectName("btnInicio")
-        self.btnListarClientes = QtWidgets.QPushButton(self.navegation)
-        self.btnListarClientes.setGeometry(QtCore.QRect(0, 210, 221, 101))
-        self.btnListarClientes.setAutoFillBackground(False)
-        self.btnListarClientes.setStyleSheet("background-color: rgb(91, 113, 133);\n"
-                                             "color: white;")
-        self.btnListarClientes.setObjectName("btnCadastrar")
         self.healthypets = QtWidgets.QPushButton(self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))
@@ -446,9 +434,6 @@ class Ui_AtualizarAnimal(object):
     def retranslateUi(self, Cadastrar):
         _translate = QtCore.QCoreApplication.translate
         Cadastrar.setWindowTitle(_translate("Cadastrar", "Cadastrar"))
-        self.btnInicio.setText(_translate("Cadastrar", "INICIO"))
-        self.btnListarClientes.setText(
-            _translate("Cadastrar", "CADASTRAR"))
         self.healthypets.setText(_translate("Cadastrar", "HEALTHY PETS"))
         self.txtCadastrar.setText(_translate("Cadastrar", "Atualizar Animal"))
         self.nomeAnimal.setText(_translate("Cadastrar", "NOME DO ANIMAL"))

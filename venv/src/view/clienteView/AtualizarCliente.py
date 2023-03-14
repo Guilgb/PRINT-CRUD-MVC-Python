@@ -28,12 +28,6 @@ class Ui_AtualizarCliente(object):
         self.navegation.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.navegation.setFrameShadow(QtWidgets.QFrame.Raised)
         self.navegation.setObjectName("navegation")
-        self.btnInicio = QtWidgets.QPushButton(self.navegation)
-        self.btnInicio.setGeometry(QtCore.QRect(0, 110, 221, 101))
-        self.btnInicio.setAutoFillBackground(False)
-        self.btnInicio.setStyleSheet("background-color: rgb(48, 68, 86);\n"
-                                     "color: white;")
-        self.btnInicio.setObjectName("btnInicio")
         self.healthypets = QtWidgets.QPushButton(self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))
@@ -371,7 +365,6 @@ class Ui_AtualizarCliente(object):
         _translate = QtCore.QCoreApplication.translate
         CadastrarCliente.setWindowTitle(
             _translate("CadastrarCliente", "Cadastrar"))
-        self.btnInicio.setText(_translate("CadastrarCliente", "INICIO"))
         self.healthypets.setText(_translate(
             "CadastrarCliente", "HEALTHY PETS"))
         self.txtCadastrar.setText(_translate(
