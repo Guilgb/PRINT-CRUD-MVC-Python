@@ -25,7 +25,6 @@ class ListaConsultas(object):
         self.navegation.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.navegation.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.navegation.setObjectName("navegation")
-
         self.healthypets = QtWidgets.QPushButton(parent=self.navegation)
         self.healthypets.setEnabled(False)
         self.healthypets.setGeometry(QtCore.QRect(0, 0, 221, 111))

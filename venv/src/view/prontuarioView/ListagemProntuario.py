@@ -171,8 +171,8 @@ class Ui_ListarProntuario(object):
             especie = QTableWidgetItem(query[row][3])
             porte = QTableWidgetItem(query[row][4])
             sexo = QTableWidgetItem(query[row][5])
-            animal = QTableWidgetItem(query[row][6])
-            veterinario = QTableWidgetItem(query[row][7])
+            animal = QTableWidgetItem(str(query[row][6]))
+            veterinario = QTableWidgetItem(str(query[row][7]))
 
             self.listagemProntuario.setItem(row, 0, id)
             self.listagemProntuario.setItem(row, 1, raca)
