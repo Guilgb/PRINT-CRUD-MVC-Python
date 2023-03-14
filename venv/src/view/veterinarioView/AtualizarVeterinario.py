@@ -287,8 +287,8 @@ class Ui_AtualizarVeterinario(object):
         VeterinarioController.updateControllerVeterinario(vet)
 
         msg = QMessageBox()
-        msg.setText("Cliente Atualizado")
-        msg.setWindowTitle("Atualizar Cliente")
+        msg.setText("Veterinário Atualizado")
+        msg.setWindowTitle("Atualizar Veterinário")
         msg.exec()
 
     def retranslateUi(self, CadastrarCliente):

@@ -309,8 +309,8 @@ class Ui_CadastrarVeterinario(object):
 
         msg = QMessageBox()
         # msg.setIcon(QMessageBox.information)
-        msg.setText("Cliente Adicionado")
-        msg.setWindowTitle("Adicionar Cliente")
+        msg.setText("Veterinário Adicionado")
+        msg.setWindowTitle("Adicionar Veterinário")
         # msg.setStandardButtons(QMessageBox.Ok)
         msg.exec()
 

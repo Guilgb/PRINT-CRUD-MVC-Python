@@ -303,8 +303,8 @@ class Ui_AtualizarConsulta(object):
 
         ConsultaController.updateConsultaController(consulta)
         msg = QMessageBox()
-        msg.setText("Cliente Atualizado")
-        msg.setWindowTitle("Atualizar Cliente")
+        msg.setText("Consulta Atualizado")
+        msg.setWindowTitle("Atualizar Consulta")
         msg.exec()
 
     def retranslateUi(self, AgendarConsulta):

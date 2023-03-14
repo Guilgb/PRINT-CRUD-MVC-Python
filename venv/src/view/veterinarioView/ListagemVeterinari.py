@@ -192,8 +192,8 @@ class Ui_ListarVet(object):
 
         msg = QMessageBox()
         # msg.setIcon(QMessageBox.information)
-        msg.setText("Vaxina Excluida")
-        msg.setWindowTitle("Excluir Vaxina")
+        msg.setText("Veterinário Excluida")
+        msg.setWindowTitle("Excluir Veterinário")
         # msg.setStandardButtons(QMessageBox.Ok)
         msg.exec()
 
