@@ -52,4 +52,17 @@ class ProntuarioRepository:
                 con.close()
 
     def updateProntuarioRepository(prontuario):
-        pass
+        try:
+            con = Conexao.getConnection('')
+            cursor = con.cursor()
+
+            sqlUpateProntuario = "update prontuario set sexo=%s, porte=%s, especie=%s, data=%s, raca=%s, animalid=%s, veterinarioid=%s where id=%s"
+            cursor.execute(sqlUpateProntuario, (prontuario.sexo, prontuario.porte, prontuario.especie, prontuario.dataProntuario, prontuario.racaProntuario, prontuario.animal, prontuario.veterinario, prontuario.idProntuario ))
+            con.commit()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
+        finally:
+            if con is not None:
+                con.close()
